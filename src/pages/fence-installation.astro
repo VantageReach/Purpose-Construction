@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Fence Installation',
+  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+  areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
+  description: 'Fence installation across East Texas — wood privacy fences, vinyl, chain link, and ornamental iron with proper post installation and gates for East Texas properties.',
+};
+---
+<BaseLayout
+  title="Fence Installation East Texas | Purpose Construction"
+  description="Fence installation across East Texas — wood privacy, vinyl, chain link, and ornamental iron. Purpose Construction installs fences with proper posts and gates across East Texas."
+  schema={schema}
+>
+  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Outdoor Living', href: '/outdoor-living' }, { label: 'Fence Installation', href: '/fence-installation' }]} />
+  <PageHero title="Fence Installation in East Texas" subtitle="Wood privacy fences, vinyl, chain link, and ornamental iron — properly installed with set posts and quality hardware that holds up in East Texas soil and weather." tag="Outdoor Living Service" />
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Fence Installation" title="Fences Set to Last in East Texas Soil" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>The clay-heavy soils in the Lufkin area expand and contract significantly with moisture changes, which means fence posts set too shallow or without proper concrete will lean, heave, and fail within a few seasons. Purpose Construction sets posts deep and secures them with concrete, accounting for East Texas soil conditions so your fence stays plumb and stable year after year.</p>
+            <p>We install cedar privacy fences in dog-ear and board-on-board styles — board-on-board being particularly popular in Lufkin because the overlapping boards provide better privacy and handle wind loading better than standard dog-ear in storm conditions. We also install vinyl fencing for homeowners who want a maintenance-free option, chain link for pet containment and utility applications, and ornamental iron for decorative front yard fencing.</p>
+            <p>Every fence project includes proper gate installation with hardware rated for the gate weight, so gates swing correctly and latch securely from the first day and for years to come.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/outdoor-living" class="btn-outline">All Outdoor Living</a>
+          </div>
+        </div>
+        <img src="https://placehold.co/640x480/2a2520/555?text=Fence+Installation" alt="Fence installation across East Texas by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What's Included" title="Fence Installation Services" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {['Wood Privacy Fence', 'Vinyl Fence', 'Chain Link', 'Ornamental Iron', 'Post Installation', 'Gates', 'Dog-Ear Boards', 'Board on Board'].map(item => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Related Outdoor Services" />
+      <div class="flex flex-wrap gap-3">
+        {[{ label: 'Patio Construction', href: '/patio-construction' }, { label: 'Driveway Installation', href: '/driveway-installation' }, { label: 'Outdoor Living', href: '/outdoor-living' }].map(link => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Get Your Fence Installed Right</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free fence installation estimate. We serve Lufkin and all of East Texas.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

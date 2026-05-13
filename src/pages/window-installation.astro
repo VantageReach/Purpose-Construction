@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Window Installation',
+  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+  areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
+  description: 'Window installation across East Texas — replacement and new construction windows, double-pane energy efficient, with proper flashing, sealing, and interior casing for East Texas homes.',
+};
+---
+<BaseLayout
+  title="Window Installation East Texas | Purpose Construction"
+  description="Window installation across East Texas — replacement and new construction windows, double-pane energy efficient, with proper flashing and casing. Purpose Construction serves East Texas."
+  schema={schema}
+>
+  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Exterior Services', href: '/exterior-services' }, { label: 'Window Installation', href: '/window-installation' }]} />
+  <PageHero title="Window Installation in East Texas" subtitle="Replacement and new construction windows installed with proper flashing, sealing, and interior trim — improving energy efficiency and curb appeal across East Texas." tag="Exterior Service" />
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Window Installation" title="Energy-Efficient Windows Installed to Stay Sealed" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Older windows in East Texas homes are a significant source of energy loss — single-pane glass and deteriorated seals let the summer heat pour in and make air conditioning systems work overtime. Upgrading to double-pane, low-E windows can meaningfully reduce cooling loads in Lufkin's long hot summers. Purpose Construction installs energy-efficient replacement and new construction windows that are properly sized and specified for the Texas climate zone.</p>
+            <p>Window installation is a trade where flashing and sealing details determine whether the product performs for 20 years or starts causing water intrusion within a few seasons. We flash every window opening with a continuous water management system, integrate with the house wrap, and seal interior and exterior properly so the window unit is part of a complete moisture-resistant assembly — not just a glass pane dropped into a hole.</p>
+            <p>We install the full range of window types for East Texas homes — double-hung, casement, bay windows, picture windows, and specialty shapes — and finish every installation with interior trim and casing so the job looks complete from both inside and out.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/exterior-services" class="btn-outline">All Exterior Services</a>
+          </div>
+        </div>
+        <img src="https://placehold.co/640x480/2a2520/555?text=Window+Installation" alt="Window installation across East Texas by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What's Included" title="Window Installation Services" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {['Replacement Windows', 'New Construction Windows', 'Double-Pane Energy Efficient', 'Casement', 'Double-Hung', 'Bay Windows', 'Flashing & Sealing', 'Trim & Interior Casing'].map(item => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Related Exterior Services" />
+      <div class="flex flex-wrap gap-3">
+        {[{ label: 'Door Installation', href: '/door-installation' }, { label: 'Siding Installation', href: '/siding-installation' }, { label: 'Exterior Services', href: '/exterior-services' }].map(link => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Time to Replace Your Windows?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free window installation estimate. We serve Lufkin and all of East Texas.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

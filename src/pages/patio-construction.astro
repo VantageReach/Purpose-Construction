@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Patio Construction',
+  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+  areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
+  description: 'Patio construction across East Texas — poured concrete, stamped concrete, pavers, and flagstone patios with proper drainage for East Texas homes.',
+};
+---
+<BaseLayout
+  title="Patio Construction East Texas | Purpose Construction"
+  description="Patio construction across East Texas — concrete, stamped concrete, pavers, and flagstone with proper drainage and grading. Purpose Construction builds outdoor spaces across East Texas."
+  schema={schema}
+>
+  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Outdoor Living', href: '/outdoor-living' }, { label: 'Patio Construction', href: '/patio-construction' }]} />
+  <PageHero title="Patio Construction in East Texas" subtitle="Concrete, stamped, paver, and flagstone patios built with proper drainage and grading — extending your living space into the East Texas outdoors." tag="Outdoor Living Service" />
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Patio Construction" title="Outdoor Spaces Built for East Texas Weather" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>East Texas gets generous rainfall — Lufkin averages around 50 inches per year — which means a patio without proper drainage becomes a pond after every storm. Purpose Construction grades and drains every patio we build so water moves away from your foundation and your outdoor space stays usable after it rains. It's a detail that separates a well-built patio from one that causes problems down the road.</p>
+            <p>We pour standard and stamped concrete patios, install paver systems in brick and natural stone patterns, and lay flagstone for a more organic, natural look. Covered patio slabs are engineered to handle the structure above them — we coordinate with the cover installation so footings and slab thickness match what's being built on top.</p>
+            <p>Whether you're adding a simple back patio to a new home or replacing an old cracked slab, we deliver a finished product that looks good, drains well, and holds up through East Texas summers and storm seasons.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/outdoor-living" class="btn-outline">All Outdoor Living</a>
+          </div>
+        </div>
+        <img src="https://placehold.co/640x480/2a2520/555?text=Patio+Construction" alt="Patio construction across East Texas by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What's Included" title="Patio Construction Services" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {['Poured Concrete', 'Stamped Concrete', 'Pavers', 'Flagstone', 'Covered Patios', 'Drainage', 'Lighting Conduit', 'Seating Walls'].map(item => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Complete Your Outdoor Space" />
+      <div class="flex flex-wrap gap-3">
+        {[{ label: 'Deck Construction', href: '/deck-construction' }, { label: 'Pergola Construction', href: '/pergola-construction' }, { label: 'Outdoor Living', href: '/outdoor-living' }].map(link => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Let's Build Your Patio</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free patio estimate. We serve Lufkin and all of East Texas.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

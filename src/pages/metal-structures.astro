@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Metal Structure Construction Lufkin TX',
+  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+  areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
+  description: 'Custom metal structures including barndominiums, pole barns, steel frame buildings, and metal shop construction across East Texas and East Texas.',
+};
+
+const services = [
+  {
+    title: 'Barndominium Construction',
+    body: 'The most-requested metal structure in East Texas. Custom barndominiums with durable metal exteriors, fully custom interiors, porches, and complete utility hookups — built on your land.',
+    href: '/barndominium-construction',
+    core: true,
+  },
+  {
+    title: 'Pole Barn Construction',
+    body: 'Heavy-duty pole barns for agriculture, livestock, equipment storage, and workshops. Built for the East Texas climate and your specific property.',
+    href: '/pole-barn-construction',
+    core: false,
+  },
+  {
+    title: 'Metal Shop Buildings',
+    body: 'Commercial and residential metal shop buildings — welding shops, auto garages, woodworking shops, and general-purpose steel frame structures built to last.',
+    href: '/new-construction',
+    core: false,
+  },
+  {
+    title: 'Steel Frame Homes',
+    body: 'Residential homes built on steel frames for superior strength, energy efficiency, and longevity. A modern alternative to traditional wood-frame construction.',
+    href: '/residential-construction',
+    core: false,
+  },
+];
+
+const advantages = [
+  {
+    title: 'Built for East Texas Weather',
+    body: 'Metal structures stand up to the humidity, heat, and storm conditions common across East Texas — with minimal maintenance over decades.',
+    icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',
+  },
+  {
+    title: 'Faster Build Times',
+    body: 'Metal structure components are pre-engineered, reducing on-site construction time compared to traditional wood-frame builds.',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+  },
+  {
+    title: 'Fully Customizable Interiors',
+    body: 'Don\'t let the metal exterior fool you — interiors can be finished to any standard, from rustic farmhouse to modern luxury.',
+    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+  },
+  {
+    title: 'Long-Term Value',
+    body: 'Metal structures depreciate slower and require less upkeep than wood-frame alternatives — making them a smart long-term investment for your East Texas property.',
+    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+  },
+];
+---
+
+<BaseLayout
+  title="Metal Structures & Barndominiums East Texas | Purpose Construction"
+  description="Purpose Construction builds custom metal structures across East Texas — barndominiums, pole barns, steel frame homes, and metal shop buildings. Insured general contractor. Free estimates."
+  schema={schema}
+>
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Construction Services', href: '/new-construction' },
+    { label: 'Metal Structures', href: '/metal-structures' },
+  ]} />
+
+  <PageHero
+    title="Metal Structures in East Texas"
+    subtitle="From barndominiums and pole barns to steel frame homes and metal shop buildings — Purpose Construction delivers durable, fully custom metal structures built for East Texas land and life."
+    tag="Metal Structure Construction"
+  />
+
+  <!-- Services grid -->
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        tag="What We Build"
+        title="Metal Structure Services"
+        subtitle="Every metal structure we build is engineered for the East Texas climate, permitted properly, and finished to match your vision — whether that's a working ranch facility or a full-time family home."
+      />
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {services.map((svc) => (
+          <a
+            href={svc.href}
+            class="group relative rounded-xl border border-warm-200 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-brand-red-mid"
+          >
+            {svc.core && <span class="tag mb-3 inline-block text-[10px]">Most Popular</span>}
+            <h2 class="display-sm mb-2 text-charcoal-900">{svc.title}</h2>
+            <p class="text-sm leading-relaxed text-charcoal-500">{svc.body}</p>
+            <span class="service-link mt-4 inline-flex">
+              Learn more
+              <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why metal structures -->
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Why Metal" title="The Smart Choice for East Texas" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Metal structures have become the go-to choice for East Texas property owners — and for good reason. They're built to handle decades of humidity, heat, and severe weather without the rot, pest damage, and constant upkeep that plagues wood-frame construction.</p>
+            <p>Whether you're building a barndominium as your primary residence, a pole barn for your equipment, or a metal shop to run your business — Purpose Construction handles every phase from land prep and foundation to final finishes and utilities.</p>
+            <p>We work directly with trusted steel suppliers to get quality materials at competitive prices, and our crews have built dozens of metal structures across Angelina County and beyond.</p>
+          </div>
+          <div class="mt-6">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+          </div>
+        </div>
+        <img
+          src="https://placehold.co/640x480/2a2520/555?text=Metal+Structures"
+          alt="Metal structure construction by Purpose Construction in East Texas"
+          class="rounded-xl shadow-hero"
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section class="section-padding bg-warm-100 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        tag="The Advantages"
+        title="Why Choose Metal?"
+        align="center"
+      />
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {advantages.map((adv) => (
+          <div class="flex flex-col rounded-xl border border-warm-200 bg-white p-6 shadow-card">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red-light">
+              <svg class="h-5 w-5 text-brand-red" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d={adv.icon}/>
+              </svg>
+            </div>
+            <h3 class="display-sm mb-2 text-charcoal-900 text-xl">{adv.title}</h3>
+            <p class="text-sm leading-relaxed text-charcoal-500">{adv.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- More services -->
+  <section class="section-padding-sm bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also From Purpose Construction" title="More Services" />
+      <div class="flex flex-wrap gap-3">
+        {[
+          { label: 'Remodeling', href: '/remodeling-contractor' },
+          { label: 'New Construction', href: '/new-construction' },
+          { label: 'Outdoor Living', href: '/outdoor-living' },
+          { label: 'Exterior Services', href: '/exterior-services' },
+        ].map((link) => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
+            {link.label} &rarr;
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Ready to Build Your Metal Structure?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">
+        Contact us for a free consultation. We'll walk your property, review your plans, and put together a detailed estimate — at no cost to you.
+      </p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

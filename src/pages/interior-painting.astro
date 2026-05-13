@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+<BaseLayout
+  title="Interior Painting East Texas | Purpose Construction"
+  description="Professional interior painting across East Texas. Purpose Construction provides proper prep, primer, and premium paint for homes across East Texas. Free estimates — call (936) 555-5555."
+>
+  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Remodeling', href: '/remodeling-contractor' }, { label: 'Interior Painting', href: '/interior-painting' }]} />
+  <PageHero title="Interior Painting in East Texas" subtitle="Clean finishes, proper prep, and premium paints that hold up to East Texas living — from single rooms to full home repaints." tag="Remodeling Service" />
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Interior Painting" title="More Than a Coat of Paint" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>A quality paint job starts before the first brush stroke — with proper surface preparation, drywall repair, caulking, priming, and masking. Purpose Construction's painting crews don't skip steps. We protect your floors and fixtures, prepare surfaces correctly, and apply paint that looks clean and holds up long-term.</p>
+            <p>Whether you're refreshing a single room, repainting after a remodel, or doing a full home interior repaint, we bring the same discipline and professionalism to every project across East Texas and East Texas.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/remodeling-contractor" class="btn-outline">All Remodeling Services</a>
+          </div>
+        </div>
+        <img src="https://placehold.co/640x480/2a2520/555?text=Interior+Painting" alt="Interior painting by Purpose Construction in East Texas" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What's Included" title="Our Interior Painting Process" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {['Surface Preparation', 'Drywall Patching', 'Caulking & Sealing', 'Primer Application', 'Masking & Protection', 'Wall Painting', 'Trim & Baseboard', 'Door & Window Casing', 'Ceiling Painting', 'Texture Matching', 'Cleanup', 'Color Consultation'].map(item => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Often Paired With Interior Painting" />
+      <div class="flex flex-wrap gap-3">
+        {[{ label: 'Drywall Repair', href: '/drywall-repair' }, { label: 'Flooring Installation', href: '/flooring-installation' }, { label: 'Kitchen Remodeling', href: '/kitchen-remodeling' }, { label: 'All Remodeling', href: '/remodeling-contractor' }].map(link => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Ready to Refresh Your Space?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free interior painting estimate. We serve Lufkin and all of East Texas.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
