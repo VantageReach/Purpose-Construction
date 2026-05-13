@@ -18,9 +18,19 @@ const companyLinks = [
 ];
 
 const serviceAreas = [
-  'Lufkin, TX', 'Hudson, TX', 'Huntington, TX', 'Diboll, TX',
-  'Nacogdoches, TX', 'Corrigan, TX', 'Wells, TX', 'Zavalla, TX',
-  'Pollok, TX', 'Redland, TX', 'Burke, TX', 'Etoile, TX', 'Chireno, TX',
+  { label: 'Lufkin, TX', href: '/contact' },
+  { label: 'Burke, TX', href: '/locations/burke' },
+  { label: 'Chireno, TX', href: '/locations/chireno' },
+  { label: 'Corrigan, TX', href: '/locations/corrigan' },
+  { label: 'Diboll, TX', href: '/locations/diboll' },
+  { label: 'Etoile, TX', href: '/locations/etoile' },
+  { label: 'Hudson, TX', href: '/locations/hudson' },
+  { label: 'Huntington, TX', href: '/locations/huntington' },
+  { label: 'Nacogdoches, TX', href: '/locations/nacogdoches' },
+  { label: 'Pollok, TX', href: '/locations/pollok' },
+  { label: 'Redland, TX', href: '/locations/redland' },
+  { label: 'Wells, TX', href: '/locations/wells' },
+  { label: 'Zavalla, TX', href: '/locations/zavalla' },
 ];
 
 const year = new Date().getFullYear();
@@ -139,9 +149,9 @@ const year = new Date().getFullYear();
         <h3 class="font-display text-sm font-bold uppercase tracking-widest text-charcoal-400 mb-4">Service Areas</h3>
         <ul class="space-y-1.5">
           {serviceAreas.map((area) => (
-            <li class="flex items-center gap-2 text-sm text-charcoal-300">
+            <li class="flex items-center gap-2 text-sm">
               <span class="h-1 w-1 rounded-full bg-brand-red flex-shrink-0" aria-hidden="true"></span>
-              {area}
+              <a href={area.href} class="text-charcoal-300 hover:text-white transition-colors duration-150">{area.label}</a>
             </li>
           ))}
         </ul>

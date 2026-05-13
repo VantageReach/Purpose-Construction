@@ -31,3 +31,17 @@
 /tiny-home-construction-lufkin-tx      /tiny-home-construction      301
 /walkway-installation-lufkin-tx        /walkway-installation        301
 /window-installation-lufkin-tx         /window-installation         301
+
+# Location page redirects — old /city URLs → new /locations/city
+/hudson        /locations/hudson        301
+/huntington    /locations/huntington    301
+/diboll        /locations/diboll        301
+/nacogdoches   /locations/nacogdoches   301
+/corrigan      /locations/corrigan      301
+/wells         /locations/wells         301
+/zavalla       /locations/zavalla       301
+/pollok        /locations/pollok        301
+/redland       /locations/redland       301
+/burke         /locations/burke         301
+/etoile        /locations/etoile        301
+/chireno       /locations/chireno       301

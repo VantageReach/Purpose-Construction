@@ -3,12 +3,26 @@ interface Props {
   title: string;
   subtitle?: string;
   tag?: string;
+  image?: string;
 }
 
-const { title, subtitle, tag } = Astro.props;
+const { title, subtitle, tag, image } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-charcoal-900 py-16 lg:py-20">
+<section class="relative overflow-hidden bg-charcoal-900 py-20 lg:py-28">
+  <!-- Background image (when provided) -->
+  {image && (
+    <img
+      src={image}
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 h-full w-full object-cover opacity-50"
+      loading="eager"
+      decoding="sync"
+    />
+  )}
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900/85 via-charcoal-900/60 to-charcoal-900/45" aria-hidden="true"></div>
   <!-- Decorative grid pattern -->
   <div class="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
     <svg width="100%" height="100%">
@@ -25,15 +39,15 @@ const { title, subtitle, tag } = Astro.props;
   <!-- Red glow orb -->
   <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-red/10 blur-3xl" aria-hidden="true"></div>
 
-  <div class="container-wide relative px-4 sm:px-6 lg:px-8">
+  <div class="container-wide relative z-10 px-4 sm:px-6 lg:px-8">
     {tag && (
       <div class="mb-4">
         <span class="tag-dark">{tag}</span>
       </div>
     )}
-    <h1 class="display-lg text-white text-balance max-w-3xl">{title}</h1>
+    <h1 class="display-lg text-white text-balance max-w-3xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">{title}</h1>
     {subtitle && (
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-charcoal-300">{subtitle}</p>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/85 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{subtitle}</p>
     )}
   </div>
 </section>

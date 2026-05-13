@@ -63,7 +63,7 @@
   }
 
   .tag-dark {
-    @apply inline-block rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white;
+    @apply inline-block rounded-sm bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white border border-white/20;
   }
 
   .service-card {
