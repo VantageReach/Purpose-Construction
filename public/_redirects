@@ -1,3 +1,6 @@
+# Sitemap alias — sitemap plugin generates sitemap-index.xml, redirect common /sitemap.xml requests
+/sitemap.xml   /sitemap-index.xml   301
+
 # Service page redirects — old lufkin-tx URLs → new clean slugs
 /barndominium-construction-lufkin-tx   /barndominium-construction   301
 /bathroom-remodeling-lufkin-tx         /bathroom-remodeling         301
