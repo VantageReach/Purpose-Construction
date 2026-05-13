@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-warm-50 text-charcoal-800 antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-display text-charcoal-900;
+  }
+
+  ::selection {
+    background-color: #C41C35;
+    color: white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-red rounded;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded bg-brand-red px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white shadow-red transition-all duration-200 hover:bg-brand-red-dark hover:shadow-red hover:-translate-y-px active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded border-2 border-brand-red px-6 py-3 text-sm font-semibold uppercase tracking-widest text-brand-red transition-all duration-200 hover:bg-brand-red hover:text-white active:bg-brand-red-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white border-2 border-white/30 transition-all duration-200 hover:border-white/60 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  }
+
+  .section-padding-sm {
+    @apply px-4 py-10 sm:px-6 lg:px-8 lg:py-14;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-3xl;
+  }
+
+  .container-mid {
+    @apply mx-auto max-w-5xl;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .tag {
+    @apply inline-block rounded-sm bg-brand-red-light px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-red;
+  }
+
+  .tag-dark {
+    @apply inline-block rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white;
+  }
+
+  .service-card {
+    @apply relative overflow-hidden rounded-lg border border-warm-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-brand-red-mid;
+  }
+
+  .service-link {
+    @apply inline-flex items-center gap-1 text-sm font-semibold text-brand-red hover:gap-2 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-28px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(28px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .delay-100 { transition-delay: 0.1s; }
+  .delay-200 { transition-delay: 0.2s; }
+  .delay-300 { transition-delay: 0.3s; }
+  .delay-400 { transition-delay: 0.4s; }
+  .delay-500 { transition-delay: 0.5s; }
+
+  .display-xl {
+    @apply font-display text-5xl font-bold tracking-tight-display leading-none sm:text-6xl lg:text-7xl;
+  }
+
+  .display-lg {
+    @apply font-display text-4xl font-bold tracking-display leading-none sm:text-5xl lg:text-6xl;
+  }
+
+  .display-md {
+    @apply font-display text-3xl font-bold tracking-display leading-tight sm:text-4xl;
+  }
+
+  .display-sm {
+    @apply font-display text-2xl font-bold tracking-display leading-tight sm:text-3xl;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href?: string;
+  icon?: string; // SVG path data
+  tag?: string;
+}
+
+const { title, body, href, icon, tag } = Astro.props;
+---
+
+<div class:list={['service-card', href ? 'cursor-pointer' : '']}>
+  <div class="p-6">
+    {icon && (
+      <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-brand-red-light text-brand-red transition-colors duration-300 group-hover:bg-brand-red group-hover:text-white">
+        <svg class="h-5 w-5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d={icon} />
+        </svg>
+      </div>
+    )}
+    {tag && <span class="tag mb-3 inline-block text-[10px]">{tag}</span>}
+    <h3 class="display-sm mb-2 text-charcoal-900">{title}</h3>
+    <p class="text-sm leading-relaxed text-charcoal-500">{body}</p>
+    {href && (
+      <div class="mt-4">
+        <span class="service-link">
+          Learn more
+          <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+      </div>
+    )}
+  </div>
+  {href && (
+    <a href={href} class="absolute inset-0" aria-label={`Learn more about ${title}`}></a>
+  )}
+</div>

@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const faqs = [
+  { q: 'How long does a kitchen remodel take in Lufkin?', a: 'A standard kitchen remodel typically takes 4–8 weeks depending on scope. A full gut renovation with new layout changes can run 8–12 weeks. We provide a detailed timeline in every written proposal before work begins.' },
+  { q: 'Do you pull permits for kitchen remodels?', a: 'Yes. We pull all required permits with the City of Lufkin and Angelina County. Permitted work protects your home\'s value and ensures code compliance — we never skip this step.' },
+  { q: 'Can I stay in my home during the remodel?', a: 'Most homeowners stay in their home during a kitchen remodel. We work to minimize disruption, establish containment barriers for dust, and ensure plumbing and power are restored at the end of each workday where possible.' },
+  { q: 'What does a kitchen remodel cost in East Texas?', a: 'Kitchen remodels vary widely based on scope. A moderate refresh with new cabinets, countertops, and appliances typically runs $20,000–$40,000. A full gut renovation with layout changes can run $40,000–$80,000+. We provide a free, itemized estimate with no obligation.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Kitchen Remodeling',
+    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+    areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+    description: 'Custom kitchen remodeling in Lufkin, TX. Purpose Construction handles full kitchen renovations including cabinetry, countertops, flooring, lighting, and layout changes.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Kitchen Remodeling Lufkin TX | Purpose Construction"
+  description="Purpose Construction delivers custom kitchen remodeling in Lufkin, TX. Cabinetry, countertops, flooring, lighting, and full gut renovations for East Texas homeowners. Free estimates — call (936) 555-5555."
+  schema={schema}
+>
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Remodeling', href: '/remodeling-contractor-lufkin-tx' },
+    { label: 'Kitchen Remodeling', href: '/kitchen-remodeling-lufkin-tx' },
+  ]} />
+
+  <PageHero
+    title="Kitchen Remodeling in Lufkin, TX"
+    subtitle="Purpose Construction transforms outdated kitchens into functional, beautiful spaces East Texas homeowners love — on time and within budget."
+    tag="Core Service"
+  />
+
+  <!-- Intro + image -->
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Kitchen Remodeling" title="Your Kitchen, Done Right" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>The kitchen is the most-used room in any home — and the remodel that returns the most value when done well. Purpose Construction handles every phase of the kitchen renovation process, from demolition and structural changes through final finishes.</p>
+            <p>We work with your goals and your budget. Whether you want to refresh existing cabinets and counters, reconfigure the layout entirely, or take the room down to the studs and start over — we have the team and the experience to do it right in Lufkin and across East Texas.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="tel:9365555555" class="btn-outline">Call (936) 555-5555</a>
+          </div>
+        </div>
+        <img
+          src="https://placehold.co/640x480/2a2520/555?text=Kitchen+Remodel"
+          alt="Kitchen remodel completed by Purpose Construction in Lufkin, TX"
+          class="rounded-xl shadow-hero"
+          width="640"
+          height="480"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What We Handle" title="Full-Scope Kitchen Renovations" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {[
+          'Demolition & Disposal', 'Cabinet Installation', 'Countertop Installation',
+          'Tile Backsplash', 'Flooring', 'Electrical & Lighting',
+          'Plumbing Fixtures', 'Appliance Hookups', 'Drywall & Paint',
+          'Layout Redesign', 'Island Construction', 'Permit Management',
+        ].map((item) => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section-padding bg-warm-100 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Our Process" title="How a Kitchen Remodel Works" />
+      <ol class="space-y-6">
+        {[
+          { step: '1', title: 'Free On-Site Consultation', body: 'We visit your home, assess the kitchen, discuss your goals, and take measurements. No obligation.' },
+          { step: '2', title: 'Written Proposal', body: 'You receive a detailed scope of work with itemized pricing, material specs, and a project timeline.' },
+          { step: '3', title: 'Permit & Planning', body: 'We pull any required permits and finalize material selections and subcontractor scheduling before demo day.' },
+          { step: '4', title: 'Demolition & Rough Work', body: 'Existing cabinets, flooring, and fixtures come out. Structural, electrical, and plumbing rough work is completed.' },
+          { step: '5', title: 'Installation & Finishes', body: 'Cabinets, counters, tile, flooring, fixtures, and appliances are installed and finished to spec.' },
+          { step: '6', title: 'Final Walkthrough', body: 'We walk through the completed kitchen with you, address any items, and make sure you\'re fully satisfied before we close out.' },
+        ].map((step) => (
+          <li class="flex gap-6 items-start">
+            <span class="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-red text-white font-display font-bold text-sm" aria-hidden="true">{step.step}</span>
+            <div>
+              <h3 class="display-sm text-charcoal-900 mb-1">{step.title}</h3>
+              <p class="text-sm leading-relaxed text-charcoal-500">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Common Questions" title="Kitchen Remodeling FAQs" align="center" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 list-none">
+              <h3 class="text-sm font-semibold text-charcoal-800 pr-4">{faq.q}</h3>
+              <svg class="h-5 w-5 flex-shrink-0 text-charcoal-400 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm leading-relaxed text-charcoal-600">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Often Paired With Kitchen Remodeling" />
+      <div class="flex flex-wrap gap-3">
+        {[
+          { label: 'Bathroom Remodeling', href: '/bathroom-remodeling-lufkin-tx' },
+          { label: 'Home Additions', href: '/home-additions-lufkin-tx' },
+          { label: 'Flooring Installation', href: '/flooring-installation-lufkin-tx' },
+          { label: 'Interior Painting', href: '/interior-painting-lufkin-tx' },
+          { label: 'All Remodeling Services', href: '/remodeling-contractor-lufkin-tx' },
+        ].map((link) => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
+            {link.label} →
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Start Your Kitchen Remodel</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of East Texas.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

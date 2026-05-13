@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Drywall Repair',
+  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+  areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+  description: 'Drywall repair in Lufkin, TX — patching holes, fixing water damage, matching texture, and delivering a paint-ready finish for East Texas homes.',
+};
+---
+<BaseLayout
+  title="Drywall Repair Lufkin TX | Purpose Construction"
+  description="Drywall repair in Lufkin, TX — holes, water damage, cracks, and texture matching. Purpose Construction delivers paint-ready results across East Texas. Call (936) 555-5555."
+  schema={schema}
+>
+  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Remodeling', href: '/remodeling-contractor-lufkin-tx' }, { label: 'Drywall Repair', href: '/drywall-repair-lufkin-tx' }]} />
+  <PageHero title="Drywall Repair in Lufkin, TX" subtitle="Seamless patching, texture matching, and paint-ready finishes — fixing holes, water damage, and settling cracks in East Texas homes." tag="Remodeling Service" />
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Drywall Repair" title="Patches That Disappear Into the Wall" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>A drywall repair is only as good as the texture match. Purpose Construction doesn't just fill holes — we match your existing wall texture so repairs blend in and disappear under paint. Whether your walls have an orange peel, knockdown, skip trowel, or smooth finish, we replicate it precisely before priming and painting.</p>
+            <p>East Texas homes commonly see drywall damage from roof leaks during heavy rain seasons, foundation settling that causes hairline cracks, and the occasional door handle through the wall. We address the cause alongside the cosmetic fix when needed, recommending water-resistant solutions where moisture is a recurring issue.</p>
+            <p>We handle repairs for homeowners across Lufkin and Angelina County — from a single patch job before listing a home, to full room remediation after water damage.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/remodeling-contractor-lufkin-tx" class="btn-outline">All Remodeling Services</a>
+          </div>
+        </div>
+        <img src="https://placehold.co/640x480/2a2520/555?text=Drywall+Repair" alt="Drywall repair in Lufkin, TX by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What's Included" title="Drywall Repair Services" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {['Hole Patching', 'Water Damage Repair', 'Crack Repair', 'Texture Matching', 'Popcorn Ceiling Repair', 'Settling Cracks', 'Paint-Ready Finish'].map(item => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Often Paired With Drywall Repair" />
+      <div class="flex flex-wrap gap-3">
+        {[{ label: 'Drywall Installation', href: '/drywall-installation-lufkin-tx' }, { label: 'Interior Painting', href: '/interior-painting-lufkin-tx' }, { label: 'All Remodeling', href: '/remodeling-contractor-lufkin-tx' }].map(link => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Get That Patch Taken Care Of</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free drywall repair estimate. We serve Lufkin and all of East Texas.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

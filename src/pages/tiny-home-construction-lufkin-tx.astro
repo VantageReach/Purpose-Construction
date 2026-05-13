@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Tiny Home Construction',
+  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+  areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+  description: 'Tiny home construction in Lufkin, TX — slab foundation, framing, electrical, plumbing, mini-split HVAC, and full interior finishes for permanent structures in East Texas.',
+};
+---
+<BaseLayout
+  title="Tiny Home Construction Lufkin TX | Purpose Construction"
+  description="Tiny home construction in Lufkin, TX — foundation, framing, electrical, plumbing, mini-split, and full finishes. Purpose Construction builds permanent tiny homes in East Texas."
+  schema={schema}
+>
+  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'New Construction', href: '/new-construction-lufkin-tx' }, { label: 'Tiny Home Construction', href: '/tiny-home-construction-lufkin-tx' }]} />
+  <PageHero title="Tiny Home Construction in Lufkin, TX" subtitle="Permanent, permit-ready tiny homes built on slab foundations with full mechanical systems and finished interiors — designed for East Texas living." tag="New Construction Service" />
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Tiny Home Construction" title="Small Footprint, Full-Quality Build" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Tiny homes have become an increasingly popular option for East Texas landowners looking for an affordable primary residence, a guest quarters on a family property, or a starter home on rural acreage. Purpose Construction builds permanent tiny homes — not trailer park conversions — on concrete slab foundations with proper electrical, plumbing, and HVAC from the start.</p>
+            <p>In East Texas, climate control is critical. We specify mini-split HVAC systems sized for small square footage, giving you efficient heating and cooling that handles Lufkin's humid summers and cool winters without oversized, inefficient equipment. We also insulate beyond minimum code requirements so the small envelope is tight and energy-efficient year-round.</p>
+            <p>Every tiny home we build is permitted and inspected, with full mechanical systems, finished interiors, and the same attention to detail we bring to a full-size custom home build.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/new-construction-lufkin-tx" class="btn-outline">All New Construction</a>
+          </div>
+        </div>
+        <img src="https://placehold.co/640x480/2a2520/555?text=Tiny+Home+Construction" alt="Tiny home construction in Lufkin, TX by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What's Included" title="Tiny Home Construction Services" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {['Slab Foundation', 'Framing', 'Electrical', 'Plumbing', 'HVAC Mini-Split', 'Insulation', 'Drywall', 'Interior Finishes', 'Exterior Finishes', 'Lofts'].map(item => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Related Construction Services" />
+      <div class="flex flex-wrap gap-3">
+        {[{ label: 'Barndominium Construction', href: '/barndominium-construction-lufkin-tx' }, { label: 'Residential Construction', href: '/residential-construction-lufkin-tx' }, { label: 'All New Construction', href: '/new-construction-lufkin-tx' }].map(link => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Interested in a Tiny Home?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction to discuss your tiny home project in Lufkin and East Texas. We'll help you figure out what's possible on your property.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,526 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Card from '../components/Card.astro';
+import InfoCard from '../components/InfoCard.astro';
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'GeneralContractor',
+  name: 'Purpose Construction',
+  url: 'https://purposeconstructionco.com',
+  telephone: '(936) 555-5555',
+  email: 'info@purposeconstructionco.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '', // TODO: Add street address
+    addressLocality: 'Lufkin',
+    addressRegion: 'TX',
+    postalCode: '75904',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 31.3382, // TODO: Verify exact coordinates
+    longitude: -94.7291,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '07:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '08:00',
+      closes: '14:00',
+    },
+  ],
+  image: 'https://purposeconstructionco.com/og-default.jpg', // TODO: Replace with real photo
+  areaServed: [
+    'Lufkin', 'Hudson', 'Huntington', 'Diboll', 'Nacogdoches',
+    'Corrigan', 'Wells', 'Zavalla', 'Pollok', 'Redland',
+    'Burke', 'Etoile', 'Chireno',
+  ],
+  sameAs: [], // TODO: Add Facebook, Google, Yelp, etc. URLs
+  hasMap: '', // TODO: Add Google Maps URL
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Purpose Construction',
+  url: 'https://purposeconstructionco.com',
+};
+
+const categories = [
+  {
+    title: 'Remodeling',
+    body: 'Kitchen and bathroom remodels, home additions, flooring, drywall, and interior painting — complete interior transformations for East Texas homes.',
+    href: '/remodeling-contractor-lufkin-tx',
+    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+  },
+  {
+    title: 'New Construction',
+    body: 'Custom homes, commercial builds, barndominiums, pole barns, and tiny homes — built from the ground up with East Texas craftsmanship.',
+    href: '/new-construction-lufkin-tx',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+  },
+  {
+    title: 'Outdoor Living',
+    body: 'Patios, decks, pergolas, pavilions, fences, driveways, and walkways — outdoor spaces designed for East Texas living.',
+    href: '/outdoor-living-lufkin-tx',
+    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+  },
+  {
+    title: 'Exterior Services',
+    body: 'Siding, windows, doors, exterior painting, gutters, and insulation — protecting and upgrading the outside of your home.',
+    href: '/exterior-services-lufkin-tx',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  },
+];
+
+const coreServices = [
+  {
+    title: 'Kitchen Remodeling',
+    tag: 'Most Popular',
+    body: 'Transform your kitchen with custom layouts, cabinetry, countertops, flooring, and full gut renovations tailored to how your family actually lives.',
+    href: '/kitchen-remodeling-lufkin-tx',
+    image: '/images/kitchen-remodeling-lufkin-tx.jpg',
+  },
+  {
+    title: 'Bathroom Remodeling',
+    tag: 'Top Requested',
+    body: 'From walk-in showers and soaking tubs to full layout changes — we deliver bathroom transformations that blend beauty with everyday function.',
+    href: '/bathroom-remodeling-lufkin-tx',
+    image: '/images/bathroom-remodeling-lufkin-tx.jpg',
+  },
+  {
+    title: 'Metal Structures',
+    tag: 'East Texas Specialty',
+    body: 'Barndominiums, pole barns, metal shop buildings, and custom steel-frame structures built for East Texas land and life — durable, versatile, and fully custom.',
+    href: '/metal-structures-lufkin-tx',
+    image: '/images/metal-structures-barndominium-lufkin-tx.jpg',
+  },
+  {
+    title: 'Gutter Installation',
+    tag: 'Protect Your Home',
+    body: 'Seamless gutters, guards, and downspouts installed by professionals — protecting your foundation, siding, and landscaping from East Texas rainfall.',
+    href: '/gutter-installation-lufkin-tx',
+    image: '/images/gutter-installation-lufkin-tx.jpg',
+  },
+];
+
+const testimonials = [
+  {
+    name: 'James & Carol T.',
+    location: 'Lufkin, TX',
+    text: 'Purpose Construction transformed our outdated kitchen into something we are genuinely proud of. From the initial consultation to the final walkthrough, every detail was handled with care. Highly recommend.',
+  },
+  {
+    name: 'Mike R.',
+    location: 'Nacogdoches, TX',
+    text: 'We hired Purpose Construction to build our barndominium on 20 acres outside Nacogdoches. The crew was professional, the timeline was accurate, and the quality exceeded what we expected for the price.',
+  },
+  {
+    name: 'Sarah L.',
+    location: 'Diboll, TX',
+    text: 'After storm damage took out our siding, Purpose Construction had us covered within days. Great communication, fair pricing, and the new siding looks better than original. Would use again without hesitation.',
+  },
+];
+
+const serviceAreas = [
+  'Lufkin', 'Hudson', 'Huntington', 'Diboll', 'Nacogdoches',
+  'Corrigan', 'Wells', 'Zavalla', 'Pollok', 'Redland', 'Burke', 'Etoile', 'Chireno',
+];
+---
+
+<BaseLayout
+  title="General Contractor Lufkin TX | Purpose Construction"
+  description="Purpose Construction is Lufkin's trusted general contractor. We build custom homes, barndominiums, remodels, outdoor living spaces, and more across East Texas. Call (936) 555-5555 for a free quote."
+  schema={[businessSchema, websiteSchema]}
+>
+  <!-- Hero -->
+  <Hero
+    title="Your Project,<br>Built on <span class='text-brand-red'>Purpose.</span>"
+    subtitle="East Texas's trusted general contractor for custom homes, full remodels, barndominiums, and outdoor living spaces — built with craftsmanship and delivered with integrity."
+    size="large"
+  />
+
+  <!-- Quick stats -->
+  <section class="border-b border-warm-200 bg-white section-padding-sm">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div class="reveal delay-100">
+          <InfoCard
+            label="Locally Owned"
+            value="East Texas"
+            detail="Born, built, and rooted in Lufkin, TX"
+            icon="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+          />
+        </div>
+        <div class="reveal delay-200">
+          <InfoCard
+            label="Our Standard"
+            value="Done Right"
+            detail="Quality craftsmanship on every project"
+            icon="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+          />
+        </div>
+        <div class="reveal delay-300">
+          <InfoCard
+            label="Coverage"
+            value="All of East Texas"
+            detail="Lufkin, Nacogdoches & surrounding areas"
+            icon="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          />
+        </div>
+        <div class="reveal delay-400">
+          <InfoCard
+            label="Estimates"
+            value="Always Free"
+            detail="No obligation, no pressure — ever"
+            icon="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service categories -->
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        tag="What We Do"
+        title="Full-Service Construction for East Texas"
+        subtitle="From the ground up to finish work — we handle residential, commercial, and specialty construction projects across Angelina County and beyond."
+      />
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {categories.map((cat) => (
+          <Card
+            title={cat.title}
+            body={cat.body}
+            href={cat.href}
+            icon={cat.icon}
+          />
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/services" class="btn-outline">
+          View All Services
+          <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / SEO content section -->
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+
+        <!-- Left: photo -->
+        <div class="reveal-left relative">
+          <img
+            src="/images/general-contractor-lufkin-tx.jpg"
+            alt="Purpose Construction — General Contractor in Lufkin, TX"
+            class="w-full rounded-xl shadow-hero object-cover"
+            style="max-height: 540px;"
+            width="640"
+            height="540"
+            loading="lazy"
+            decoding="async"
+          />
+          <!-- Floating stat card -->
+          <div class="absolute -bottom-5 -right-5 hidden sm:flex flex-col items-center justify-center rounded-xl bg-brand-red p-6 shadow-red text-white text-center min-w-[130px]">
+            <span class="font-display text-2xl font-bold leading-tight">Insured<br>&amp; Trusted</span>
+            <span class="mt-1 text-xs font-semibold uppercase tracking-widest opacity-80">General<br>Contractor</span>
+          </div>
+        </div>
+
+        <!-- Right: keyword-rich content -->
+        <div class="reveal-right">
+          <span class="tag mb-4 inline-block">Lufkin's Construction Company</span>
+          <h2 class="display-md mb-5 text-charcoal-900">
+            Lufkin's Most Trusted<br>Construction Company
+          </h2>
+
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>
+              <strong class="text-charcoal-900">Purpose Construction</strong> is Lufkin's premier construction company, serving East Texas homeowners and businesses for over a decade. Whether you're planning a full home remodel, a new custom build, or a commercial construction project — our team of insured professionals brings the expertise and integrity your project deserves.
+            </p>
+            <p>
+              As a locally owned construction company, we understand what it means to build in East Texas. Our crews know local building codes, local suppliers, and the specific climate conditions that affect how your project should be built. From the first consultation to the final walkthrough, you work directly with our team — not a revolving door of subcontractors.
+            </p>
+            <p>
+              We specialize in kitchen and bathroom remodeling, new home construction, barndominiums, metal structures, outdoor living spaces, and exterior services across Lufkin, Nacogdoches, Diboll, and surrounding East Texas communities. We pull all permits, provide written contracts, and stand behind every project with a workmanship warranty.
+            </p>
+          </div>
+
+          <!-- Trust highlights -->
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            {[
+              { value: 'Locally Owned', label: 'Lufkin, Texas' },
+              { value: 'East Texas', label: 'Coverage Area' },
+              { value: 'Insured', label: '& Trusted' },
+              { value: 'Free', label: 'Estimates, Always' },
+            ].map((stat) => (
+              <div class="rounded-lg border border-warm-200 bg-warm-50 px-4 py-3">
+                <div class="font-display text-2xl font-bold text-brand-red leading-none">{stat.value}</div>
+                <div class="mt-1 text-xs font-semibold uppercase tracking-wider text-charcoal-500">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/about" class="btn-primary">About Our Company</a>
+            <a href="/contact" class="btn-outline">Get a Free Estimate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured core services -->
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <SectionHeading
+          tag="Specialty Services"
+          title="Built to Stand Out"
+          subtitle="Our most requested services — each delivered with the same dedication to quality that defines every Purpose Construction project."
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {coreServices.map((svc, i) => (
+          <div class={`reveal delay-${(i % 4 + 1) * 100}`}>
+            <a
+              href={svc.href}
+              class="group relative overflow-hidden rounded-xl bg-charcoal-900 shadow-hero transition-transform duration-300 hover:-translate-y-1 block"
+            >
+              <img
+                src={svc.image}
+                alt={svc.title + ' in Lufkin, TX'}
+                class="h-56 w-full object-cover opacity-40 transition-opacity duration-300 group-hover:opacity-50"
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal-900/95 via-charcoal-900/40 to-transparent"></div>
+              <!-- Color accent overlay -->
+              <div class="absolute inset-0 bg-brand-red/5 mix-blend-overlay transition-opacity duration-300 group-hover:opacity-0"></div>
+              <div class="absolute inset-0 flex flex-col justify-end p-7">
+                <span class="tag-dark mb-3 self-start">{svc.tag}</span>
+                <h3 class="display-sm text-white">{svc.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-charcoal-300">{svc.body}</p>
+                <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-widest text-brand-red-mid group-hover:gap-2 transition-all duration-200">
+                  Learn more
+                  <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section-padding bg-warm-100 border-t border-warm-200" style="background-image: radial-gradient(circle at 80% 50%, rgba(196,28,53,0.04) 0%, transparent 60%);">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <SectionHeading
+          tag="Our Process"
+          title="Simple. Transparent. Done Right."
+          subtitle="We keep you informed from the first call to the final walkthrough. No surprises — just results."
+          align="center"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {[
+          {
+            step: '01',
+            title: 'Free Consultation',
+            body: 'We meet on-site, listen to your vision, assess the scope, and give you an honest estimate — no obligation, no pressure.',
+          },
+          {
+            step: '02',
+            title: 'Detailed Proposal',
+            body: 'You receive a written scope of work with itemized pricing, timeline, and milestones. You know exactly what you\'re paying for before we start.',
+          },
+          {
+            step: '03',
+            title: 'Built With Purpose',
+            body: 'Our crew shows up on time, communicates throughout the project, and doesn\'t leave until the work meets our standards — and yours.',
+          },
+        ].map((step, i) => (
+          <div class={`reveal delay-${(i + 1) * 100} relative flex flex-col rounded-xl border border-warm-200 bg-white p-8 shadow-card group hover:shadow-card-hover hover:border-brand-red-mid transition-all duration-300`}>
+            <span class="mb-4 font-display text-6xl font-bold leading-none text-warm-200 select-none group-hover:text-brand-red-mid transition-colors duration-300" aria-hidden="true">
+              {step.step}
+            </span>
+            <h3 class="display-sm mb-3 text-charcoal-900">{step.title}</h3>
+            <p class="text-sm leading-relaxed text-charcoal-500">{step.body}</p>
+            <!-- Red accent bar that grows on hover -->
+            <div class="mt-auto pt-6">
+              <div class="h-0.5 w-8 bg-brand-red rounded transition-all duration-300 group-hover:w-16"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sister company callout -->
+  <section class="section-padding-sm bg-charcoal-900 border-t border-charcoal-800">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center justify-between gap-8 sm:flex-row rounded-xl border border-charcoal-700 bg-charcoal-800 p-8">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+          <div class="flex-shrink-0 rounded-lg bg-white px-4 py-3">
+            <img
+              src="/images/purpose-roofing-construction-logo.png"
+              alt="Purpose Roofing & Construction"
+              class="h-12 w-auto"
+              width="200"
+              height="48"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-charcoal-400 mb-1">From the Same Team</p>
+            <h2 class="display-sm text-white mb-2">Need Roofing Too?</h2>
+            <p class="text-sm text-charcoal-300 max-w-md">
+              Purpose Construction and <strong class="text-white">Purpose Roofing</strong> are sister companies serving Lufkin and East Texas. If your project includes a new roof, or if roofing is all you need, our partners at Purpose Roofing have you covered.
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://www.purpose-roofing.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline flex-shrink-0 border-charcoal-600 text-charcoal-200 hover:bg-white hover:text-charcoal-900 hover:border-white"
+        >
+          Visit Purpose Roofing
+          <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-padding bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <SectionHeading
+          tag="What Clients Say"
+          title="East Texas Homeowners Trust Purpose"
+          subtitle="Real reviews from real neighbors across Lufkin, Nacogdoches, Diboll, and beyond."
+          align="center"
+        />
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+        {testimonials.map((t, i) => (
+          <div class={`reveal delay-${(i + 1) * 100} rounded-xl border border-warm-200 bg-white p-6 shadow-card hover:shadow-card-hover transition-shadow duration-300`}>
+            <!-- Stars -->
+            <div class="mb-4 flex gap-1" aria-label="5 out of 5 stars">
+              {Array.from({ length: 5 }).map(() => (
+                <svg class="h-4 w-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+            <!-- Large quote mark -->
+            <div class="mb-2 font-display text-4xl leading-none text-brand-red/20 select-none" aria-hidden="true">&ldquo;</div>
+            <blockquote>
+              <p class="text-sm leading-relaxed text-charcoal-600 italic">"{t.text}"</p>
+            </blockquote>
+            <div class="mt-4 flex items-center gap-3">
+              <div class="flex h-9 w-9 items-center justify-center rounded-full bg-brand-red-light text-sm font-bold text-brand-red">
+                {t.name.charAt(0)}
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-charcoal-900">{t.name}</p>
+                <p class="text-xs text-charcoal-400">{t.location}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service areas -->
+  <section class="section-padding-sm bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <SectionHeading
+            tag="Where We Work"
+            title="Serving All of East Texas"
+            subtitle="Based in Lufkin, we serve Angelina County and surrounding communities."
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {serviceAreas.map((area) => (
+            <span class="rounded-md border border-warm-200 bg-warm-50 px-3 py-1.5 text-xs font-semibold text-charcoal-600">
+              {area}, TX
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="section-padding bg-gradient-red" style="background-image: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.07) 0%, transparent 60%), linear-gradient(135deg, #C41C35 0%, #9B1528 100%);">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center reveal">
+      <span class="tag-dark mb-4 inline-block">Free Estimates — No Obligation</span>
+      <h2 class="display-lg text-white mb-4">Ready to Build?<br>Let's Talk.</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base leading-relaxed text-white/80">
+        Whether you're planning a full custom home, a kitchen remodel, or a new barndominium on your land — Purpose Construction is ready to put a plan together at no cost to you.
+      </p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4 text-sm">
+          Get a Free Quote
+          <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="tel:9365555555" class="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors duration-150">
+          <svg class="h-4 w-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          Or call (936) 555-5555
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Scroll-triggered reveal animations
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

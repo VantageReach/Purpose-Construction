@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  tag?: string;
+}
+
+const { title, subtitle, tag } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-charcoal-900 py-16 lg:py-20">
+  <!-- Decorative grid pattern -->
+  <div class="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <defs>
+        <pattern id="page-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#page-grid)"/>
+    </svg>
+  </div>
+  <!-- Red accent bottom border -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-brand-red" aria-hidden="true"></div>
+  <!-- Red glow orb -->
+  <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-red/10 blur-3xl" aria-hidden="true"></div>
+
+  <div class="container-wide relative px-4 sm:px-6 lg:px-8">
+    {tag && (
+      <div class="mb-4">
+        <span class="tag-dark">{tag}</span>
+      </div>
+    )}
+    <h1 class="display-lg text-white text-balance max-w-3xl">{title}</h1>
+    {subtitle && (
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-charcoal-300">{subtitle}</p>
+    )}
+  </div>
+</section>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Residential Construction',
+  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://purposeconstructionco.com' },
+  areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+  description: 'Custom residential construction in Lufkin, TX — ground-up home builds managed from site prep and foundation through interior finishes for East Texas homeowners.',
+};
+---
+<BaseLayout
+  title="Residential Construction Lufkin TX | Purpose Construction"
+  description="Custom home construction in Lufkin, TX. Purpose Construction manages ground-up residential builds from foundation to finish across Angelina County. Call (936) 555-5555."
+  schema={schema}
+>
+  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'New Construction', href: '/new-construction-lufkin-tx' }, { label: 'Residential Construction', href: '/residential-construction-lufkin-tx' }]} />
+  <PageHero title="Residential Construction in Lufkin, TX" subtitle="Ground-up custom home builds managed from site preparation and foundation through final interior and exterior finishes — right here in East Texas." tag="New Construction Service" />
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Residential Construction" title="Your Home Built the Right Way From the Ground Up" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Building a custom home in East Texas requires a general contractor who knows the region — the clay-heavy soils around Lufkin that demand properly engineered foundations, the humidity that requires thoughtful framing and insulation choices, and the permitting process across Angelina County. Purpose Construction has the experience to manage every phase of your build from a position of knowledge, not guesswork.</p>
+            <p>We self-perform many of the core trades and coordinate the rest, keeping your project moving with a single point of accountability. From site clearing and foundation pour through framing, mechanical rough-ins, insulation, drywall, and all interior and exterior finishes — you deal with one contractor who owns the whole build.</p>
+            <p>We build in Lufkin and throughout Angelina County, including Diboll, Huntington, Zavalla, and surrounding communities in the Piney Woods region.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/new-construction-lufkin-tx" class="btn-outline">All New Construction</a>
+          </div>
+        </div>
+        <img src="https://placehold.co/640x480/2a2520/555?text=Residential+Construction" alt="Residential construction in Lufkin, TX by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What's Included" title="Our Residential Build Process" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {['Site Preparation', 'Foundation', 'Framing', 'Roofing Coordination', 'Electrical', 'Plumbing', 'HVAC', 'Insulation', 'Drywall', 'Interior Finishes', 'Exterior Finishes', 'Permit Management'].map(item => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Related Services" title="Related New Construction Services" />
+      <div class="flex flex-wrap gap-3">
+        {[{ label: 'Barndominium Construction', href: '/barndominium-construction-lufkin-tx' }, { label: 'Home Additions', href: '/home-additions-lufkin-tx' }, { label: 'Site Preparation', href: '/site-preparation-lufkin-tx' }, { label: 'All New Construction', href: '/new-construction-lufkin-tx' }].map(link => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Ready to Build Your Home?</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction to discuss your custom home build in Lufkin and East Texas. We'll walk you through the process from day one.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9365555555" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 555-5555</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

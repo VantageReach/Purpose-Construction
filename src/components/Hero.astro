@@ -1,0 +1,265 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  size?: 'full' | 'large' | 'medium';
+}
+
+const {
+  title,
+  subtitle,
+  size = 'large',
+} = Astro.props;
+
+const heightClass = {
+  full: 'min-h-screen',
+  large: 'min-h-[90vh]',
+  medium: 'min-h-[60vh]',
+}[size];
+---
+
+<section
+  class={`relative flex items-center overflow-hidden ${heightClass}`}
+  style="background-color: #1A1714;"
+>
+  <!-- Background photo with multi-layer overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/home-remodeling-contractor-lufkin-tx.jpg"
+      alt=""
+      class="h-full w-full object-cover opacity-50"
+      width="1600"
+      height="900"
+      loading="eager"
+      fetchpriority="high"
+      decoding="sync"
+      aria-hidden="true"
+    />
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900/80 via-charcoal-900/60 to-charcoal-800/50"></div>
+    <!-- Red diagonal accent -->
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-brand-red opacity-80"></div>
+    <!-- Subtle red glow bottom-left -->
+    <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-brand-red opacity-[0.05] blur-3xl"></div>
+  </div>
+
+  <!-- Grid pattern -->
+  <div class="pointer-events-none absolute inset-0 z-0 opacity-[0.035]" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <defs>
+        <pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M 48 0 L 0 0 0 48" fill="none" stroke="white" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-grid)"/>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="container-wide relative z-10 w-full px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-center">
+
+      <!-- Left: Hero copy -->
+      <div>
+        <!-- Engaging tag -->
+        <div class="hero-tag mb-6 inline-flex items-center gap-2.5" style="animation: heroFadeDown 0.7s cubic-bezier(0.22,1,0.36,1) both;">
+          <span class="h-px w-8 bg-brand-red flex-shrink-0"></span>
+          <span class="inline-flex items-center gap-1.5 rounded-sm bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
+            <svg class="h-3.5 w-3.5 text-brand-red flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            East Texas's Most Trusted General Contractor
+          </span>
+          <span class="h-px w-8 bg-brand-red flex-shrink-0"></span>
+        </div>
+
+        <!-- Headline -->
+        <h1
+          class="display-xl mb-5 text-white text-balance"
+          set:html={title}
+          style="animation: heroFadeUp 0.75s 0.1s cubic-bezier(0.22,1,0.36,1) both;"
+        />
+
+        <!-- Subtitle -->
+        {subtitle && (
+          <p
+            class="mb-8 max-w-xl text-lg leading-relaxed text-charcoal-200"
+            style="animation: heroFadeUp 0.75s 0.2s cubic-bezier(0.22,1,0.36,1) both;"
+          >
+            {subtitle}
+          </p>
+        )}
+
+        <!-- Phone CTA -->
+        <div style="animation: heroFadeUp 0.75s 0.3s cubic-bezier(0.22,1,0.36,1) both;">
+          <a
+            href="tel:9365555555"
+            class="group inline-flex items-center gap-3 rounded bg-brand-red px-7 py-4 text-base font-bold uppercase tracking-wider text-white shadow-red transition-all duration-200 hover:bg-brand-red-dark hover:-translate-y-px active:translate-y-0"
+          >
+            <svg class="h-5 w-5 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Call Now &middot; (936) 555-5555
+          </a>
+          <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-white/70">
+            or fill out the form for a free quote &rarr;
+          </p>
+        </div>
+
+        <!-- Trust badges -->
+        <div
+          class="mt-10 flex flex-wrap items-center gap-3"
+          style="animation: heroFadeUp 0.75s 0.4s cubic-bezier(0.22,1,0.36,1) both;"
+        >
+          <span class="flex items-center gap-2 rounded-full bg-white/15 border border-white/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+            <svg class="h-3.5 w-3.5 text-brand-red flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Insured &amp; Trusted
+          </span>
+          <span class="flex items-center gap-2 rounded-full bg-white/15 border border-white/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+            <svg class="h-3.5 w-3.5 text-brand-red flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+            Lufkin-Based
+          </span>
+          <span class="flex items-center gap-2 rounded-full bg-white/15 border border-white/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+            <svg class="h-3.5 w-3.5 text-brand-red flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            Workmanship Warranty
+          </span>
+          <span class="flex items-center gap-2 rounded-full bg-white/15 border border-white/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+            <svg class="h-3.5 w-3.5 text-brand-red flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"/>
+            </svg>
+            Free Estimates
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Quote Form -->
+      <div style="animation: heroSlideIn 0.85s 0.2s cubic-bezier(0.22,1,0.36,1) both;">
+        <div class="rounded-xl border border-charcoal-700/60 bg-charcoal-800/85 p-7 shadow-hero" style="backdrop-filter: blur(12px);">
+          <!-- Form header -->
+          <div class="mb-6 border-b border-charcoal-700/60 pb-5">
+            <span class="mb-2 block text-xs font-bold uppercase tracking-widest text-brand-red">Get a Free Quote</span>
+            <p class="text-sm leading-snug text-charcoal-300">Tell us about your project and we'll be in touch within 1 business day.</p>
+          </div>
+
+          <form
+            name="hero-quote"
+            method="POST"
+            action="/thank-you"
+            data-netlify="true"
+            class="space-y-4"
+          >
+            <input type="hidden" name="form-name" value="hero-quote" />
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <div>
+                <label for="hero-name" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-charcoal-400">
+                  Your Name
+                </label>
+                <input
+                  id="hero-name"
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="John Smith"
+                  class="w-full rounded border border-charcoal-600 bg-charcoal-700/60 px-3.5 py-2.5 text-sm text-white placeholder-charcoal-500 transition-colors duration-150 focus:border-brand-red focus:bg-charcoal-700 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label for="hero-phone" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-charcoal-400">
+                  Phone Number
+                </label>
+                <input
+                  id="hero-phone"
+                  type="tel"
+                  name="phone"
+                  required
+                  placeholder="(936) 555-0000"
+                  class="w-full rounded border border-charcoal-600 bg-charcoal-700/60 px-3.5 py-2.5 text-sm text-white placeholder-charcoal-500 transition-colors duration-150 focus:border-brand-red focus:bg-charcoal-700 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="hero-service" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-charcoal-400">
+                Type of Project
+              </label>
+              <select
+                id="hero-service"
+                name="service"
+                required
+                class="w-full rounded border border-charcoal-600 bg-charcoal-700/60 px-3.5 py-2.5 text-sm text-white transition-colors duration-150 focus:border-brand-red focus:bg-charcoal-700 focus:outline-none appearance-none"
+                style="background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237A7268' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;"
+              >
+                <option value="" disabled selected>Select a service...</option>
+                <option value="kitchen-remodeling">Kitchen Remodeling</option>
+                <option value="bathroom-remodeling">Bathroom Remodeling</option>
+                <option value="home-addition">Home Addition</option>
+                <option value="new-construction">New Construction</option>
+                <option value="metal-structures">Metal Structures / Barndominium</option>
+                <option value="outdoor-living">Outdoor Living</option>
+                <option value="exterior-services">Exterior Services</option>
+                <option value="gutter-installation">Gutter Installation</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="hero-message" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-charcoal-400">
+                Brief Description
+              </label>
+              <textarea
+                id="hero-message"
+                name="message"
+                rows="3"
+                placeholder="Tell us a little about your project..."
+                class="w-full rounded border border-charcoal-600 bg-charcoal-700/60 px-3.5 py-2.5 text-sm text-white placeholder-charcoal-500 transition-colors duration-150 focus:border-brand-red focus:bg-charcoal-700 focus:outline-none resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full rounded bg-brand-red py-3.5 text-sm font-bold uppercase tracking-widest text-white shadow-red transition-all duration-200 hover:bg-brand-red-dark hover:-translate-y-px active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red"
+            >
+              Send My Request
+              <svg class="inline ml-2 h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
+
+            <p class="text-center text-[11px] font-semibold uppercase tracking-widest text-charcoal-500">
+              Free &middot; No Obligation &middot; Responds in &lt;1 Business Day
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-1 text-charcoal-600" aria-hidden="true">
+    <span class="text-[10px] uppercase tracking-widest">Scroll</span>
+    <svg class="h-5 w-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes heroFadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroSlideIn {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+</style>
