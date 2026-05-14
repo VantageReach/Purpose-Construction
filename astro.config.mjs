@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://purposeconstructionco.com',
+  site: 'https://www.purposeconstructionco.com',
   integrations: [
     tailwind(),
     sitemap({
