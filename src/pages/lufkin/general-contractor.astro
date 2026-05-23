@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+
+const faqs = [
+  { q: 'Is Purpose Construction licensed and insured in Texas?', a: 'Yes. Purpose Construction is a licensed general contractor operating in Angelina County and throughout Deep East Texas. We carry general liability insurance and workers\' compensation coverage on every project. We\'re happy to provide certificates of insurance at any estimate.' },
+  { q: 'What areas do you serve around Lufkin?', a: 'We serve all of Angelina County including Lufkin, Diboll, Huntington, Hudson, and Zavalla — plus neighboring counties including Nacogdoches, Trinity, Polk, and San Augustine. If you\'re in Deep East Texas, call us and we\'ll tell you if we can get to you.' },
+  { q: 'Do you handle permits for construction projects in Lufkin?', a: 'Yes. Purpose Construction pulls all required building permits through the City of Lufkin and Angelina County on every project that requires one. We manage the permit process end-to-end — application, inspections, and final sign-off. You don\'t have to coordinate any of it.' },
+  { q: 'How do you price construction projects in Lufkin?', a: 'We provide free, itemized written estimates for every project. Pricing is by scope of work, not a rough guess. You\'ll see line-item material specs, labor costs, and timeline in every proposal before you sign anything. No hidden fees, no bait-and-switch after the deposit.' },
+  { q: 'Can you handle multiple trades on one project?', a: 'Yes — that\'s the main advantage of a general contractor. Purpose Construction self-performs or directly manages every trade on a project: carpentry, concrete, framing, drywall, painting, and exterior work. You have one point of contact and one contract, not a stack of subcontractors to coordinate.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://www.purposeconstructionco.com/lufkin/general-contractor',
+    name: 'Purpose Construction — General Contractor Lufkin TX',
+    url: 'https://www.purposeconstructionco.com',
+    telephone: '+19362552235',
+    email: 'info@purposeconstructionco.com',
+    image: 'https://www.purposeconstructionco.com/images/general-contractor-lufkin-tx.jpg',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '',
+      addressLocality: 'Lufkin',
+      addressRegion: 'TX',
+      postalCode: '75904',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 31.3382,
+      longitude: -94.7291,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'AdministrativeArea', name: 'Angelina County' } },
+      { '@type': 'City', name: 'Diboll' },
+      { '@type': 'City', name: 'Huntington' },
+      { '@type': 'City', name: 'Hudson' },
+      { '@type': 'City', name: 'Nacogdoches' },
+    ],
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '20:00' },
+    ],
+    priceRange: '$$',
+    description: 'General contractor in Lufkin, TX. Remodeling, new construction, outdoor living, and exterior services for Angelina County homeowners and businesses.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
+
+const serviceCategories = [
+  {
+    label: 'Remodeling',
+    services: [
+      { label: 'Kitchen Remodeling', href: '/lufkin/kitchen-remodeling' },
+      { label: 'Bathroom Remodeling', href: '/lufkin/bathroom-remodeling' },
+      { label: 'Home Additions', href: '/lufkin/home-additions' },
+      { label: 'Interior Painting', href: '/lufkin/interior-painting' },
+      { label: 'Flooring Installation', href: '/lufkin/flooring-installation' },
+      { label: 'Drywall Services', href: '/lufkin/drywall-services' },
+    ],
+  },
+  {
+    label: 'Construction',
+    services: [
+      { label: 'New Construction', href: '/lufkin/new-construction' },
+      { label: 'Residential Construction', href: '/lufkin/residential-construction' },
+      { label: 'Commercial Construction', href: '/lufkin/commercial-construction' },
+      { label: 'Barndominium Construction', href: '/lufkin/barndominium-construction' },
+    ],
+  },
+  {
+    label: 'Outdoor Living',
+    services: [
+      { label: 'Outdoor Living', href: '/lufkin/outdoor-living' },
+      { label: 'Patio Construction', href: '/lufkin/patio-construction' },
+      { label: 'Deck Construction', href: '/lufkin/deck-construction' },
+      { label: 'Pergola Construction', href: '/lufkin/pergola-construction' },
+    ],
+  },
+  {
+    label: 'Exterior Services',
+    services: [
+      { label: 'Exterior Painting', href: '/lufkin/exterior-painting' },
+      { label: 'Siding Installation', href: '/lufkin/siding-installation' },
+      { label: 'Window Installation', href: '/lufkin/window-installation' },
+      { label: 'Door Installation', href: '/lufkin/door-installation' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="General Contractor in Lufkin, TX | Purpose Construction"
+  description="General contractor in Lufkin, TX. Remodeling, new construction, outdoor living, and exterior services for Angelina County homeowners. Licensed & insured. Free estimates — (936) 255-2235."
+  schema={schema}
+>
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Lufkin, TX', href: '/lufkin/general-contractor' },
+  ]} />
+
+  <PageHero
+    title="General Contractor in Lufkin, TX"
+    subtitle="Purpose Construction is Lufkin's full-service general contractor — remodeling, new construction, outdoor living, and exterior services for Angelina County homeowners and businesses."
+    tag="Lufkin, TX"
+    image="/images/general-contractor-lufkin-tx.jpg"
+  />
+
+  <div class="bg-charcoal-900 border-b border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <div class="flex items-center gap-3">
+        <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
+        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Lufkin, TX" title="Lufkin's Full-Service General Contractor" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Purpose Construction is a licensed general contractor based in Lufkin, Texas, serving homeowners and businesses throughout Angelina County and Deep East Texas. We handle the full range of construction work — from kitchen and bathroom remodels to new home construction, outdoor living projects, and complete exterior overhauls — with licensed, insured crews and written proposals on every job.</p>
+            <p>Lufkin homeowners deal with specific construction challenges: aging housing stock from the 1960s–1990s, humid subtropical climate conditions that stress exterior materials, and Angelina County permit requirements that vary by project type. We know this market, pull every required permit, and build to the conditions here — not a national template.</p>
+            <p>Every project starts with a free on-site estimate and a written proposal before any work begins. No verbal quotes, no surprise costs after the deposit. One point of contact, one contract, one crew accountable for the finished result.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <img
+            src="/images/general-contractor-lufkin-tx.jpg"
+            alt="General contractor in Lufkin, TX — Purpose Construction"
+            class="rounded-xl shadow-hero w-full"
+            width="640" height="480"
+            loading="lazy" decoding="async"
+          />
+          <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
+            <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
+            <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
+            <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
+            <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
+              <p>Mon–Sat: 8:00 AM – 8:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Services in Lufkin" title="All Construction Services in Lufkin, TX" align="center" />
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {serviceCategories.map((cat) => (
+          <div>
+            <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-charcoal-400">{cat.label}</h3>
+            <ul class="space-y-2">
+              {cat.services.map((svc) => (
+                <li>
+                  <a href={svc.href} class="flex items-center gap-2 text-sm font-semibold text-charcoal-700 hover:text-brand-red transition-colors duration-150">
+                    <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
+                    {svc.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-charcoal-900 border-t border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Why Purpose Construction" title="What Sets Us Apart in Lufkin" theme="dark" />
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: 'Licensed & Insured', body: 'Licensed general contractor in Texas. Full general liability and workers\' comp coverage on every project. Certificates of insurance available on request.' },
+          { title: 'Written Proposals Only', body: 'Every project gets an itemized written proposal before work starts. No verbal quotes. No scope creep. No surprise invoices after the deposit.' },
+          { title: 'Permit Management', body: 'We handle every required City of Lufkin and Angelina County permit application, inspection, and final sign-off. You don\'t coordinate any of it.' },
+          { title: 'Single Point of Contact', body: 'One contractor, one contract, one crew accountable from start to finish. You\'re not managing a stack of independent subcontractors.' },
+          { title: 'East Texas Experience', body: 'We build for Lufkin\'s climate, soil conditions, and code environment — not a national playbook that ignores humidity, UV load, and Angelina County permit requirements.' },
+          { title: 'Free On-Site Estimates', body: 'We come to your property, assess the actual conditions, and price based on what we see — not a per-square-foot number from a call center.' },
+        ].map((item) => (
+          <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-5">
+            <h3 class="mb-2 text-sm font-bold text-white">{item.title}</h3>
+            <p class="text-sm leading-relaxed text-charcoal-300">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Common Questions" title="General Contractor FAQs — Lufkin, TX" align="center" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 list-none">
+              <h3 class="text-sm font-semibold text-charcoal-800 pr-4">{faq.q}</h3>
+              <svg class="h-5 w-5 flex-shrink-0 text-charcoal-400 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also Serving" title="Nearby Communities" />
+      <div class="flex flex-wrap gap-3">
+        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Get a Free Estimate in Lufkin</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form. We'll schedule a free on-site visit, assess your project, and provide a written proposal — no obligation. Serving Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

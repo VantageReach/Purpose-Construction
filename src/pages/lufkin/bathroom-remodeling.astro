@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+
+const faqs = [
+  { q: 'How long does a bathroom remodel take in Lufkin, TX?', a: 'A standard bathroom remodel in Lufkin typically takes 2–4 weeks. A full primary suite renovation or custom tile shower build can run 4–6 weeks. We provide a written timeline in every proposal before work begins.' },
+  { q: 'Do I need a permit for a bathroom remodel in Angelina County?', a: 'Permits are required for plumbing and electrical work in Angelina County. Purpose Construction pulls all required permits through the City of Lufkin and Angelina County Building Department — it\'s included in our process.' },
+  { q: 'Can you remodel a small bathroom?', a: 'Absolutely. We handle everything from compact guest bath refreshes to full primary suite renovations. Small bathrooms in older Lufkin homes often benefit the most from updated layouts and modern fixtures.' },
+  { q: 'What does a bathroom remodel cost in Lufkin, TX?', a: 'A basic bathroom refresh with new vanity, fixtures, and flooring typically runs $6,000–$15,000 in the Lufkin area. A full custom tile shower renovation with new plumbing and layout changes can run $15,000–$35,000+. We provide free, itemized estimates.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Bathroom Remodeling in Lufkin TX',
+    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+    description: 'Custom bathroom remodeling in Lufkin, TX. Showers, tubs, vanities, tile, and full bathroom renovations for Angelina County homeowners.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Bathroom Remodeling in Lufkin, TX | Purpose Construction"
+  description="Purpose Construction delivers custom bathroom remodeling in Lufkin, TX. Showers, tubs, vanities, tile, and full renovations for Angelina County homeowners. Free estimates — call (936) 255-2235."
+  schema={schema}
+>
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Remodeling', href: '/remodeling-contractor' },
+    { label: 'Bathroom Remodeling', href: '/bathroom-remodeling' },
+    { label: 'Lufkin, TX', href: '/lufkin/bathroom-remodeling' },
+  ]} />
+
+  <PageHero
+    title="Bathroom Remodeling in Lufkin, TX"
+    subtitle="Purpose Construction remodels bathrooms across Lufkin and Angelina County — custom tile showers, vanity upgrades, full gut renovations, and everything in between."
+    tag="Lufkin, TX"
+    image="/images/bathroom-remodeling-lufkin-tx.jpg"
+  />
+
+  <div class="bg-charcoal-900 border-b border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <div class="flex items-center gap-3">
+        <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
+        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Lufkin, TX" title="Bathroom Renovations Built for Lufkin Homes" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Lufkin's housing stock — much of it built in the 1960s through 1990s — includes a lot of original bathrooms that are ripe for renovation. Outdated tile, cramped layouts, and worn fixtures are common in homes throughout Angelina County. Purpose Construction specializes in <a href="/bathroom-remodeling" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a> that transforms these spaces into something modern and functional.</p>
+            <p>From a simple vanity and fixture swap to a full tile shower buildout or primary suite renovation, we handle the complete project — plumbing, tile, drywall, electrical, and finishes. Many homeowners pair bathroom remodels with <a href="/lufkin/kitchen-remodeling" class="text-brand-red hover:underline font-semibold">kitchen remodeling</a> or <a href="/lufkin/flooring-installation" class="text-brand-red hover:underline font-semibold">flooring installation</a> throughout the home.</p>
+            <p>All plumbing and electrical work is permitted through the City of Lufkin and Angelina County Building Department. We manage every permit so you don't have to.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <img
+            src="/images/bathroom-remodeling-lufkin-tx.jpg"
+            alt="Bathroom remodel by Purpose Construction in Lufkin, TX"
+            class="rounded-xl shadow-hero w-full"
+            width="640" height="480"
+            loading="lazy" decoding="async"
+          />
+          <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
+            <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
+            <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
+            <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
+            <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
+              <p>Mon–Sat: 8:00 AM – 8:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What We Handle" title="Full-Scope Bathroom Renovations" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {[
+          'Shower Installation', 'Tub Replacement', 'Vanity & Fixtures',
+          'Tile Flooring', 'Wall Tile', 'Lighting Upgrades',
+          'Plumbing Rough-In', 'Exhaust Fan', 'Drywall & Paint',
+          'Custom Shower Pan', 'Accessibility Upgrades', 'Permit Management',
+        ].map((item) => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-warm-100 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Our Process" title="How a Bathroom Remodel Works in Lufkin" />
+      <ol class="space-y-6">
+        {[
+          { step: '1', title: 'Free On-Site Consultation', body: 'We visit your Lufkin home, assess the bathroom, discuss your goals, and take measurements. No obligation.' },
+          { step: '2', title: 'Written Proposal', body: 'You receive a detailed scope with itemized pricing, material specs, tile selections, and a project timeline.' },
+          { step: '3', title: 'Permit & Planning', body: 'We pull all required City of Lufkin and Angelina County permits and schedule subcontractors before demo day.' },
+          { step: '4', title: 'Demo & Plumbing Rough', body: 'Existing fixtures, tile, and flooring come out. Plumbing rough-in is completed and inspected before walls close up.' },
+          { step: '5', title: 'Tile, Fixtures & Finishes', body: 'Tile work, vanity, shower, tub, lighting, and all fixtures are installed and finished to spec.' },
+          { step: '6', title: 'Final Walkthrough', body: 'We walk through the completed bathroom with you, address any items, and make sure you\'re fully satisfied.' },
+        ].map((step) => (
+          <li class="flex gap-6 items-start">
+            <span class="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-red text-white font-display font-bold text-sm" aria-hidden="true">{step.step}</span>
+            <div>
+              <h3 class="display-sm text-charcoal-900 mb-1">{step.title}</h3>
+              <p class="text-sm leading-relaxed text-charcoal-500">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Common Questions" title="Bathroom Remodeling FAQs — Lufkin, TX" align="center" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 list-none">
+              <h3 class="text-sm font-semibold text-charcoal-800 pr-4">{faq.q}</h3>
+              <svg class="h-5 w-5 flex-shrink-0 text-charcoal-400 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
+      <div class="flex flex-wrap gap-3">
+        {[
+          { label: 'Kitchen Remodeling', href: '/lufkin/kitchen-remodeling' },
+          { label: 'Home Additions', href: '/lufkin/home-additions' },
+          { label: 'Flooring Installation', href: '/lufkin/flooring-installation' },
+          { label: 'Drywall Services', href: '/lufkin/drywall-services' },
+          { label: 'Remodeling Contractor', href: '/lufkin/remodeling-contractor' },
+          { label: 'All Lufkin Services', href: '/lufkin/general-contractor' },
+        ].map((link) => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
+            {link.label} →
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also Serving" title="Nearby Communities" />
+      <div class="flex flex-wrap gap-3">
+        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Start Your Bathroom Remodel in Lufkin</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

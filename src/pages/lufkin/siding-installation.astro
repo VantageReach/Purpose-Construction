@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+
+const faqs = [
+  { q: 'What siding holds up best in Lufkin\'s climate?', a: 'James Hardie fiber cement siding is the top performer in East Texas — it resists humidity, won\'t warp or rot, and holds paint longer than wood or vinyl in high-UV conditions. Vinyl siding is a solid, lower-cost option. We discuss the tradeoffs at every estimate based on your home\'s exposure and budget.' },
+  { q: 'Do I need a permit for siding replacement in Lufkin, TX?', a: 'Full siding replacement typically does not require a permit in Lufkin if it\'s a like-for-like material replacement. Projects that involve structural sheathing repair or changes to the building envelope may require one. Purpose Construction assesses each project and handles any required permits.' },
+  { q: 'How long does a siding replacement take for a Lufkin home?', a: 'A typical 1,500–2,500 sq ft Lufkin home takes 3–7 days for a full siding replacement, depending on material, stories, and whether any sheathing or moisture barrier work is required. We provide a specific schedule in every written proposal.' },
+  { q: 'What are signs I need new siding on my Lufkin home?', a: 'Bubbling, cracking, or warping siding is a clear sign — often caused by moisture intrusion in East Texas humidity. Fading is normal over time, but deep chalking or peeling paint on fiber cement can indicate the coating has failed. Visible rot or soft spots around windows and trim mean water has gotten behind the siding.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Siding Installation in Lufkin TX',
+    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+    description: 'Siding installation and replacement in Lufkin, TX. Fiber cement, vinyl, and wood siding for Angelina County homeowners.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Siding Installation in Lufkin, TX | Purpose Construction"
+  description="Siding installation and replacement in Lufkin, TX. Fiber cement, vinyl, and wood siding for Angelina County homeowners. Free estimates — call (936) 255-2235."
+  schema={schema}
+>
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Exterior Services', href: '/exterior-services' },
+    { label: 'Siding Installation', href: '/siding-installation' },
+    { label: 'Lufkin, TX', href: '/lufkin/siding-installation' },
+  ]} />
+
+  <PageHero
+    title="Siding Installation in Lufkin, TX"
+    subtitle="Purpose Construction installs and replaces siding for Lufkin and Angelina County homeowners — fiber cement, vinyl, and wood siding installed right for East Texas conditions."
+    tag="Lufkin, TX"
+    image="/images/siding-installation-east-texas.jpg"
+  />
+
+  <div class="bg-charcoal-900 border-b border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <div class="flex items-center gap-3">
+        <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
+        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Lufkin, TX" title="Siding That Lasts in East Texas Conditions" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Lufkin's humid subtropical climate is one of the harder environments for exterior siding. High humidity, UV intensity, and heat cycling cause vinyl to warp, wood to rot, and poorly installed fiber cement to fail at the seams. Purpose Construction's <a href="/siding-installation" class="text-brand-red hover:underline font-semibold">siding installation</a> team focuses on proper moisture management behind the siding — house wrap, flashing, and joint sealing — as much as the siding material itself. That's what separates a 10-year siding job from one that fails in three.</p>
+            <p>We install James Hardie fiber cement, vinyl siding, and engineered wood siding. New siding is often combined with <a href="/lufkin/window-installation" class="text-brand-red hover:underline font-semibold">window installation</a> or <a href="/lufkin/exterior-painting" class="text-brand-red hover:underline font-semibold">exterior painting</a> for a complete exterior refresh — we coordinate all trades as one project.</p>
+            <p>Most siding replacements in Lufkin don't require a permit, but we assess each job individually. Any sheathing repairs or moisture barrier upgrades are identified at the estimate stage.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <img
+            src="/images/siding-installation-east-texas.jpg"
+            alt="Siding installation in Lufkin, TX by Purpose Construction"
+            class="rounded-xl shadow-hero w-full"
+            width="640" height="480"
+            loading="lazy" decoding="async"
+          />
+          <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
+            <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
+            <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
+            <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
+            <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
+              <p>Mon–Sat: 8:00 AM – 8:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="What We Handle" title="Full-Scope Siding Services" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {[
+          'Fiber Cement Siding', 'Vinyl Siding', 'Engineered Wood Siding',
+          'Full Replacement', 'Partial Repair', 'Moisture Barrier Upgrade',
+          'House Wrap Installation', 'Corner & Trim Pieces', 'Soffit & Fascia',
+          'Caulking & Sealing', 'Color Consultation', 'Permit Management',
+        ].map((item) => (
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-warm-100 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Our Process" title="How Siding Installation Works in Lufkin" />
+      <ol class="space-y-6">
+        {[
+          { step: '1', title: 'Free On-Site Estimate', body: 'We assess your existing siding, check for sheathing damage or moisture issues, and discuss material options and color selections.' },
+          { step: '2', title: 'Written Proposal', body: 'Itemized scope including material specs, moisture barrier plan, trim and corner details, and a project schedule.' },
+          { step: '3', title: 'Demolition & Inspection', body: 'Existing siding removed. Sheathing and framing inspected for moisture damage, rot, or structural issues before any new material goes on.' },
+          { step: '4', title: 'Moisture Barrier & Flashing', body: 'House wrap installed, all penetrations flashed and sealed. This is the most critical phase for long-term performance in East Texas.' },
+          { step: '5', title: 'Siding Installation', body: 'Siding panels, trim, corner pieces, and soffit and fascia installed per manufacturer spec and to proper exposure and overlap.' },
+          { step: '6', title: 'Caulk, Paint & Final Walkthrough', body: 'All joints and penetrations caulked. Primer and paint applied if needed. Final inspection with you before we leave.' },
+        ].map((step) => (
+          <li class="flex gap-6 items-start">
+            <span class="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-red text-white font-display font-bold text-sm" aria-hidden="true">{step.step}</span>
+            <div>
+              <h3 class="display-sm text-charcoal-900 mb-1">{step.title}</h3>
+              <p class="text-sm leading-relaxed text-charcoal-500">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Common Questions" title="Siding FAQs — Lufkin, TX" align="center" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 list-none">
+              <h3 class="text-sm font-semibold text-charcoal-800 pr-4">{faq.q}</h3>
+              <svg class="h-5 w-5 flex-shrink-0 text-charcoal-400 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
+      <div class="flex flex-wrap gap-3">
+        {[
+          { label: 'Window Installation', href: '/lufkin/window-installation' },
+          { label: 'Door Installation', href: '/lufkin/door-installation' },
+          { label: 'Exterior Painting', href: '/lufkin/exterior-painting' },
+          { label: 'All Lufkin Services', href: '/lufkin/general-contractor' },
+        ].map((link) => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
+            {link.label} →
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also Serving" title="Nearby Communities" />
+      <div class="flex flex-wrap gap-3">
+        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gradient-red">
+    <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="display-md text-white mb-4">Start Your Siding Project in Lufkin</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
