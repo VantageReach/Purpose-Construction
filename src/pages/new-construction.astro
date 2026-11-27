@@ -17,7 +17,7 @@ const schema = [
     '@type': 'Service',
     name: 'New Construction in Lufkin TX',
     provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
-    areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+    areaServed: { '@type': 'City', name: 'Lufkin', containedInPlace: { '@type': 'State', name: 'Texas' } },
     description: 'New home construction in Lufkin, TX. Purpose Construction builds custom homes on your lot throughout Angelina County — full-scope from site prep to final walkthrough.',
   },
   {
@@ -31,11 +31,12 @@ const schema = [
   },
 ];
 const services = [
-  { title: 'Residential Construction', body: 'Custom single-family homes built to your plans or from scratch — floor plans, materials, and finishes chosen by you.', href: '/residential-construction/', core: false },
-  { title: 'Commercial Construction', body: 'Commercial shells, tenant buildouts, warehouses, and office construction for businesses across East Texas.', href: '/commercial-construction/', core: false },
   { title: 'Barndominium Construction', body: 'The most-requested build in rural East Texas. Custom barndominiums with metal exteriors, open-plan interiors, and full utility hookups.', href: '/barndominium-construction/', core: true },
+  { title: 'Metal Buildings', body: 'Metal shops, garages, storage buildings and equipment covers, built on your East Texas land.', href: '/metal-structures/', core: true },
   { title: 'Pole Barn Construction', body: 'Agricultural, storage, and workshop pole barns built to last on your East Texas property.', href: '/pole-barn-construction/', core: false },
+  { title: 'Commercial Construction', body: 'Commercial shells, tenant buildouts, warehouses, and office construction for businesses across East Texas.', href: '/commercial-construction/', core: false },
   { title: 'Tiny Home Construction', body: 'Efficient, custom-built tiny homes — permanent foundation or slab — tailored to your property and lifestyle.', href: '/tiny-home-construction/', core: false },
+  { title: 'Residential Construction', body: 'Custom single-family homes built to your plans or from scratch — floor plans, materials, and finishes chosen by you.', href: '/residential-construction/', core: false },
 ];
 ---
 
@@ -200,10 +201,11 @@ const services = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Residential Construction', href: '/residential-construction/' },
           { label: 'Barndominium Construction', href: '/barndominium-construction/' },
+          { label: 'Metal Buildings', href: '/metal-structures/' },
           { label: 'Commercial Construction', href: '/commercial-construction/' },
           { label: 'Home Additions', href: '/home-additions/' },
+          { label: 'Residential Construction', href: '/residential-construction/' },
           { label: 'General Contractor', href: '/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">

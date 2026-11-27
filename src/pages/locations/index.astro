@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
 const locations = [
-  { city: 'Lufkin', slug: null, county: 'Angelina County', keyword: 'Home Base', desc: 'Our primary service area and home base. We serve all of Lufkin and Angelina County.', href: '/contact/' },
+  { city: 'Lufkin', slug: null, county: 'Angelina County', keyword: 'Home Base', desc: 'Our primary service area and home base. We serve all of Lufkin and Angelina County.', href: '/' },
   { city: 'Hudson', slug: 'hudson', county: 'Angelina County', keyword: 'General Contractor', desc: 'Just north of Lufkin on US-59 — rapid response, no travel fees.', href: '/locations/hudson/' },
   { city: 'Huntington', slug: 'huntington', county: 'Angelina County', keyword: 'Construction Company', desc: 'Full builds and remodels throughout Huntington and surrounding communities.', href: '/locations/huntington/' },
   { city: 'Diboll', slug: 'diboll', county: 'Angelina County', keyword: 'Remodeling Contractor', desc: 'Kitchen, bath, additions, and new construction for Diboll homeowners.', href: '/locations/diboll/' },
@@ -22,13 +22,20 @@ const locations = [
 
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Purpose Construction',
-  description: 'Purpose Construction serves all of East Texas — Lufkin, Nacogdoches, Diboll, Huntington, and surrounding communities with residential and commercial construction and remodeling.',
+  '@type': 'CollectionPage',
+  name: 'Service Areas',
+  description: 'Towns Purpose Construction serves from Lufkin, TX across East Texas.',
   url: 'https://www.purposeconstructionco.com/locations/',
-  telephone: '+19362552235',
-  address: { '@type': 'PostalAddress', addressLocality: 'Lufkin', addressRegion: 'TX', addressCountry: 'US' },
-  areaServed: { '@type': 'State', name: 'Texas' },
+  about: { '@id': 'https://www.purposeconstructionco.com/#business' },
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: locations.filter((l) => l.slug).map((l, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `Construction Company in ${l.city}, TX`,
+      url: `https://www.purposeconstructionco.com/locations/${l.slug}/`,
+    })),
+  },
 };
 ---
 <BaseLayout

@@ -6,26 +6,16 @@ import SectionHeading from '../../components/SectionHeading.astro';
 
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://www.purposeconstructionco.com/locations/wells/',
-  name: 'Purpose Construction',
-  description: 'Purpose Construction — home builder serving Wells, TX and Cherokee County.',
+  '@type': 'Service',
+  '@id': 'https://www.purposeconstructionco.com/locations/wells/#service',
+  name: 'Construction Company in Wells, TX',
+  serviceType: 'Construction company',
+  description: 'Construction company serving Wells, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
   url: 'https://www.purposeconstructionco.com/locations/wells/',
-  telephone: '+19362552235',
-  email: 'info@purposeconstructionco.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Lufkin',
-    addressRegion: 'TX',
-    addressCountry: 'US',
-  },
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '00:00', closes: '23:59' },
-  ],
+  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
   areaServed: [
-    { '@type': 'City', name: 'Wells', containedIn: { '@type': 'State', name: 'Texas' } },
+    { '@type': 'City', name: 'Wells', containedInPlace: { '@type': 'State', name: 'Texas' } },
   ],
-  priceRange: '$$',
 };
 ---
 <BaseLayout
@@ -132,11 +122,13 @@ const schema = {
         align="center"
       />
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
           <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
           <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
           <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
           <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
           <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
+          <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
           <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
           <a href="/interior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Interior Painting</a>
           <a href="/exterior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Exterior Painting</a>
@@ -261,7 +253,7 @@ const schema = {
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Communities Near Wells" />
       <div class="flex flex-wrap gap-3">
-        <a href="/contact/" class="rounded-lg border border-warm-200 bg-white px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Lufkin →</a>
+        <a href="/" class="rounded-lg border border-warm-200 bg-white px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Lufkin →</a>
         <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-white px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
         <a href="/locations/pollok/" class="rounded-lg border border-warm-200 bg-white px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Pollok →</a>
         <a href="/locations/chireno/" class="rounded-lg border border-warm-200 bg-white px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Chireno →</a>

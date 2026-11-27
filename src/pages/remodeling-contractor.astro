@@ -14,30 +14,20 @@ const faqs = [
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://www.purposeconstructionco.com/remodeling-contractor/',
-    name: 'Purpose Construction — Remodeling Contractor Lufkin TX',
-    url: 'https://www.purposeconstructionco.com',
-    telephone: '+19362552235',
-    email: 'info@purposeconstructionco.com',
+    '@type': 'Service',
+    '@id': 'https://www.purposeconstructionco.com/remodeling-contractor/#service',
+    name: 'Remodeling Contractor in Lufkin, TX',
+    serviceType: 'Home remodeling',
+    url: 'https://www.purposeconstructionco.com/remodeling-contractor/',
     image: 'https://www.purposeconstructionco.com/images/home-remodeling-contractor-lufkin-tx.jpg',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Lufkin',
-      addressRegion: 'TX',
-      addressCountry: 'US',
-    },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: [
-      { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'AdministrativeArea', name: 'Angelina County' } },
+      { '@type': 'City', name: 'Lufkin', containedInPlace: { '@type': 'AdministrativeArea', name: 'Angelina County' } },
       { '@type': 'City', name: 'Diboll' },
       { '@type': 'City', name: 'Huntington' },
       { '@type': 'City', name: 'Hudson' },
       { '@type': 'City', name: 'Nacogdoches' },
     ],
-    openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '00:00', closes: '23:59' },
-    ],
-    priceRange: '$$',
     description: 'Remodeling contractor in Lufkin, TX. Kitchen remodeling, bathroom remodeling, home additions, flooring, painting, and exterior work for Angelina County homeowners.',
   },
   {
