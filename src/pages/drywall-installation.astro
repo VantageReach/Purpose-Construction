@@ -4,53 +4,158 @@ import PageHero from '../components/PageHero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Drywall Installation',
-  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
-  areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
-  description: 'Professional drywall installation across East Texas — hang, tape, mud, sand, and texture for new construction, additions, and remodels throughout East Texas.',
-};
+const faqs = [
+  { q: 'Do you handle drywall repair for water damage in Lufkin?', a: 'Yes. Water damage and storm-related drywall repair are among the most common jobs we handle in East Texas. We assess the extent of moisture damage, address the source, then remove and replace all compromised drywall and insulation before finishing.' },
+  { q: 'What drywall textures can you apply?', a: 'We apply orange peel, knockdown, skip trowel, smooth, and popcorn (removal included). We match existing texture in repair situations or apply a new finish coat when doing a full room.' },
+  { q: 'How long does drywall installation take?', a: 'A single room typically takes 2–4 days from hanging through finishing and prime coat. Whole-home drywall (such as after a remodel or renovation) takes 1–2 weeks depending on scope.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Drywall Services in Lufkin TX',
+    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+    description: 'Drywall installation and repair in Lufkin, TX. New drywall, water damage repair, texture matching, and finishing for Angelina County homeowners and contractors.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
 ---
+
 <BaseLayout
-  title="Drywall Installation East Texas | Purpose Construction"
-  description="Drywall installation across East Texas — hang, tape, mud, texture, and paint-ready finish. Purpose Construction handles new construction and remodels. Call (936) 255-2235."
+  title="Drywall Services in Lufkin, TX | Purpose Construction"
+  description="Drywall installation and repair in Lufkin, TX: water damage, texture matching, remodels and new construction. Free estimates: (936) 255-2235."
   schema={schema}
 >
-  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Remodeling', href: '/remodeling-contractor' }, { label: 'Drywall Installation', href: '/drywall-installation' }]} />
-  <PageHero title="Drywall Installation in East Texas" subtitle="Complete drywall installation from hanging and taping to mud, sand, texture, and a paint-ready finish — for new builds, additions, and remodels." tag="Remodeling Service" 
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Remodeling', href: '/remodeling-contractor' },
+    { label: 'Drywall Installation', href: '/drywall-installation' },
+  ]} />
+
+  <PageHero
+    title="Drywall Services in Lufkin, TX"
+    subtitle="Purpose Construction handles drywall installation and repair across Lufkin and Angelina County — new construction, water damage, texture work, and full-room finishes."
+    tag="Lufkin, TX"
     image="/images/drywall-installation-east-texas.jpg"
   />
+
+  <div class="bg-charcoal-900 border-b border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <div class="flex items-center gap-3">
+        <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
+        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
 
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionHeading tag="Drywall Installation" title="Walls That Are Ready for the Next Trade" />
+          <SectionHeading tag="Lufkin, TX" title="Drywall Repair & Installation for East Texas Homes" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Drywall installation is one of those trades where the quality of the work determines what every other finish looks like. Badly taped seams and uneven mud show through paint. Purpose Construction brings the same discipline to drywall that we bring to every phase — proper board selection, clean hanging, tight taping, and finish work that holds up without visible imperfections.</p>
+            <p>Lufkin's humid climate creates real drywall challenges — moisture intrusion from storms, plumbing leaks, and condensation can compromise walls and ceilings quickly. Purpose Construction handles drywall installation and repair for water damage situations, remodel projects, and new construction across Angelina County.</p>
+            <p>We handle hanging, taping, mudding, texture application, and prime coat — leaving walls ready for paint. Drywall work is frequently part of larger projects like <a href="/bathroom-remodeling" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a> or <a href="/home-additions" class="text-brand-red hover:underline font-semibold">home additions</a>, but we also take standalone repair jobs when a homeowner just needs a few bad sections addressed.</p>
+            <p>We match existing texture in repair situations so patched areas blend seamlessly with the surrounding wall. No patchwork seams, no obvious repairs.</p>
             <p>East Texas humidity is hard on drywall if the wrong product gets used in the wrong place. We specify moisture-resistant board in bathrooms, laundry rooms, and anywhere else that sees humidity, so the walls stay solid over time. For garages and mechanical spaces, we use fire-rated drywall where code requires it.</p>
-            <p>Whether it's a room addition, a full new-construction shell, or interior remodel work in Lufkin, we deliver walls that are flat, clean, and ready for paint — on schedule.</p>
           </div>
           <div class="mt-6 flex gap-4">
             <a href="/contact" class="btn-primary">Get a Free Estimate</a>
-            <a href="/remodeling-contractor" class="btn-outline">All Remodeling Services</a>
+            <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
-        <img src="/images/drywall-installation-east-texas.jpg" alt="Drywall installation across East Texas by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+        <div class="space-y-5">
+          <img
+            src="/images/drywall-installation-east-texas.jpg"
+            alt="Drywall installation and repair by Purpose Construction in Lufkin, TX"
+            class="rounded-xl shadow-hero w-full"
+            width="640" height="480"
+            loading="lazy" decoding="async"
+          />
+          <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
+            <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
+            <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
+            <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
+            <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
+              <p>Mon–Sat: 8:00 AM – 8:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="What's Included" title="Drywall Installation Services" align="center" />
+      <SectionHeading tag="What We Handle" title="Full-Scope Drywall Services in Lufkin" align="center" />
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {['Hang & Tape', 'Mud & Sand', 'Texture Application', 'Corner Bead', 'Moisture-Resistant Board', 'Fire-Rated Drywall', 'Ceiling Drywall', 'Arch & Curved Walls', 'Cleanup'].map(item => (
+        {[
+          'Drywall Installation', 'Drywall Repair', 'Taping & Mudding',
+          'Texture Application', 'Smooth Finish', 'Ceiling Drywall',
+          'Water Damage Repair', 'Hole Patching', 'Fire-Rated Drywall',
+          'Demo & Haul-Off', 'Prime Coat', 'Texture Matching',
+        ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
-            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
+            {item}
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-warm-100 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Our Process" title="How Drywall Work Gets Done in Lufkin" />
+      <ol class="space-y-6">
+        {[
+          { step: '1', title: 'Free On-Site Assessment', body: 'We inspect the affected or target areas, assess scope, and provide a written quote.' },
+          { step: '2', title: 'Written Proposal', body: 'Itemized pricing, material specs, timeline, and whether any moisture repair is needed.' },
+          { step: '3', title: 'Source Correction (if applicable)', body: 'If water damage is the cause, we confirm the moisture source is resolved before installing new drywall.' },
+          { step: '4', title: 'Board Hanging & Rough Work', body: 'New drywall is hung, fitted, and fastened. Blocking is added where needed for edges and fixtures.' },
+          { step: '5', title: 'Taping, Finishing & Texture', body: 'Tape, multiple coats of joint compound, sanding, and texture application. Existing texture is matched in repair situations.' },
+          { step: '6', title: 'Prime Coat & Final Inspection', body: 'A prime coat is applied, surfaces are inspected, and the project is handed off ready for paint.' },
+        ].map((step) => (
+          <li class="flex gap-6 items-start">
+            <span class="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-red text-white font-display font-bold text-sm" aria-hidden="true">{step.step}</span>
+            <div>
+              <h3 class="display-sm text-charcoal-900 mb-1">{step.title}</h3>
+              <p class="text-sm leading-relaxed text-charcoal-500">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Common Questions" title="Drywall FAQs — Lufkin, TX" align="center" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 list-none">
+              <h3 class="text-sm font-semibold text-charcoal-800 pr-4">{faq.q}</h3>
+              <svg class="h-5 w-5 flex-shrink-0 text-charcoal-400 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
         ))}
       </div>
     </div>
@@ -58,19 +163,42 @@ const schema = {
 
   <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Related Services" title="Often Paired With Drywall Installation" />
+      <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
-        {[{ label: 'Drywall Repair', href: '/drywall-repair' }, { label: 'Interior Painting', href: '/interior-painting' }, { label: 'Home Additions', href: '/home-additions' }, { label: 'All Remodeling', href: '/remodeling-contractor' }].map(link => (
-          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        {[
+          { label: 'Interior Painting', href: '/interior-painting' },
+          { label: 'Bathroom Remodeling', href: '/bathroom-remodeling' },
+          { label: 'Home Additions', href: '/home-additions' },
+          { label: 'Flooring Installation', href: '/flooring-installation' },
+          { label: 'Remodeling Contractor', href: '/remodeling-contractor' },
+          { label: 'All Services', href: '/services' },
+        ].map((link) => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
+            {link.label} →
+          </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also Serving" title="Nearby Communities" />
+      <div class="flex flex-wrap gap-3">
+        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
 
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Need Drywall Work Done Right?</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free drywall installation estimate across East Texas and across East Texas.</p>
+      <h2 class="display-md text-white mb-4">Start Your Drywall Project in Lufkin</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>

@@ -29,7 +29,6 @@ const schema = {
     { '@type': 'City', name: 'Wells', containedIn: { '@type': 'State', name: 'Texas' } },
   ],
   priceRange: '$$',
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '2' },
 };
 ---
 <BaseLayout
@@ -41,7 +40,7 @@ const schema = {
 
   <PageHero
     title="Home Builder in Wells, TX"
-    subtitle="Purpose Construction is your East Texas home builder serving Wells and Cherokee County — custom homes, barndominiums, pole barns, and full remodeling. Licensed, insured, written contracts."
+    subtitle="Purpose Construction is your East Texas home builder serving Wells and Cherokee County — custom homes, barndominiums, pole barns, and full remodeling. Insured, local, free estimates."
     tag="Serving Wells, TX"
     image="/images/barndominium-construction-east-texas.jpg"
   />
@@ -65,7 +64,7 @@ const schema = {
           <SectionHeading tag="Wells, TX" title="Serving Wells and Cherokee County" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Wells is a small community in Cherokee County, north of Lufkin and east of Rusk. The area is characterized by rural tracts and wooded land — exactly the kind of property where barndominiums, custom homes, and pole barn builds thrive. Purpose Construction works throughout Cherokee County with the same crew and same standards we bring to every county we serve.</p>
-            <p>Whether you're starting from raw land or updating an existing home, we handle the full scope: site preparation, foundation, framing, mechanical systems, and all interior and exterior finishes. We coordinate with Cherokee County for permitting and inspections so you don't have to navigate that process on your own.</p>
+            <p>Whether you're starting from raw land or updating an existing home, we handle the full scope: site preparation, foundation, framing, mechanical systems, and all interior and exterior finishes.</p>
             <p>If you're planning a rural build in the Wells area, Purpose Construction is an experienced partner who will walk the site with you, understand your vision, and build it the right way — on budget and with no shortcuts.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
@@ -178,7 +177,7 @@ const schema = {
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
               <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span><strong class="text-charcoal-900">Licensed & Fully Insured</strong> — Liability insurance and workers' comp on every job. Documentation available on request.</span>
+            <span><strong class="text-charcoal-900">Fully Insured</strong> — We carry liability insurance on every job.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
@@ -196,7 +195,7 @@ const schema = {
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
               <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span><strong class="text-charcoal-900">We Pull All Permits</strong> — We handle every required permit. Never build without proper authorization.</span>
+            <span><strong class="text-charcoal-900">Free Written Estimates</strong> — You see the full scope and cost in writing before any work starts.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
@@ -225,25 +224,16 @@ const schema = {
     </div>
   </section>
 
-  <!-- Social proof -->
-  <section class="section-padding bg-warm-50 border-t border-warm-200">
+  <!-- Reviews -->
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Reviews" title="What Wells Customers Say" align="center" />
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div class="rounded-xl border border-warm-200 bg-white p-6 shadow-card">
-          <div class="mb-3 flex gap-0.5"><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-          <p class="mb-4 text-sm leading-relaxed text-charcoal-600 italic">&ldquo;Purpose Construction built our custom barndominium on 40 acres outside Wells. They handled everything from site prep to final finishes, kept us informed throughout, and delivered exactly what we envisioned.&rdquo;</p>
-          <p class="text-xs font-bold text-charcoal-800">Greg A.</p>
-          <p class="text-xs text-charcoal-400">Wells, TX</p>
+      <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-warm-200 bg-white px-8 py-6 shadow-card sm:flex-row">
+        <div>
+          <p class="font-display text-lg font-bold leading-tight text-charcoal-900">Worked with us in Wells?</p>
+          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors find a contractor they can trust.</p>
         </div>
-        <div class="rounded-xl border border-warm-200 bg-white p-6 shadow-card">
-          <div class="mb-3 flex gap-0.5"><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-          <p class="mb-4 text-sm leading-relaxed text-charcoal-600 italic">&ldquo;Had them remodel our kitchen and add a mudroom. Good communication, fair price, quality work. They treated our home with respect — which matters when you live out in the country and let people in.&rdquo;</p>
-          <p class="text-xs font-bold text-charcoal-800">Terri N.</p>
-          <p class="text-xs text-charcoal-400">Wells, TX</p>
-        </div>
+        <a href="https://g.page/r/CUKivaolola3EBM/review" target="_blank" rel="noopener noreferrer" class="btn-outline flex-shrink-0">Leave Us a Review</a>
       </div>
-      <p class="mt-6 text-center text-xs text-charcoal-400">More reviews available on Google. Purpose Construction — serving Wells, TX and all of East Texas.</p>
     </div>
   </section>
 
@@ -265,13 +255,6 @@ const schema = {
             <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Barndominiums and custom homes on acreage are the most common projects we see in the Wells area. We build both, from simple metal-and-slab structures to fully custom interiors.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do you handle Cherokee County permits?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — we know Cherokee County's permitting requirements and manage all required permits as part of your project.</div>
         </details>
       </div>
     </div>

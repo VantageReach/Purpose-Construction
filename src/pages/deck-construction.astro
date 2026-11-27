@@ -4,53 +4,157 @@ import PageHero from '../components/PageHero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Deck Construction',
-  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
-  areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
-  description: 'Deck construction across East Texas — pressure-treated lumber, composite decking, and hardwood decks with proper footings, railings, and stairs for East Texas homes.',
-};
+const faqs = [
+  { q: 'Wood vs composite deck — which is better in East Texas?', a: 'Composite decking outperforms natural wood in East Texas humidity and UV exposure. It won\'t warp, splinter, or require annual staining. Pressure-treated lumber is a solid budget option when properly maintained. We discuss the tradeoffs at every estimate and recommend based on your priorities.' },
+  { q: 'How much does a deck cost in Angelina County?', a: 'It depends on the size, the height off the ground, and whether you go with pressure-treated wood or composite. We\'ll measure up and give you a free written estimate with the costs broken out.' },
+  { q: 'How long does deck construction take?', a: 'A standard 200–400 sq ft deck in Lufkin takes approximately 1–2 weeks from start to finish. Larger or multi-level decks take 2–4 weeks. We provide a written schedule in every proposal.' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Deck Construction in Lufkin TX',
+    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+    description: 'Deck construction in Lufkin, TX. Wood and composite decks, railing systems, and multi-level decks for Angelina County homeowners.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
 ---
+
 <BaseLayout
-  title="Deck Construction East Texas | Purpose Construction"
-  description="Deck construction across East Texas — pressure-treated, composite, and hardwood decks with proper footings, railings, and stairs. Purpose Construction builds across East Texas."
+  title="Deck Construction in Lufkin, TX | Purpose Construction"
+  description="Deck construction in Lufkin, TX: wood and composite decks, railings, stairs and multi-level decks. Insured, local crew. Free estimates: (936) 255-2235."
   schema={schema}
 >
-  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Outdoor Living', href: '/outdoor-living' }, { label: 'Deck Construction', href: '/deck-construction' }]} />
-  <PageHero title="Deck Construction in East Texas" subtitle="Custom wood and composite decks built on proper footings with railings, stairs, and detail work — designed to last through East Texas weather." tag="Outdoor Living Service" 
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Outdoor Living', href: '/outdoor-living' },
+    { label: 'Deck Construction', href: '/deck-construction' },
+  ]} />
+
+  <PageHero
+    title="Deck Construction in Lufkin, TX"
+    subtitle="Purpose Construction builds wood and composite decks for Lufkin and Angelina County homeowners, on solid footings and built to hold up in East Texas humidity."
+    tag="Lufkin, TX"
     image="/images/deck-construction-east-texas.jpg"
   />
+
+  <div class="bg-charcoal-900 border-b border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <div class="flex items-center gap-3">
+        <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
+        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
 
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionHeading tag="Deck Construction" title="Decks Built to Handle the East Texas Climate" />
+          <SectionHeading tag="Lufkin, TX" title="Decks Built for East Texas Conditions" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>East Texas humidity is hard on wood decks. The wet seasons, high moisture content in the air, and cycles of rain and heat cause untreated or poorly installed decking to warp, rot, and deteriorate within a few years. Purpose Construction builds decks that account for this from the start — using properly graded pressure-treated lumber, composite decking systems, or hardwood species that are proven in humid climates, with the right fasteners and spacing to allow for movement.</p>
+            <p>East Texas humidity is one of the toughest environments for deck materials. Untreated or improperly maintained wood decks in Lufkin can warp, cup, and deteriorate within a few years. Purpose Construction's deck construction team guides every homeowner through material selection — composite decking for low maintenance and longevity, pressure-treated lumber for budget builds that are well-maintained, or hardwoods for premium natural aesthetics.</p>
+            <p>We build everything from single-level attached decks to elevated multi-level structures with built-in seating and stairs. Many decks are paired with a <a href="/pergola-construction" class="text-brand-red hover:underline font-semibold">pergola</a> or cover structure, and we plan for that connection from the start so the finished project looks intentional, not afterthought.</p>
             <p>Footings and framing are the foundation of any deck, and we don't cut corners on them. Concrete footings set to proper depth for East Texas soil conditions, beam sizing calculated for the load, and ledger connections that won't pull away from the house — these are the details that separate a deck that lasts 20 years from one that fails in five.</p>
-            <p>We build freestanding and attached decks of any size across East Texas and across Angelina County, from simple back-door platforms to large multi-level entertaining decks with integrated pergola structures.</p>
           </div>
           <div class="mt-6 flex gap-4">
             <a href="/contact" class="btn-primary">Get a Free Estimate</a>
-            <a href="/outdoor-living" class="btn-outline">All Outdoor Living</a>
+            <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
-        <img src="/images/deck-construction-east-texas.jpg" alt="Deck construction across East Texas by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
+        <div class="space-y-5">
+          <img
+            src="/images/deck-construction-east-texas.jpg"
+            alt="Deck construction in Lufkin, TX by Purpose Construction"
+            class="rounded-xl shadow-hero w-full"
+            width="640" height="480"
+            loading="lazy" decoding="async"
+          />
+          <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
+            <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
+            <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
+            <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
+            <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
+              <p>Mon–Sat: 8:00 AM – 8:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="What's Included" title="Deck Construction Services" align="center" />
+      <SectionHeading tag="What We Handle" title="Full-Scope Deck Construction" align="center" />
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {['Pressure-Treated Lumber', 'Composite Decking', 'Hardwood', 'Framing & Footings', 'Railings', 'Stairs', 'Fascia', 'Lighting Conduit', 'Pergola Integration'].map(item => (
+        {[
+          'Composite Decking', 'Pressure-Treated Lumber', 'Wood Deck Framing',
+          'Railing Systems', 'Stair Construction', 'Ledger Board & Flashing',
+          'Deck Lighting', 'Pergola Integration', 'Multi-Level Decks',
+          'Demo & Haul-Off', 'Stain & Sealing',
+        ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
-            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>{item}
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
+            {item}
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-warm-100 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Our Process" title="How Deck Construction Works in Lufkin" />
+      <ol class="space-y-6">
+        {[
+          { step: '1', title: 'Free On-Site Estimate', body: 'We visit your Lufkin home, assess the site, and discuss material options, size, railing styles, and stairs.' },
+          { step: '2', title: 'Written Proposal', body: 'Itemized scope with material specs, framing plan, railing selection, and project timeline.' },
+          { step: '3', title: 'Planning', body: 'Footing layout, ledger attachment and materials confirmed before any work begins.' },
+          { step: '4', title: 'Post Setting & Framing', body: 'Footings are dug and poured. Posts set, beams and joists framed, and ledger properly flashed to the house.' },
+          { step: '5', title: 'Decking, Railings & Finishes', body: 'Decking boards installed, railing system set, stairs built, and any lighting or pergola connections completed.' },
+          { step: '6', title: 'Final Walkthrough', body: 'We inspect every board, railing, and step with you and make sure the project is exactly what was specified.' },
+        ].map((step) => (
+          <li class="flex gap-6 items-start">
+            <span class="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-red text-white font-display font-bold text-sm" aria-hidden="true">{step.step}</span>
+            <div>
+              <h3 class="display-sm text-charcoal-900 mb-1">{step.title}</h3>
+              <p class="text-sm leading-relaxed text-charcoal-500">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Common Questions" title="Deck Construction FAQs — Lufkin, TX" align="center" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 list-none">
+              <h3 class="text-sm font-semibold text-charcoal-800 pr-4">{faq.q}</h3>
+              <svg class="h-5 w-5 flex-shrink-0 text-charcoal-400 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
         ))}
       </div>
     </div>
@@ -58,19 +162,41 @@ const schema = {
 
   <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Related Services" title="Complete Your Outdoor Space" />
+      <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
-        {[{ label: 'Patio Construction', href: '/patio-construction' }, { label: 'Pergola Construction', href: '/pergola-construction' }, { label: 'Outdoor Living', href: '/outdoor-living' }].map(link => (
-          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
+        {[
+          { label: 'Patio Construction', href: '/patio-construction' },
+          { label: 'Pergola Construction', href: '/pergola-construction' },
+          { label: 'Outdoor Living', href: '/outdoor-living' },
+          { label: 'Exterior Painting', href: '/exterior-painting' },
+          { label: 'All Services', href: '/services' },
+        ].map((link) => (
+          <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
+            {link.label} →
+          </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding-sm bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also Serving" title="Nearby Communities" />
+      <div class="flex flex-wrap gap-3">
+        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
 
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Ready to Build Your Deck?</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free deck estimate. We serve Lufkin and all of East Texas.</p>
+      <h2 class="display-md text-white mb-4">Start Your Deck Project in Lufkin</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>

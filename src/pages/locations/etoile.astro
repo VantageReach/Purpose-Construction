@@ -29,7 +29,6 @@ const schema = {
     { '@type': 'City', name: 'Etoile', containedIn: { '@type': 'State', name: 'Texas' } },
   ],
   priceRange: '$$',
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '2' },
 };
 ---
 <BaseLayout
@@ -41,7 +40,7 @@ const schema = {
 
   <PageHero
     title="Construction Contractor in Etoile, TX"
-    subtitle="Purpose Construction serves Etoile and southern Nacogdoches County — custom homes, barndominiums, remodeling, and lake-area outdoor living construction. Licensed, insured, free estimates."
+    subtitle="Purpose Construction serves Etoile and southern Nacogdoches County — custom homes, barndominiums, remodeling, and lake-area outdoor living construction. Insured, local, free estimates."
     tag="Serving Etoile, TX"
     image="/images/barndominium-construction-east-texas.jpg"
   />
@@ -65,7 +64,7 @@ const schema = {
           <SectionHeading tag="Etoile, TX" title="Serving Etoile and Nacogdoches County" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Etoile is a quiet rural community in southern Nacogdoches County, near Sam Rayburn Reservoir. The area draws landowners and lake-area residents who value privacy, space, and the natural beauty of Deep East Texas — and who want to build or improve structures that complement that lifestyle.</p>
-            <p>Purpose Construction is experienced with rural builds in the Etoile and southern Nacogdoches County area. Barndominiums, pole barns, custom homes on acreage, and lake-adjacent outdoor living structures are all within our scope. We handle all Nacogdoches County permitting and coordinate every phase from site prep to final walkthrough.</p>
+            <p>Purpose Construction is experienced with rural builds in the Etoile and southern Nacogdoches County area. Barndominiums, pole barns, custom homes on acreage, and lake-adjacent outdoor living structures are all within our scope. We coordinate every phase from site prep to final walkthrough.</p>
             <p>If you're building near Sam Rayburn or in the broader Etoile area and want a contractor who will actually show up and communicate clearly, Purpose Construction is the team that delivers.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
@@ -178,7 +177,7 @@ const schema = {
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
               <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span><strong class="text-charcoal-900">Licensed & Fully Insured</strong> — Liability insurance and workers' comp on every job. Documentation available on request.</span>
+            <span><strong class="text-charcoal-900">Fully Insured</strong> — We carry liability insurance on every job.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
@@ -196,7 +195,7 @@ const schema = {
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
               <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             </span>
-            <span><strong class="text-charcoal-900">We Pull All Permits</strong> — We handle every required permit. Never build without proper authorization.</span>
+            <span><strong class="text-charcoal-900">Free Written Estimates</strong> — You see the full scope and cost in writing before any work starts.</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
@@ -225,25 +224,16 @@ const schema = {
     </div>
   </section>
 
-  <!-- Social proof -->
-  <section class="section-padding bg-warm-50 border-t border-warm-200">
+  <!-- Reviews -->
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Reviews" title="What Etoile Customers Say" align="center" />
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div class="rounded-xl border border-warm-200 bg-white p-6 shadow-card">
-          <div class="mb-3 flex gap-0.5"><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-          <p class="mb-4 text-sm leading-relaxed text-charcoal-600 italic">&ldquo;Built our lake-area barndominium near Sam Rayburn — couldn't be happier. Purpose Construction handled site prep, the slab, metal structure, and all interior work. Professional, communicative, and worth every dollar.&rdquo;</p>
-          <p class="text-xs font-bold text-charcoal-800">Ray M.</p>
-          <p class="text-xs text-charcoal-400">Etoile, TX</p>
+      <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-warm-200 bg-white px-8 py-6 shadow-card sm:flex-row">
+        <div>
+          <p class="font-display text-lg font-bold leading-tight text-charcoal-900">Worked with us in Etoile?</p>
+          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors find a contractor they can trust.</p>
         </div>
-        <div class="rounded-xl border border-warm-200 bg-white p-6 shadow-card">
-          <div class="mb-3 flex gap-0.5"><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-          <p class="mb-4 text-sm leading-relaxed text-charcoal-600 italic">&ldquo;They added a covered deck and outdoor kitchen to our Etoile property. Beautiful work that fits the setting perfectly. The crew respected our land and cleaned up completely.&rdquo;</p>
-          <p class="text-xs font-bold text-charcoal-800">Janet C.</p>
-          <p class="text-xs text-charcoal-400">Etoile, TX</p>
-        </div>
+        <a href="https://g.page/r/CUKivaolola3EBM/review" target="_blank" rel="noopener noreferrer" class="btn-outline flex-shrink-0">Leave Us a Review</a>
       </div>
-      <p class="mt-6 text-center text-xs text-charcoal-400">More reviews available on Google. Purpose Construction — serving Etoile, TX and all of East Texas.</p>
     </div>
   </section>
 
@@ -258,13 +248,6 @@ const schema = {
             <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — we work in the Etoile area and serve lake-area property owners with everything from outdoor living builds to full custom home construction near Sam Rayburn.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do you handle Nacogdoches County permits for Etoile projects?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — Etoile falls under Nacogdoches County jurisdiction. We know the requirements and manage all permits as part of your project.</div>
         </details>
         <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
           <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">

@@ -5,32 +5,35 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
-  { q: 'What types of home additions does Purpose Construction build?', a: 'We build room additions, sunrooms, bonus rooms, master suite additions, garage conversions, in-law suites, second-story additions, and full rear extensions. If you need more space, we can build it.' },
-  { q: 'Do home additions require permits in Lufkin?', a: 'Yes — all structural additions require permits from the City of Lufkin or Angelina County. Purpose Construction pulls all required permits and ensures every addition is built to current building codes.' },
-  { q: 'How long does a home addition take?', a: 'Timeline depends heavily on size and complexity. A single-room addition typically takes 6–10 weeks. A full master suite or second-story addition can take 3–5 months. We provide a detailed schedule in the proposal.' },
-  { q: 'Will a home addition match my existing house?', a: 'Matching existing siding, roofline, windows, and interior finishes is a priority for our team. We assess your home\'s materials during the consultation phase and select matching or complementary options so the addition looks like it was always part of the house.' },
+  { q: 'What types of additions does Purpose Construction build in Lufkin?', a: 'We build bedroom additions, master suite additions, family room extensions, garage conversions, in-law suites, and second-story additions across Lufkin and Angelina County. If it expands your home\'s footprint, we handle it.' },
+  { q: 'How long does a home addition take in Lufkin, TX?', a: 'A standard room addition in Lufkin typically takes 8–14 weeks depending on size and complexity. Second-story additions or additions requiring significant structural work can run longer. We provide a written timeline in every proposal.' },
+  { q: 'Will my addition match the rest of my existing home?', a: 'Yes. We match exterior cladding, roofline pitch, trim, and interior finishes to your existing home as closely as possible. Our goal is a seamless result — not something that looks tacked on.' },
 ];
 
 const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Home Additions',
+    name: 'Home Additions in Lufkin TX',
     provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
-    areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
-    description: 'Home addition contractor across East Texas. Room additions, master suites, bonus rooms, sunrooms, and second-story additions for East Texas homeowners.',
+    areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
+    description: 'Home additions in Lufkin, TX. Purpose Construction builds room additions, master suites, family room extensions, and in-law suites across Angelina County.',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
   },
 ];
 ---
 
 <BaseLayout
-  title="Home Additions East Texas | Purpose Construction"
-  description="Home addition contractor across East Texas. Purpose Construction builds room additions, master suites, bonus rooms, and sunrooms across East Texas. Free estimates — call (936) 255-2235."
+  title="Home Additions in Lufkin, TX | Purpose Construction"
+  description="Home additions in Lufkin, TX: bedrooms, primary suites and family rooms built to match your house. Insured, local crew. Free estimates: (936) 255-2235."
   schema={schema}
 >
   <Breadcrumb items={[
@@ -40,63 +43,107 @@ const schema = [
   ]} />
 
   <PageHero
-    title="Home Additions in East Texas"
-    subtitle="Need more space without moving? Purpose Construction designs and builds home additions across East Texas — from single rooms to full second stories."
-    tag="Core Service"
+    title="Home Additions in Lufkin, TX"
+    subtitle="Purpose Construction expands Lufkin homes with room additions, primary suites, family rooms and in-law suites, built to match the house you already have."
+    tag="Lufkin, TX"
     image="/images/home-additions-east-texas.jpg"
   />
+
+  <div class="bg-charcoal-900 border-b border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <div class="flex items-center gap-3">
+        <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
+        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
 
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionHeading tag="Home Additions" title="Expand Without Relocating" />
+          <SectionHeading tag="Lufkin, TX" title="Add Space Without Leaving Your Lufkin Home" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Moving is expensive and disruptive. A well-designed home addition gives your family the space you need while keeping you in the neighborhood and the home you already love. Purpose Construction builds additions that blend seamlessly with your existing structure — matching rooflines, siding, and interior finishes so nothing looks out of place.</p>
-            <p>We handle the full process: architectural planning, permit submission, foundation work, framing, exterior, MEP rough-in, and all interior finishes. You get a single point of contact and a clear written scope before any work starts.</p>
+            <p>Lufkin families that need more space don't always have to move. East Texas property gives homeowners room to expand, and home additions are often the most cost-effective way to gain the square footage you need. Purpose Construction builds additions that integrate seamlessly with your existing structure — not something that looks slapped on.</p>
+            <p>We handle the full scope: foundation work, framing, roofline tie-ins, electrical, plumbing, HVAC extensions, insulation, drywall, and interior finishes. Many homeowners combine additions with <a href="/kitchen-remodeling" class="text-brand-red hover:underline font-semibold">kitchen remodeling</a> or <a href="/bathroom-remodeling" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a> to update the whole home at once.</p>
+            <p>In East Texas's humid climate, proper vapor barriers, insulation, and roofline tie-ins are critical — we don't cut corners on any of it.</p>
           </div>
           <div class="mt-6 flex gap-4">
             <a href="/contact" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
-        <img
-          src="/images/home-additions-east-texas.jpg"
-          alt="Home addition project by Purpose Construction in East Texas"
-          class="rounded-xl shadow-hero"
-          width="640"
-          height="480"
-          loading="lazy"
-          decoding="async"
-        />
+        <div class="space-y-5">
+          <img
+            src="/images/home-additions-east-texas.jpg"
+            alt="Home addition built by Purpose Construction in Lufkin, TX"
+            class="rounded-xl shadow-hero w-full"
+            width="640" height="480"
+            loading="lazy" decoding="async"
+          />
+          <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
+            <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
+            <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
+            <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
+            <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
+              <p>Mon–Sat: 8:00 AM – 8:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Types of Additions" title="What We Build" align="center" />
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <SectionHeading tag="What We Handle" title="Full-Scope Home Addition Construction" align="center" />
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {[
-          { title: 'Room Additions', body: 'Expand a bedroom, living area, or create a dedicated office or playroom attached to your existing home.' },
-          { title: 'Master Suite Additions', body: 'Add a primary bedroom with ensuite bath, walk-in closet, and all the space your family needs.' },
-          { title: 'Sunrooms & Enclosed Patios', body: 'Convert existing covered areas or build new three-season and four-season sunrooms.' },
-          { title: 'Bonus Rooms', body: 'Above-garage bonus rooms, loft spaces, and flex rooms for families that need versatile square footage.' },
-          { title: 'In-Law Suites', body: 'Attached or detached in-law suites with private entrance, bedroom, bath, and kitchenette.' },
-          { title: 'Second-Story Additions', body: 'Full second-story additions that double your living space without increasing your footprint.' },
+          'Foundation Work', 'Framing & Structural', 'Roofline Tie-In',
+          'Electrical Rough-In', 'Plumbing Rough-In', 'HVAC Extension',
+          'Insulation', 'Drywall', 'Windows & Doors',
+          'Interior Finishes', 'Exterior Match',
         ].map((item) => (
-          <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 shadow-card">
-            <h3 class="display-sm mb-2 text-charcoal-900">{item.title}</h3>
-            <p class="text-sm leading-relaxed text-charcoal-500">{item.body}</p>
+          <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
+            <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
+            {item}
           </div>
         ))}
       </div>
     </div>
   </section>
 
+  <section class="section-padding bg-warm-100 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Our Process" title="How a Home Addition Works in Lufkin" />
+      <ol class="space-y-6">
+        {[
+          { step: '1', title: 'Free On-Site Consultation', body: 'We visit your Lufkin home, evaluate the addition scope, and discuss your goals, timeline, and budget.' },
+          { step: '2', title: 'Written Proposal', body: 'Detailed scope with itemized pricing, material specs, structural approach, and a project timeline.' },
+          { step: '3', title: 'Planning', body: 'Engineering finalized, materials matched to your house and every trade scheduled before we break ground.' },
+          { step: '4', title: 'Foundation & Framing', body: 'Footings, slab, or crawlspace foundation is poured and cured. Framing is completed, inspected, and tied into the existing structure.' },
+          { step: '5', title: 'Systems, Finishes & Tie-In', body: 'Electrical, plumbing, and HVAC rough-in. Insulation, drywall, interior finishes, and exterior match work completed.' },
+          { step: '6', title: 'Final Walkthrough', body: 'We walk every detail with you, address any punch list items, and close out only when you\'re fully satisfied.' },
+        ].map((step) => (
+          <li class="flex gap-6 items-start">
+            <span class="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-brand-red text-white font-display font-bold text-sm" aria-hidden="true">{step.step}</span>
+            <div>
+              <h3 class="display-sm text-charcoal-900 mb-1">{step.title}</h3>
+              <p class="text-sm leading-relaxed text-charcoal-500">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-mid px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Common Questions" title="Home Addition FAQs" align="center" />
+      <SectionHeading tag="Common Questions" title="Home Addition FAQs — Lufkin, TX" align="center" />
       <div class="space-y-4">
         {faqs.map((faq) => (
           <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
@@ -115,13 +162,15 @@ const schema = [
 
   <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Related Services" title="Often Paired With Home Additions" />
+      <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
           { label: 'Kitchen Remodeling', href: '/kitchen-remodeling' },
           { label: 'Bathroom Remodeling', href: '/bathroom-remodeling' },
+          { label: 'New Construction', href: '/new-construction' },
           { label: 'Residential Construction', href: '/residential-construction' },
-          { label: 'All Remodeling Services', href: '/remodeling-contractor' },
+          { label: 'Remodeling Contractor', href: '/remodeling-contractor' },
+          { label: 'All Services', href: '/services' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} →
@@ -131,10 +180,24 @@ const schema = [
     </div>
   </section>
 
+  <section class="section-padding-sm bg-white border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also Serving" title="Nearby Communities" />
+      <div class="flex flex-wrap gap-3">
+        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Plan Your Home Addition</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call or contact us online for a free consultation. We'll assess your home and help you determine the right addition for your family's needs and your property.</p>
+      <h2 class="display-md text-white mb-4">Start Your Home Addition in Lufkin</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>

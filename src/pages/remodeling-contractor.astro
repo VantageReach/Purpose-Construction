@@ -4,15 +4,53 @@ import PageHero from '../components/PageHero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Remodeling Contractor',
-  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
-  areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
-  description: 'Full interior remodeling services for homes across East Texas including kitchen remodels, bathroom remodels, home additions, flooring, painting, and drywall.',
-};
+const faqs = [
+  { q: 'What remodeling services do you offer in Lufkin, TX?', a: 'Purpose Construction handles the full range of residential remodeling in Lufkin: kitchen remodels, bathroom remodels, home additions, interior painting, flooring installation, and drywall repair and installation. We also handle exterior work — siding, windows, doors, and exterior painting — often as part of a whole-home renovation.' },
+  { q: 'How much does a home remodel cost in Lufkin, TX?', a: 'It depends on the project. A bathroom refresh and a full kitchen with new layout are very different jobs. We\'ll walk through your home with you and give you a free written estimate with the costs broken out.' },
+  { q: 'How long does a kitchen or bathroom remodel take in Lufkin?', a: 'A kitchen remodel in Lufkin typically takes 3–6 weeks from cabinet delivery to final walkthrough. Bathroom remodels run 2–4 weeks. Timelines depend heavily on material lead times — custom cabinets, specialty tile, and custom countertops all require ordering time. We provide a written schedule in every proposal.' },
+];
 
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://www.purposeconstructionco.com/remodeling-contractor',
+    name: 'Purpose Construction — Remodeling Contractor Lufkin TX',
+    url: 'https://www.purposeconstructionco.com',
+    telephone: '+19362552235',
+    email: 'info@purposeconstructionco.com',
+    image: 'https://www.purposeconstructionco.com/images/home-remodeling-contractor-lufkin-tx.jpg',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '',
+      addressLocality: 'Lufkin',
+      addressRegion: 'TX',
+      postalCode: '75904',
+      addressCountry: 'US',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'AdministrativeArea', name: 'Angelina County' } },
+      { '@type': 'City', name: 'Diboll' },
+      { '@type': 'City', name: 'Huntington' },
+      { '@type': 'City', name: 'Hudson' },
+      { '@type': 'City', name: 'Nacogdoches' },
+    ],
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '20:00' },
+    ],
+    priceRange: '$$',
+    description: 'Remodeling contractor in Lufkin, TX. Kitchen remodeling, bathroom remodeling, home additions, flooring, painting, and exterior work for Angelina County homeowners.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
 const services = [
   { title: 'Kitchen Remodeling', body: 'Full kitchen renovations — layouts, cabinetry, countertops, flooring, lighting, and custom finishes.', href: '/kitchen-remodeling', core: true },
   { title: 'Bathroom Remodeling', body: 'Complete bathroom overhauls — tile, fixtures, vanities, showers, soaking tubs, and flooring.', href: '/bathroom-remodeling', core: true },
@@ -25,19 +63,71 @@ const services = [
 ---
 
 <BaseLayout
-  title="Remodeling Contractor East Texas | Purpose Construction"
-  description="Purpose Construction is Lufkin's trusted remodeling contractor. Kitchen remodels, bathroom remodels, home additions, flooring, drywall, and interior painting across East Texas. Free estimates."
+  title="Remodeling Contractor in Lufkin, TX | Purpose Construction"
+  description="Remodeling contractor in Lufkin, TX: kitchens, bathrooms, additions, flooring and painting. Insured, local crew. Free estimates: (936) 255-2235."
   schema={schema}
 >
-  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Remodeling', href: '/remodeling-contractor' }]} />
+  <Breadcrumb items={[
+    { label: 'Services', href: '/services' },
+    { label: 'Remodeling', href: '/remodeling' },
+  ]} />
+
   <PageHero
-    title="Remodeling Contractor in East Texas"
-    subtitle="Transform your home with Purpose Construction. We handle full interior remodeling projects across East Texas — on time, on budget, and built to last."
-    tag="Remodeling Services"
-    image="/images/remodeling-contractor-east-texas.jpg"
+    title="Remodeling Contractor in Lufkin, TX"
+    subtitle="Purpose Construction handles home remodeling for Lufkin and Angelina County homeowners — kitchens, bathrooms, additions, flooring, painting, and exterior work."
+    tag="Lufkin, TX"
+    image="/images/home-remodeling-contractor-lufkin-tx.jpg"
   />
 
-  <!-- Services grid -->
+  <div class="bg-charcoal-900 border-b border-charcoal-700">
+    <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <div class="flex items-center gap-3">
+        <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
+        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-padding bg-warm-50">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading tag="Lufkin, TX" title="Home Remodeling for Lufkin Homeowners" />
+          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
+            <p>Plenty of Lufkin homes still have the kitchens, bathrooms and finishes they were built with. Purpose Construction specializes in remodeling these homes to modern standards without losing what makes them solid, affordable East Texas properties to live in.</p>
+            <p>We handle the full scope of residential remodeling: <a href="/kitchen-remodeling" class="text-brand-red hover:underline font-semibold">kitchen remodeling</a>, <a href="/bathroom-remodeling" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a>, <a href="/home-additions" class="text-brand-red hover:underline font-semibold">home additions</a>, <a href="/flooring-installation" class="text-brand-red hover:underline font-semibold">flooring installation</a>, <a href="/interior-painting" class="text-brand-red hover:underline font-semibold">interior painting</a>, and <a href="/drywall-installation" class="text-brand-red hover:underline font-semibold">drywall services</a>. On the exterior, we also handle <a href="/siding-installation" class="text-brand-red hover:underline font-semibold">siding</a>, <a href="/window-installation" class="text-brand-red hover:underline font-semibold">windows</a>, <a href="/door-installation" class="text-brand-red hover:underline font-semibold">doors</a>, and <a href="/exterior-painting" class="text-brand-red hover:underline font-semibold">exterior painting</a>.</p>
+            <p>Every project starts with a free on-site estimate and a written proposal. You get one point of contact from start to finish — you're not managing multiple contractors.</p>
+            <p>We're an insured general contractor, and we stand behind our work with a workmanship warranty. When we're done, we want you calling your neighbors to come see it — not calling us to come back and fix something.</p>
+          </div>
+          <div class="mt-6 flex gap-4">
+            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <img
+            src="/images/home-remodeling-contractor-lufkin-tx.jpg"
+            alt="Remodeling contractor in Lufkin, TX — Purpose Construction"
+            class="rounded-xl shadow-hero w-full"
+            width="640" height="480"
+            loading="lazy" decoding="async"
+          />
+          <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
+            <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
+            <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
+            <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
+            <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
+              <p>Mon–Sat: 8:00 AM – 8:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading
@@ -66,80 +156,65 @@ const services = [
     </div>
   </section>
 
-  <!-- Why remodel with us -->
-  <section class="section-padding bg-white border-t border-warm-200">
-    <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
-          <SectionHeading
-            tag="Why Purpose Construction"
-            title="Remodeling Done Right — Not Just Done Fast"
-          />
-          <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>East Texas homes face specific challenges — high humidity, aging wood, and the wear that comes from decades of use. Our remodeling teams are trained for those conditions and select materials that perform in this climate long-term. We serve homeowners in <a href="/contact" class="text-brand-red hover:underline font-semibold">Lufkin</a>, <a href="/locations/diboll" class="text-brand-red hover:underline font-semibold">Diboll</a>, <a href="/locations/redland" class="text-brand-red hover:underline font-semibold">Redland</a>, <a href="/locations/hudson" class="text-brand-red hover:underline font-semibold">Hudson</a>, and throughout East Texas.</p>
-            <p>Every remodeling project begins with a detailed written proposal. You know exactly what's included, what's excluded, and what the timeline looks like before we ever break ground. Our most popular projects include <a href="/kitchen-remodeling" class="text-brand-red hover:underline font-semibold">kitchen remodeling</a>, <a href="/bathroom-remodeling" class="text-brand-red hover:underline font-semibold">bathroom renovations</a>, and <a href="/home-additions" class="text-brand-red hover:underline font-semibold">room additions</a>.</p>
-            <p>We're a insured general contractor, and we stand behind our work with a workmanship warranty. When we're done, we want you calling your neighbors to come see it — not calling us to come back and fix something.</p>
-          </div>
-          <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
-          </div>
-        </div>
-        <img
-          src="/images/remodeling-contractor-east-texas.jpg"
-          alt="Remodeling project by Purpose Construction in East Texas"
-          class="rounded-xl shadow-hero"
-          width="640"
-          height="480"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-    </div>
-  </section>
 
-  <!-- Local issues callout -->
-  <section class="section-padding-sm bg-warm-100 border-t border-warm-200">
+  <section class="section-padding bg-charcoal-900 border-t border-charcoal-700">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="East Texas Expertise" title="We Know Local Homes" align="center" />
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <SectionHeading tag="Why Purpose Construction" title="What Sets Us Apart in Lufkin" theme="dark" />
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          { title: 'Humidity-Resistant Materials', body: 'We specify materials that resist East Texas moisture — preventing rot, mold, and warping from day one.' },
-          { title: 'Older Home Specialists', body: 'Lufkin\'s aging housing stock needs careful attention. We assess structural integrity before any remodel begins.' },
-          { title: 'Storm-Ready Finishes', body: 'From impact-resistant windows to proper flashing, we build remodels that hold up through East Texas storm seasons.' },
-          { title: 'Local Code Compliance', body: 'We pull all required permits and ensure every project meets Angelina County and City of Lufkin building codes.' },
+          { title: 'Fully Insured', body: 'We carry liability insurance on every project.' },
+          { title: 'Written Proposals', body: 'Itemized written proposal before any work starts. No verbal quotes. No surprise costs after the deposit.' },
+          { title: 'Locally Owned', body: 'We live and work in Lufkin. When you call, you get us, not a call center two states away.' },
+          { title: 'Single Point of Contact', body: 'One contractor, one contract, one crew accountable from demolition to final walkthrough.' },
+          { title: 'East Texas Experience', body: 'We know Lufkin homes — older homes, the humid climate, and what it does to wood, paint and siding.' },
+          { title: 'Free On-Site Estimates', body: 'We visit your home, assess the actual conditions, and price based on what we see — not a per-square-foot estimate over the phone.' },
         ].map((item) => (
-          <div class="rounded-lg border border-warm-200 bg-white p-5 shadow-card">
-            <h3 class="display-sm mb-2 text-charcoal-900 text-xl">{item.title}</h3>
-            <p class="text-sm leading-relaxed text-charcoal-500">{item.body}</p>
+          <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-5">
+            <h3 class="mb-2 text-sm font-bold text-white">{item.title}</h3>
+            <p class="text-sm leading-relaxed text-charcoal-300">{item.body}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Related -->
-  <section class="section-padding-sm bg-white border-t border-warm-200">
-    <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Also From Purpose Construction" title="More Services" />
-      <div class="flex flex-wrap gap-3">
-        {[
-          { label: 'New Construction', href: '/new-construction' },
-          { label: 'Outdoor Living', href: '/outdoor-living' },
-          { label: 'Exterior Services', href: '/exterior-services' },
-        ].map((link) => (
-          <a href={link.href} class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
-            {link.label} →
-          </a>
+  <section class="section-padding bg-white border-t border-warm-200">
+    <div class="container-mid px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Common Questions" title="Remodeling FAQs — Lufkin, TX" align="center" />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 list-none">
+              <h3 class="text-sm font-semibold text-charcoal-800 pr-4">{faq.q}</h3>
+              <svg class="h-5 w-5 flex-shrink-0 text-charcoal-400 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
+    <div class="container-wide px-4 sm:px-6 lg:px-8">
+      <SectionHeading tag="Also Serving" title="Nearby Communities" />
+      <div class="flex flex-wrap gap-3">
+        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Ready to Remodel?</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of East Texas.</p>
+      <h2 class="display-md text-white mb-4">Start Your Remodel in Lufkin</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
