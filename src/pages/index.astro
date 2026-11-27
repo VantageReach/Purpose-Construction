@@ -15,10 +15,8 @@ const businessSchema = {
   email: 'info@purposeconstructionco.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '', // TODO: Add street address
     addressLocality: 'Lufkin',
     addressRegion: 'TX',
-    postalCode: '75904',
     addressCountry: 'US',
   },
   geo: {
@@ -31,7 +29,7 @@ const businessSchema = {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       opens: '08:00',
-      closes: '20:00',
+      closes: '18:00',
     },
   ],
   image: 'https://www.purposeconstructionco.com/og-default.jpg',
@@ -473,7 +471,7 @@ const serviceAreas = [
           <div class="flex-shrink-0 rounded-lg bg-white px-4 py-3">
             <img
               src="/images/purpose-roofing-construction-logo.png"
-              alt="Purpose Roofing & Construction"
+              alt="Purpose Construction"
               class="h-12 w-auto"
               width="200"
               height="48"

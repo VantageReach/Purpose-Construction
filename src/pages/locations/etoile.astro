@@ -15,15 +15,12 @@ const schema = {
   email: 'info@purposeconstructionco.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Lufkin, TX',
     addressLocality: 'Lufkin',
     addressRegion: 'TX',
-    postalCode: '75904',
     addressCountry: 'US',
   },
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '07:00', closes: '18:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '08:00', closes: '14:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '18:00' },
   ],
   areaServed: [
     { '@type': 'City', name: 'Etoile', containedIn: { '@type': 'State', name: 'Texas' } },
@@ -66,6 +63,7 @@ const schema = {
             <p>Etoile is a quiet rural community in southern Nacogdoches County, near Sam Rayburn Reservoir. The area draws landowners and lake-area residents who value privacy, space, and the natural beauty of Deep East Texas — and who want to build or improve structures that complement that lifestyle.</p>
             <p>Purpose Construction is experienced with rural builds in the Etoile and southern Nacogdoches County area. Barndominiums, pole barns, custom homes on acreage, and lake-adjacent outdoor living structures are all within our scope. We handle all Nacogdoches County permitting and coordinate every phase from site prep to final walkthrough.</p>
             <p>If you're building near Sam Rayburn or in the broader Etoile area and want a contractor who will actually show up and communicate clearly, Purpose Construction is the team that delivers.</p>
+            <p>We act as your general contractor on an Etoile build, so you have one crew and one number to call from start to finish.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="/contact/" class="btn-primary">Request a Free Estimate</a>
@@ -84,12 +82,11 @@ const schema = {
           <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
             <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
             <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
-            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX 75904</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving East Texas</p>
             <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
             <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
-              <p>Mon–Fri: 7:00 AM – 6:00 PM</p>
-              <p>Saturday: 8:00 AM – 2:00 PM</p>
+              <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
@@ -103,19 +100,11 @@ const schema = {
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <SectionHeading tag="Getting to Us" title="Directions from Etoile" />
+          <SectionHeading tag="Service Area" title="Serving Etoile" />
           <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 text-sm leading-relaxed text-charcoal-600 space-y-3">
-            <p>From Etoile: Take TX-103 W toward Nacogdoches, then US-59 S toward Lufkin — approximately 30 miles total. Purpose Construction is based in Lufkin, TX 75904.</p>
+            <p>From Etoile: Take TX-103 W toward Nacogdoches, then US-59 S toward Lufkin — approximately 30 miles total. Purpose Construction is based in Lufkin.</p>
             <p>We come to you for estimates — call to schedule a free on-site consultation anywhere in the Etoile area.</p>
           </div>
-          <a
-            href="https://maps.google.com/?q=Lufkin+Texas+75904"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150"
-          >
-            Open in Google Maps →
-          </a>
         </div>
         <div class="overflow-hidden rounded-xl border border-warm-200 shadow-card">
           <iframe
