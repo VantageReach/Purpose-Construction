@@ -2,17 +2,6 @@
 const navLinks = [
   { label: 'Home', href: '/' },
   {
-    label: 'Construction Services',
-    href: '/new-construction/',
-    id: 'construction-dropdown',
-    children: [
-      { label: 'New Construction', href: '/new-construction/' },
-      { label: 'Metal Structures', href: '/metal-structures/' },
-      { label: 'Outdoor Living', href: '/outdoor-living/' },
-      { label: 'Exterior Services', href: '/exterior-services/' },
-    ],
-  },
-  {
     label: 'Remodeling',
     href: '/remodeling-contractor/',
     id: 'remodeling-dropdown',
@@ -23,6 +12,18 @@ const navLinks = [
       { label: 'Interior Painting', href: '/interior-painting/' },
       { label: 'Flooring Installation', href: '/flooring-installation/' },
       { label: 'Drywall Services', href: '/drywall-installation/' },
+    ],
+  },
+  {
+    label: 'Construction Services',
+    href: '/services/',
+    id: 'construction-dropdown',
+    children: [
+      { label: 'Barndominiums', href: '/barndominium-construction/' },
+      { label: 'Metal Structures', href: '/metal-structures/' },
+      { label: 'Outdoor Living', href: '/outdoor-living/' },
+      { label: 'Exterior Services', href: '/exterior-services/' },
+      { label: 'New Construction', href: '/new-construction/' },
     ],
   },
   {
