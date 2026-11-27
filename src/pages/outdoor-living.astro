@@ -5,6 +5,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
+  { q: 'Do I need a permit for a deck or patio in Lufkin, TX?', a: 'Attached decks and covered patio structures typically require a permit through the City of Lufkin. Freestanding patios and ground-level hardscaping generally do not. Purpose Construction assesses each project and handles all required permits as part of the job.' },
   { q: 'What outdoor structures work best in East Texas heat?', a: 'Covered structures — pergolas, pavilions, and covered patios — provide the most usable outdoor space in Lufkin\'s climate. Adding a ceiling fan and proper ventilation extends usability through the summer months. We design for East Texas conditions, not a national template.' },
   { q: 'How long does outdoor living construction take?', a: 'A concrete patio takes 1–2 weeks. A deck or pergola typically runs 2–4 weeks. A more elaborate outdoor kitchen or pavilion setup can take 4–8 weeks. We provide a written timeline in every proposal.' },
   { q: 'What materials hold up best in Lufkin\'s climate?', a: 'Concrete, pavers, composite decking, pressure-treated lumber, and aluminum or steel pergola structures all perform well in East Texas humidity and UV exposure. We recommend against untreated wood in exposed applications and will discuss material tradeoffs during your estimate.' },
@@ -140,7 +141,7 @@ const services = [
           'Patio Construction', 'Deck Building', 'Pergola Construction',
           'Pavilion Construction', 'Outdoor Kitchens', 'Fire Pit Areas',
           'Retaining Walls', 'Landscaping Prep', 'Outdoor Lighting',
-          'Concrete Work', 'Wood & Composite Structures',
+          'Concrete Work', 'Wood & Composite Structures', 'Permit Management',
         ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
             <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
@@ -158,7 +159,7 @@ const services = [
         {[
           { step: '1', title: 'Free On-Site Consultation', body: 'We visit your Lufkin property, assess your yard, sun exposure, and goals, and discuss material and layout options.' },
           { step: '2', title: 'Written Proposal', body: 'Detailed scope with itemized pricing, material selections, and a project schedule.' },
-          { step: '3', title: 'Planning', body: 'We lay out the space, confirm materials and schedule the work before any ground is disturbed.' },
+          { step: '3', title: 'Permit & Planning', body: 'We pull any required City of Lufkin permits and schedule all work before any ground is disturbed.' },
           { step: '4', title: 'Site Prep & Foundation Work', body: 'Area is graded and prepped. Footings or concrete slab is formed, poured, and cured.' },
           { step: '5', title: 'Structure & Finishes', body: 'Framing, decking, pergola or roofing structure, lighting, and all detail work completed to spec.' },
           { step: '6', title: 'Final Walkthrough', body: 'We walk the completed project with you, ensure everything is right, and leave the space ready to enjoy.' },

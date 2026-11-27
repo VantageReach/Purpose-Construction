@@ -6,6 +6,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
   { q: 'What types of additions does Purpose Construction build in Lufkin?', a: 'We build bedroom additions, master suite additions, family room extensions, garage conversions, in-law suites, and second-story additions across Lufkin and Angelina County. If it expands your home\'s footprint, we handle it.' },
+  { q: 'Do you need a permit for a home addition in Angelina County?', a: 'Yes. All structural additions require permits through the City of Lufkin and Angelina County Building Department. Purpose Construction pulls every required permit as part of our project process — no homeowner runaround.' },
   { q: 'How long does a home addition take in Lufkin, TX?', a: 'A standard room addition in Lufkin typically takes 8–14 weeks depending on size and complexity. Second-story additions or additions requiring significant structural work can run longer. We provide a written timeline in every proposal.' },
   { q: 'Will my addition match the rest of my existing home?', a: 'Yes. We match exterior cladding, roofline pitch, trim, and interior finishes to your existing home as closely as possible. Our goal is a seamless result — not something that looks tacked on.' },
 ];
@@ -44,7 +45,7 @@ const schema = [
 
   <PageHero
     title="Home Additions in Lufkin, TX"
-    subtitle="Purpose Construction expands Lufkin homes with room additions, primary suites, family rooms and in-law suites, built to match the house you already have."
+    subtitle="Purpose Construction expands Lufkin homes with room additions, master suites, family room extensions, and in-law suites — permitted, insured, and built to match your existing structure."
     tag="Lufkin, TX"
     image="/images/home-additions-east-texas.jpg"
   />
@@ -67,7 +68,7 @@ const schema = [
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Lufkin families that need more space don't always have to move. East Texas property gives homeowners room to expand, and home additions are often the most cost-effective way to gain the square footage you need. Purpose Construction builds additions that integrate seamlessly with your existing structure — not something that looks slapped on.</p>
             <p>We handle the full scope: foundation work, framing, roofline tie-ins, electrical, plumbing, HVAC extensions, insulation, drywall, and interior finishes. Many homeowners combine additions with <a href="/kitchen-remodeling" class="text-brand-red hover:underline font-semibold">kitchen remodeling</a> or <a href="/bathroom-remodeling" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a> to update the whole home at once.</p>
-            <p>In East Texas's humid climate, proper vapor barriers, insulation, and roofline tie-ins are critical — we don't cut corners on any of it.</p>
+            <p>Additions in Lufkin require permits through the City of Lufkin and Angelina County. In East Texas's humid climate, proper vapor barriers, insulation, and roofline tie-ins are critical — we don't cut corners on any of it.</p>
           </div>
           <div class="mt-6 flex gap-4">
             <a href="/contact" class="btn-primary">Get a Free Estimate</a>
@@ -106,7 +107,7 @@ const schema = [
           'Foundation Work', 'Framing & Structural', 'Roofline Tie-In',
           'Electrical Rough-In', 'Plumbing Rough-In', 'HVAC Extension',
           'Insulation', 'Drywall', 'Windows & Doors',
-          'Interior Finishes', 'Exterior Match',
+          'Interior Finishes', 'Exterior Match', 'Permit Management',
         ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
             <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
@@ -124,7 +125,7 @@ const schema = [
         {[
           { step: '1', title: 'Free On-Site Consultation', body: 'We visit your Lufkin home, evaluate the addition scope, and discuss your goals, timeline, and budget.' },
           { step: '2', title: 'Written Proposal', body: 'Detailed scope with itemized pricing, material specs, structural approach, and a project timeline.' },
-          { step: '3', title: 'Planning', body: 'Engineering finalized, materials matched to your house and every trade scheduled before we break ground.' },
+          { step: '3', title: 'Permit & Planning', body: 'We pull all required City of Lufkin and Angelina County building permits and finalize engineering before breaking ground.' },
           { step: '4', title: 'Foundation & Framing', body: 'Footings, slab, or crawlspace foundation is poured and cured. Framing is completed, inspected, and tied into the existing structure.' },
           { step: '5', title: 'Systems, Finishes & Tie-In', body: 'Electrical, plumbing, and HVAC rough-in. Insulation, drywall, interior finishes, and exterior match work completed.' },
           { step: '6', title: 'Final Walkthrough', body: 'We walk every detail with you, address any punch list items, and close out only when you\'re fully satisfied.' },

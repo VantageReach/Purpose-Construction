@@ -6,8 +6,9 @@ import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
   { q: 'How long does a kitchen remodel take in Lufkin, TX?', a: 'A standard kitchen remodel in Lufkin typically takes 4–8 weeks depending on scope. Full gut renovations with layout changes and new plumbing or electrical runs can take 8–12 weeks. We provide a detailed timeline in every written proposal before work begins.' },
+  { q: 'Do you pull permits for kitchen remodels in Angelina County?', a: 'Yes. We pull all required permits through the City of Lufkin and Angelina County Building Department. Permitted work protects your home\'s resale value and ensures code compliance — we never skip this step.' },
   { q: 'Can I stay in my home during the kitchen remodel?', a: 'Most Lufkin homeowners stay in their home during a kitchen remodel. We establish containment barriers, minimize disruption where possible, and ensure plumbing and power are restored at the end of each workday.' },
-  { q: 'What does a kitchen remodel cost in Lufkin, TX?', a: 'It depends on the scope. Refacing cabinets and swapping counters is a very different job from moving walls and plumbing. We\'ll look at your kitchen with you and give you a free written estimate with the costs broken out.' },
+  { q: 'What does a kitchen remodel cost in Lufkin, TX?', a: 'Kitchen remodel costs vary by scope. A moderate refresh with new cabinets, countertops, and appliances typically runs $20,000–$40,000 in the Lufkin area. A full gut renovation with layout changes can run $40,000–$80,000+. We provide a free, itemized estimate with no obligation.' },
 ];
 
 const schema = [
@@ -44,7 +45,7 @@ const schema = [
 
   <PageHero
     title="Kitchen Remodeling in Lufkin, TX"
-    subtitle="Purpose Construction remodels kitchens for Lufkin and Angelina County homeowners, from cabinet and counter updates to full gut renovations."
+    subtitle="Purpose Construction transforms outdated kitchens into functional, beautiful spaces for Lufkin and Angelina County homeowners — on time and within budget."
     tag="Lufkin, TX"
     image="/images/kitchen-remodeling-lufkin-tx.jpg"
   />
@@ -65,7 +66,7 @@ const schema = [
         <div>
           <SectionHeading tag="Lufkin, TX" title="Kitchen Remodeling for Lufkin Homeowners" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Whether you're in an established neighborhood near downtown or a newer development along Loop 287, Purpose Construction handles the full scope of kitchen remodeling from demolition through final finishes.</p>
+            <p>Lufkin has a large stock of homes built in the 1960s through the 1990s — and many of those kitchens are overdue for an upgrade. Whether you're in an established neighborhood near downtown or a newer development along Loop 287, Purpose Construction handles the full scope of kitchen remodeling from demolition through final finishes.</p>
             <p>We work with your goals and your budget. Whether you want to refresh existing cabinets and counters, open up the layout, or take the room down to the studs and start over — we have the team and the experience. Homeowners often pair kitchen remodels with <a href="/bathroom-remodeling" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a> or <a href="/flooring-installation" class="text-brand-red hover:underline font-semibold">flooring installation</a> to maximize value across the project.</p>
             <p>The kitchen is the most-used room in any home — and the remodel that returns the most value when done well. Purpose Construction handles every phase of the kitchen renovation process, from demolition and structural changes through final finishes.</p>
           </div>
@@ -106,7 +107,7 @@ const schema = [
           'Demolition & Disposal', 'Cabinet Installation', 'Countertop Installation',
           'Tile Backsplash', 'Flooring', 'Electrical & Lighting',
           'Plumbing Fixtures', 'Appliance Hookups', 'Drywall & Paint',
-          'Layout Redesign', 'Island Construction',
+          'Layout Redesign', 'Island Construction', 'Permit Management',
         ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
             <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
@@ -124,7 +125,7 @@ const schema = [
         {[
           { step: '1', title: 'Free On-Site Consultation', body: 'We visit your Lufkin home, walk the kitchen, discuss your goals, and take measurements. No obligation.' },
           { step: '2', title: 'Written Proposal', body: 'You receive a detailed scope of work with itemized pricing, material specs, and a project timeline.' },
-          { step: '3', title: 'Planning', body: 'We finalize selections and schedule each trade before demo day.' },
+          { step: '3', title: 'Permit & Planning', body: 'We pull all required City of Lufkin and Angelina County permits, finalize selections, and schedule subcontractors before demo day.' },
           { step: '4', title: 'Demolition & Rough Work', body: 'Existing cabinets, flooring, and fixtures come out. Structural, electrical, and plumbing rough work is completed and inspected.' },
           { step: '5', title: 'Installation & Finishes', body: 'Cabinets, counters, tile, flooring, fixtures, and appliances are installed and finished to spec.' },
           { step: '6', title: 'Final Walkthrough', body: 'We walk through the completed kitchen with you, address any items, and make sure you\'re fully satisfied before we close out.' },

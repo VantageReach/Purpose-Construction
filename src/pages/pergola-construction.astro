@@ -6,8 +6,9 @@ import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
   { q: 'What\'s the difference between a pergola and a pavilion?', a: 'A pergola has an open lattice or slatted roof that provides partial shade and visual structure. A pavilion has a fully solid roof that provides complete weather protection. For Lufkin\'s hot summers, many homeowners choose a pavilion for full shade, or add a shade canopy system to a pergola.' },
+  { q: 'Do I need a permit for a pergola in Angelina County?', a: 'Attached pergolas in Lufkin typically require a permit. Freestanding pergolas may not, depending on size. Purpose Construction assesses each project and handles all required City of Lufkin permits as part of the job.' },
   { q: 'What materials are best for a pergola in East Texas humidity?', a: 'Cedar and pressure-treated lumber perform well if properly sealed and maintained. Aluminum and powder-coated steel pergolas are the most durable against East Texas humidity and UV — they don\'t warp, rot, or require annual refinishing. We discuss the tradeoffs for each material at the estimate.' },
-  { q: 'How long does pergola construction take?', a: 'A standard freestanding or attached pergola in Lufkin takes approximately 1–2 weeks from start to finish. Larger pavilion structures with roofing systems take 2–4 weeks.' },
+  { q: 'How long does pergola construction take?', a: 'A standard freestanding or attached pergola in Lufkin takes approximately 1–2 weeks from permit approval to completion. Larger pavilion structures with roofing systems take 2–4 weeks.' },
 ];
 
 const schema = [
@@ -107,7 +108,7 @@ const schema = [
           'Freestanding Pergolas', 'Attached Pergolas', 'Cedar Pergolas',
           'Aluminum Pergolas', 'Pavilion Construction', 'Shade Canopy Systems',
           'Lighting Integration', 'Fan Mounts', 'Decorative Trim',
-          'Stain & Finish', 'Post Footings',
+          'Stain & Finish', 'Post Footings', 'Permit Management',
         ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
             <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
@@ -125,7 +126,7 @@ const schema = [
         {[
           { step: '1', title: 'Free On-Site Estimate', body: 'We assess your yard, patio, or deck, discuss size, style, and material options, and provide a written quote.' },
           { step: '2', title: 'Written Proposal', body: 'Detailed scope with material selection, footings plan, connection method, and project timeline.' },
-          { step: '3', title: 'Planning', body: 'We confirm the size, materials and footing layout before any footings are dug.' },
+          { step: '3', title: 'Permit & Planning', body: 'We assess permit requirements and pull any needed City of Lufkin permits before any footings are dug.' },
           { step: '4', title: 'Post Setting & Foundation', body: 'Post holes are dug to proper depth, concrete footings poured, and posts set plumb and level.' },
           { step: '5', title: 'Beam & Rafter Installation', body: 'Beams, rafters, and any lattice or canopy elements are installed. Lighting conduit and fan blocking added as specified.' },
           { step: '6', title: 'Finish & Final Walkthrough', body: 'Stain or paint applied, all hardware checked, and the structure is inspected with you before we leave.' },

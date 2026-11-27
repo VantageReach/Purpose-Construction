@@ -6,7 +6,8 @@ import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
   { q: 'What size patio works for a typical Lufkin home?', a: 'Most Lufkin homeowners do well with a patio between 200–400 sq ft — large enough for a seating area and grill without overwhelming the yard. We can design to your space and lifestyle, from a compact backyard slab to a sprawling stamped concrete entertaining area.' },
-  { q: 'What\'s the cost of a concrete patio in Lufkin, TX?', a: 'It depends on the size, the finish (broom, stamped or pavers) and how much grading the site needs. We\'ll measure up and give you a free written estimate with the costs broken out.' },
+  { q: 'Do I need a permit for a patio in Angelina County?', a: 'Open, ground-level concrete patios typically don\'t require a permit in Angelina County. Covered patios or those attached to the home may require one. We assess each project and handle any required permits as part of the job.' },
+  { q: 'What\'s the cost of a concrete patio in Lufkin, TX?', a: 'A standard broom-finish concrete patio in Lufkin runs approximately $8–$12 per sq ft installed. Stamped or decorative concrete runs $15–$25+ per sq ft depending on pattern complexity. We provide a free, itemized estimate for your specific project.' },
   { q: 'Stamped vs regular concrete — which is better for East Texas heat?', a: 'Both perform well in East Texas when properly installed and sealed. Stamped concrete adds visual appeal but requires periodic resealing to maintain appearance in the UV and heat. We use quality sealers rated for southern climates and recommend a maintenance schedule.' },
 ];
 
@@ -108,7 +109,7 @@ const schema = [
           'Concrete Patio Slabs', 'Stamped Concrete', 'Flagstone & Pavers',
           'Covered Patio Structures', 'Screen Enclosures', 'Pergola Add-Ons',
           'Drainage Solutions', 'Outdoor Lighting', 'Seating Walls',
-          'Step Construction', 'Grading & Base Prep',
+          'Step Construction', 'Grading & Base Prep', 'Permit Management',
         ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
             <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
@@ -126,7 +127,7 @@ const schema = [
         {[
           { step: '1', title: 'Free On-Site Estimate', body: 'We visit your Lufkin property, assess the yard, grading, and drainage, and discuss size, finish, and layout options.' },
           { step: '2', title: 'Written Proposal', body: 'Itemized pricing, concrete spec, reinforcement type, finish selection, and a project schedule.' },
-          { step: '3', title: 'Planning', body: 'Grading and drainage planned and the layout confirmed before any digging starts.' },
+          { step: '3', title: 'Permit & Planning', body: 'We assess permit requirements and pull any needed permits through the City of Lufkin before any excavation begins.' },
           { step: '4', title: 'Excavation & Base Prep', body: 'Area is graded, excavated, and compacted. Base material and vapor barrier are placed and prepped for forming.' },
           { step: '5', title: 'Concrete Pour & Finishing', body: 'Forms set, reinforcement placed, concrete poured, finished, and stamped or textured as specified. Proper curing time observed.' },
           { step: '6', title: 'Sealing & Final Walkthrough', body: 'Sealer applied per spec, forms removed, and any landscaping edging or steps finished. Final walkthrough with you to ensure satisfaction.' },

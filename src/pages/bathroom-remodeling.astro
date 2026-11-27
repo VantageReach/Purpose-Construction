@@ -6,8 +6,9 @@ import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
   { q: 'How long does a bathroom remodel take in Lufkin, TX?', a: 'A standard bathroom remodel in Lufkin typically takes 2–4 weeks. A full primary suite renovation or custom tile shower build can run 4–6 weeks. We provide a written timeline in every proposal before work begins.' },
+  { q: 'Do I need a permit for a bathroom remodel in Angelina County?', a: 'Permits are required for plumbing and electrical work in Angelina County. Purpose Construction pulls all required permits through the City of Lufkin and Angelina County Building Department — it\'s included in our process.' },
   { q: 'Can you remodel a small bathroom?', a: 'Absolutely. We handle everything from compact guest bath refreshes to full primary suite renovations. Small bathrooms in older Lufkin homes often benefit the most from updated layouts and modern fixtures.' },
-  { q: 'What does a bathroom remodel cost in Lufkin, TX?', a: 'It depends on the scope. A vanity and fixture swap costs far less than a full tile shower with new plumbing. We\'ll look at your bathroom with you and give you a free written estimate with the costs broken out.' },
+  { q: 'What does a bathroom remodel cost in Lufkin, TX?', a: 'A basic bathroom refresh with new vanity, fixtures, and flooring typically runs $6,000–$15,000 in the Lufkin area. A full custom tile shower renovation with new plumbing and layout changes can run $15,000–$35,000+. We provide free, itemized estimates.' },
   { q: 'Can you put a walk-in shower in my existing bathroom?', a: 'Usually, yes. It\'s a common request. We look at the space, check whether the layout needs to change, then handle the tile, waterproofing and fixtures. Most conversions fit without making the room bigger.' },
 ];
 
@@ -106,7 +107,7 @@ const schema = [
           'Shower Installation', 'Tub Replacement', 'Vanity & Fixtures',
           'Tile Flooring', 'Wall Tile', 'Lighting Upgrades',
           'Plumbing Rough-In', 'Exhaust Fan', 'Drywall & Paint',
-          'Custom Shower Pan', 'Accessibility Upgrades',
+          'Custom Shower Pan', 'Accessibility Upgrades', 'Permit Management',
         ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
             <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
@@ -124,7 +125,7 @@ const schema = [
         {[
           { step: '1', title: 'Free On-Site Consultation', body: 'We visit your Lufkin home, assess the bathroom, discuss your goals, and take measurements. No obligation.' },
           { step: '2', title: 'Written Proposal', body: 'You receive a detailed scope with itemized pricing, material specs, tile selections, and a project timeline.' },
-          { step: '3', title: 'Planning', body: 'We finalize your selections and schedule each trade before demo day.' },
+          { step: '3', title: 'Permit & Planning', body: 'We pull all required City of Lufkin and Angelina County permits and schedule subcontractors before demo day.' },
           { step: '4', title: 'Demo & Plumbing Rough', body: 'Existing fixtures, tile, and flooring come out. Plumbing rough-in is completed and inspected before walls close up.' },
           { step: '5', title: 'Tile, Fixtures & Finishes', body: 'Tile work, vanity, shower, tub, lighting, and all fixtures are installed and finished to spec.' },
           { step: '6', title: 'Final Walkthrough', body: 'We walk through the completed bathroom with you, address any items, and make sure you\'re fully satisfied.' },

@@ -7,6 +7,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 const faqs = [
   { q: 'Do you build commercial buildings in Lufkin, TX?', a: 'Yes. Purpose Construction handles ground-up commercial construction, metal building erection, and tenant improvements for businesses in Lufkin and Angelina County. From office suites to warehouses and retail buildouts, we manage the full scope.' },
   { q: 'What types of commercial projects do you handle in Lufkin?', a: 'We build and renovate offices, retail spaces, medical offices, warehouses, storage facilities, and light industrial spaces. We also handle commercial tenant improvements for existing buildings throughout the Lufkin area.' },
+  { q: 'How does commercial permitting work in Angelina County?', a: 'Commercial projects in Lufkin require permits through the City of Lufkin Building Inspection Department and must meet IBC (International Building Code) requirements. Projects over certain thresholds require engineered drawings. Purpose Construction manages all permits and engineer coordination.' },
   { q: 'Do you do tenant improvements for existing commercial spaces in Lufkin?', a: 'Yes. Tenant improvements (TI) for existing commercial buildings are a regular part of our work in Lufkin — office renovations, medical build-outs, restaurant conversions, and retail refreshes. We work with landlords and tenants directly.' },
 ];
 
@@ -44,7 +45,7 @@ const schema = [
 
   <PageHero
     title="Commercial Construction in Lufkin, TX"
-    subtitle="Purpose Construction builds and renovates commercial spaces across Lufkin and Angelina County: offices, retail, warehouses and medical facilities. Insured and full-scope."
+    subtitle="Purpose Construction builds and renovates commercial spaces across Lufkin and Angelina County — offices, retail, warehouses, and medical facilities. Insured, full-scope."
     tag="Lufkin, TX"
     image="/images/commercial-construction-east-texas.jpg"
   />
@@ -66,7 +67,7 @@ const schema = [
           <SectionHeading tag="Lufkin, TX" title="Commercial Construction for Lufkin Businesses" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Lufkin is the commercial and retail hub of deep East Texas, and consistent demand for new commercial construction along Loop 287 and the city's major corridors reflects that role. Purpose Construction handles commercial construction for businesses establishing or expanding in the Lufkin market — from ground-up builds to tenant improvements in existing spaces.</p>
-            <p>Our commercial work spans offices, retail spaces, medical facilities, light industrial, and warehouse construction. We also do <a href="/residential-construction" class="text-brand-red hover:underline font-semibold">residential construction</a> and can manage mixed-use projects.</p>
+            <p>Our commercial work spans offices, retail spaces, medical facilities, light industrial, and warehouse construction. We also do <a href="/residential-construction" class="text-brand-red hover:underline font-semibold">residential construction</a> and can manage mixed-use projects. Every commercial build is fully permitted through the City of Lufkin and meets applicable IBC code requirements.</p>
             <p>We work directly with business owners, property managers, and commercial landlords. Written contracts, engineered drawings where required, and transparent timelines on every project.</p>
             <p>We understand that commercial projects have hard deadlines — lease commencement dates, investor milestones, and business timelines that don't flex. Purpose Construction builds detailed schedules and manages subcontractors to hit them. Whether you're building a warehouse, outfitting a retail space, or constructing an office building, we track every phase and communicate proactively.</p>
           </div>
@@ -107,7 +108,7 @@ const schema = [
           'Ground-Up Commercial Builds', 'Tenant Improvements', 'Metal Building Construction',
           'Office Build-Outs', 'Retail Construction', 'Medical Office Buildout',
           'Warehouse & Storage', 'Site Work & Utilities', 'ADA Compliance',
-          'Electrical & Data Rough-In', 'Plumbing Systems',
+          'Electrical & Data Rough-In', 'Plumbing Systems', 'Permit Management',
         ].map((item) => (
           <div class="flex items-center gap-2 rounded-lg border border-warm-200 bg-warm-50 px-4 py-3 text-sm font-semibold text-charcoal-700">
             <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>
@@ -125,7 +126,7 @@ const schema = [
         {[
           { step: '1', title: 'Free Consultation', body: 'We discuss your commercial project scope, site, budget, and timeline. We work with business owners, tenants, and landlords.' },
           { step: '2', title: 'Written Proposal', body: 'Detailed scope, itemized pricing, engineering requirements, and a project schedule — before any work begins.' },
-          { step: '3', title: 'Pre-Construction', body: 'Engineered drawings coordinated where needed and every subcontractor scheduled before work starts.' },
+          { step: '3', title: 'Permits & Pre-Construction', body: 'City of Lufkin commercial permits pulled, engineered drawings coordinated, and all subcontractors scheduled.' },
           { step: '4', title: 'Site Work & Foundation', body: 'Site is prepared, utilities stubbed in, and foundation or slab completed and inspected.' },
           { step: '5', title: 'Structural, Systems & Finishes', body: 'Structure erected, all mechanical systems roughed in and inspected. Interior finishes, storefront, and exterior work completed.' },
           { step: '6', title: 'Final Inspection & Turnover', body: 'Final inspection passed, punch list completed, and space turned over for tenant or owner occupancy.' },
