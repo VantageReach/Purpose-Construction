@@ -4,19 +4,45 @@ import PageHero from '../../components/PageHero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  '@id': 'https://www.purposeconstructionco.com/locations/nacogdoches/#service',
-  name: 'Construction Company in Nacogdoches, TX',
-  serviceType: 'Construction company',
-  description: 'Construction company serving Nacogdoches, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
-  url: 'https://www.purposeconstructionco.com/locations/nacogdoches/',
-  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
-  areaServed: [
-    { '@type': 'City', name: 'Nacogdoches', containedInPlace: { '@type': 'State', name: 'Texas' } },
-  ],
-};
+const faqs = [
+  {
+    "q": "Do I need a permit to remodel in Nacogdoches?",
+    "a": "If the work involves building, plumbing, mechanical or electrical changes, yes. Nacogdoches Inspection Services issues those permits, and starting before the permit is issued doubles the fee. We pull the permit before we start."
+  },
+  {
+    "q": "Do you build outside the Nacogdoches city limits?",
+    "a": "Yes. In the county we build barndominiums, metal buildings and new homes. Septic permits for new construction there come from Nacogdoches County Environmental Services."
+  },
+  {
+    "q": "Is it a problem that you're based in Lufkin?",
+    "a": "No. We're 20 miles down US 59, so getting to you is easy. You get a free on-site estimate, a written proposal and one point of contact."
+  }
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://www.purposeconstructionco.com/locations/nacogdoches/#service',
+    name: 'Construction Company in Nacogdoches, TX',
+    serviceType: 'Construction company',
+    description: 'Construction company serving Nacogdoches, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
+    url: 'https://www.purposeconstructionco.com/locations/nacogdoches/',
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
+    areaServed: [
+      { '@type': 'City', name: 'Nacogdoches', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
 ---
 <BaseLayout
   title="Nacogdoches, TX Construction Company | Purpose Construction"
@@ -27,15 +53,14 @@ const schema = {
 
   <PageHero
     title="Construction Company in Nacogdoches, TX"
-    subtitle="Purpose Construction delivers expert renovation services across Nacogdoches and Nacogdoches County — remodeling, new construction, commercial buildouts. Insured, free estimates."
+    subtitle="Kitchen and bath remodels, additions, barndominiums and metal buildings in Nacogdoches, 20 miles up US 59 from our Lufkin base."
     tag="Serving Nacogdoches, TX"
     image="/images/project-planning-consulting-east-texas.jpg"
   />
 
-  <!-- Quick CTA bar -->
   <div class="bg-charcoal-900 border-b border-charcoal-700">
     <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm font-semibold text-white">Serving Nacogdoches & Nacogdoches County — Free on-site estimates, no obligation.</p>
+      <p class="text-sm font-semibold text-white">Twenty miles up 59. We'll come to Nacogdoches for a free estimate.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
         <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
@@ -43,18 +68,15 @@ const schema = {
     </div>
   </div>
 
-  <!-- Intro -->
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionHeading tag="Nacogdoches, TX" title="Serving Nacogdoches and Nacogdoches County" />
+          <SectionHeading tag="Nacogdoches, TX" title="Construction Work in Nacogdoches" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Nacogdoches is one of the oldest cities in Texas and home to Stephen F. Austin State University, which means a diverse mix of housing stock — historic homes near campus, mid-century neighborhoods, and newer construction on the expanding edges of the city. Each presents different renovation challenges, and Purpose Construction has the experience to handle all of them.</p>
-            <p>We serve homeowners and business owners across Nacogdoches County with kitchen remodels, bathroom renovations, home additions, new custom builds, and specialty projects like barndominiums and pole barns on rural land outside the city. We also handle commercial tenant improvements for businesses in the area.</p>
-            <p>Nacogdoches County operates its own permitting process separate from Angelina County. We know both, and we handle all required permits so your project stays legal, protected, and compliant from day one.</p>
-            <p>Need roof work too? Our sister company, Purpose Roofing, handles <a href="https://purpose-roofing.com/nacogdoches/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">roofing in Nacogdoches</a>, from leak repairs and storm damage to full roof replacements.</p>
-            <p>Searching for a general contractor in Nacogdoches? We run the whole job ourselves, from the estimate to the final walkthrough, so you have one number to call.</p>
+            <p>The Handbook of Texas calls Nacogdoches the state's oldest town. Its civil roots go back to 1779, when Antonio Gil Ibarvo led settlers to the old mission site. It's the county seat, home to Stephen F. Austin State University, and had 32,147 people in the 2020 Census.</p>
+            <p>That means older homes that need kitchens and baths redone, and land outside town for barndominiums and metal shops. We do both, as one general contractor with one written proposal.</p>
+            <p>Need roof work too? Our sister company, Purpose Roofing, handles <a href="https://purpose-roofing.com/nacogdoches/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark focus-visible:underline transition-colors duration-150">roofing in Nacogdoches</a>.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="/contact/" class="btn-primary">Request a Free Estimate</a>
@@ -63,21 +85,20 @@ const schema = {
         </div>
         <div class="space-y-5">
           <img
-            src="/images/project-planning-consulting-east-texas.jpg"
-            alt="Renovation Services in Nacogdoches, TX — Purpose Construction"
+            src="/images/project-planning-consulting-east-texas-800.webp"
+            alt="Project planning with a Purpose Construction client in Nacogdoches, TX"
             class="rounded-xl shadow-hero w-full"
             width="640" height="480"
             loading="lazy" decoding="async"
           />
-          <!-- NAP card -->
           <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
             <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
             <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
-            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving East Texas</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving Nacogdoches and East Texas</p>
             <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
             <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
-              <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+              <p>Mon to Sat: 8:00 AM to 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
@@ -86,15 +107,13 @@ const schema = {
     </div>
   </section>
 
-  <!-- Map + Directions -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <SectionHeading tag="Service Area" title="Serving Nacogdoches" />
+          <SectionHeading tag="Service Area" title="Where Nacogdoches Sits" />
           <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 text-sm leading-relaxed text-charcoal-600 space-y-3">
-            <p>From Nacogdoches: Take US-59 S toward Lufkin — approximately 20 miles south. Purpose Construction is based in Lufkin and serves the Nacogdoches area regularly.</p>
-            <p>We come to you for estimates — call to schedule a free on-site consultation anywhere in the Nacogdoches area.</p>
+            <p>Nacogdoches sits on US 59, about 20 miles north of Lufkin. State Highways 7 and 21 and US 259 meet there too.</p>
           </div>
         </div>
         <div class="overflow-hidden rounded-xl border border-warm-200 shadow-card">
@@ -113,90 +132,63 @@ const schema = {
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section-padding bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading
         tag="What We Do in Nacogdoches"
-        title="Construction &amp; Remodeling Services"
-        subtitle="Purpose Construction offers the full range of residential construction and remodeling services to homeowners in Nacogdoches and Nacogdoches County."
+        title="Construction and Remodeling Services"
+        subtitle="Remodels for Nacogdoches homes and new builds on land outside the city."
         align="center"
       />
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
-          <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
-          <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
-          <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
-          <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
-          <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
-          <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
-          <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
-          <a href="/interior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Interior Painting</a>
-          <a href="/exterior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Exterior Painting</a>
-          <a href="/patio-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks & Patios</a>
-          <a href="/pergola-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Pergolas & Pavilions</a>
-          <a href="/fence-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Fence Installation</a>
-          <a href="/siding-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Siding Installation</a>
-          <a href="/drywall-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Drywall Installation</a>
-          <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
+        <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
+        <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
+        <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
+        <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
+        <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
+        <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
+        <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
+        <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/outdoor-living/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks, Patios and Outdoor Living</a>
+        <a href="/construction-costs/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Construction Costs</a>
       </div>
+      <p class="mt-6 text-center text-sm text-charcoal-500"><a href="/services/" class="font-semibold text-brand-red hover:underline focus-visible:underline">See every service we offer</a></p>
     </div>
   </section>
 
-  <!-- Why choose us -->
   <section class="section-padding bg-charcoal-900">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHeading
-            tag="Why Purpose Construction"
-            title="Why Nacogdoches Homeowners Choose Us"
+            tag="Before You Build"
+            title="Building in Nacogdoches: What to Know"
             theme="dark"
           />
-          <p class="mb-6 text-base text-white/70">With SFA University nearby, Nacogdoches sees consistent demand for rental property updates and investment renovations — we handle those with the same care as owner-occupied homes.</p>
           <ul class="space-y-4 text-sm text-charcoal-300">
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Fully Insured</strong> — Liability insurance and workers' comp on every job. Documentation available on request.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">City permits:</strong> Nacogdoches Inspection Services permits building, remodeling, plumbing, mechanical and electrical work.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Written Contracts — Always</strong> — Every project starts with a written contract. No verbal agreements, no scope creep.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Don't start early:</strong> If work begins before the permit is issued, the city doubles the fee. We pull the permit first.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Honest, Upfront Pricing</strong> — We quote the real cost. No bait-and-switch, no hidden fees after work starts.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Remodels count:</strong> The city asks for nearly the same information on a remodel or repair as on new construction, so we plan a little lead time.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">We Pull All Permits</strong> — We handle every required permit. Never build without proper authorization.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Workmanship Warranty</strong> — We stand behind our work after the job is done — not just until the invoice is paid.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Local East Texas Crew</strong> — Lufkin-based team serving the region. We're your neighbors, not a traveling franchise.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Outside city limits:</strong> Septic permits for new construction come from Nacogdoches County Environmental Services.</span>
           </li>
           </ul>
         </div>
         <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-8">
           <p class="text-xs font-bold uppercase tracking-widest text-brand-red mb-4">Free On-Site Estimate</p>
-          <p class="text-2xl font-bold text-white mb-2">Ready to Start Your Project?</p>
-          <p class="text-sm text-charcoal-400 mb-6">We'll come to your Nacogdoches property, walk the project with you, and provide a written estimate — no pressure, no obligation.</p>
+          <p class="text-2xl font-bold text-white mb-2">Planning a Job in Nacogdoches?</p>
+          <p class="text-sm text-charcoal-400 mb-6">We'll come up 59, look at the job, and build the permit time into the schedule we give you.</p>
           <div class="flex flex-col gap-3">
             <a href="/contact/" class="btn-primary w-full justify-center py-4">Request a Free Quote</a>
             <a href="tel:9362552235" class="btn-ghost w-full justify-center py-4">(936) 255-2235</a>
@@ -206,45 +198,31 @@ const schema = {
     </div>
   </section>
 
-  <!-- Reviews -->
   <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-warm-200 bg-white px-8 py-6 shadow-card sm:flex-row">
         <div>
           <p class="font-display text-lg font-bold leading-tight text-charcoal-900">Worked with us in Nacogdoches?</p>
-          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors find a contractor they can trust.</p>
+          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors in Nacogdoches find us.</p>
         </div>
         <a href="https://g.page/r/CUKivaolola3EBM/review" target="_blank" rel="noopener noreferrer" class="btn-outline flex-shrink-0">Leave Us a Review</a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Common Questions" title="FAQ — Nacogdoches Area Projects" align="center" />
+      <SectionHeading tag="Common Questions" title="Nacogdoches Construction FAQs" align="center" />
       <div class="mx-auto max-w-3xl space-y-3">
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do you handle Nacogdoches County permits?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — we're experienced with Nacogdoches County permitting and handle all required permits as part of the project scope.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do you do commercial renovation in Nacogdoches?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">We do commercial tenant improvements and buildouts for businesses in the Nacogdoches area. Contact us to discuss your commercial project.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            How far is Nacogdoches from your base?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Nacogdoches is approximately 20 miles from our Lufkin base via US-59 — a straightforward drive that we make regularly for projects in the area.</div>
-        </details>
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
+              {faq.q}
+              <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
@@ -263,11 +241,10 @@ const schema = {
     </div>
   </section>
 
-  <!-- Final CTA -->
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Ready to Start Your Nacogdoches Project?</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free on-site estimate. We serve Nacogdoches, Nacogdoches County, and all of East Texas — no travel fees, no runaround.</p>
+      <h2 class="display-md text-white mb-4">Start Your Nacogdoches Project</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us about your Nacogdoches remodel or build. We'll pull the city permit and give you the price in writing.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>

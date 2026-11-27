@@ -4,19 +4,45 @@ import PageHero from '../../components/PageHero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  '@id': 'https://www.purposeconstructionco.com/locations/wells/#service',
-  name: 'Construction Company in Wells, TX',
-  serviceType: 'Construction company',
-  description: 'Construction company serving Wells, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
-  url: 'https://www.purposeconstructionco.com/locations/wells/',
-  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
-  areaServed: [
-    { '@type': 'City', name: 'Wells', containedInPlace: { '@type': 'State', name: 'Texas' } },
-  ],
-};
+const faqs = [
+  {
+    "q": "What inspection do I need before water service on a new home in Wells?",
+    "a": "Texas requires a customer service inspection before continuous water service is set up for new construction. The City of Wells points to that rule on its website, and we schedule it into the build."
+  },
+  {
+    "q": "Do you work in Cherokee County?",
+    "a": "Yes. Wells is the part of Cherokee County closest to us, about 17 miles up US 69 from Lufkin."
+  },
+  {
+    "q": "Can you build a barndominium on my land near Wells?",
+    "a": "Yes. We handle site prep, the slab and the building. We'll price yours after we walk the land with you."
+  }
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://www.purposeconstructionco.com/locations/wells/#service',
+    name: 'Construction Company in Wells, TX',
+    serviceType: 'Construction company',
+    description: 'Construction company serving Wells, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
+    url: 'https://www.purposeconstructionco.com/locations/wells/',
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
+    areaServed: [
+      { '@type': 'City', name: 'Wells', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
 ---
 <BaseLayout
   title="Construction Company in Wells, TX | Purpose Construction"
@@ -27,15 +53,14 @@ const schema = {
 
   <PageHero
     title="Construction Company in Wells, TX"
-    subtitle="Purpose Construction is your East Texas home builder serving Wells and Cherokee County — custom homes, barndominiums, pole barns, and full remodeling. Insured, written contracts."
+    subtitle="Barndominiums, metal buildings, remodels and new homes for Wells and southern Cherokee County, about 17 miles up US 69 from Lufkin."
     tag="Serving Wells, TX"
     image="/images/barndominium-construction-east-texas.jpg"
   />
 
-  <!-- Quick CTA bar -->
   <div class="bg-charcoal-900 border-b border-charcoal-700">
     <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm font-semibold text-white">Serving Wells & Cherokee County — Free on-site estimates, no obligation.</p>
+      <p class="text-sm font-semibold text-white">Up 69 in Cherokee County. Free estimates in Wells.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
         <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
@@ -43,17 +68,14 @@ const schema = {
     </div>
   </div>
 
-  <!-- Intro -->
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionHeading tag="Wells, TX" title="Serving Wells and Cherokee County" />
+          <SectionHeading tag="Wells, TX" title="Building and Remodeling in Wells" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Wells is a small community in Cherokee County, north of Lufkin and east of Rusk. The area is characterized by rural tracts and wooded land — exactly the kind of property where barndominiums, custom homes, and pole barn builds thrive. Purpose Construction works throughout Cherokee County with the same crew and same standards we bring to every county we serve.</p>
-            <p>Whether you're starting from raw land or updating an existing home, we handle the full scope: site preparation, foundation, framing, mechanical systems, and all interior and exterior finishes. We coordinate with Cherokee County for permitting and inspections so you don't have to navigate that process on your own.</p>
-            <p>If you're planning a rural build in the Wells area, Purpose Construction is an experienced partner who will walk the site with you, understand your vision, and build it the right way — on budget and with no shortcuts.</p>
-            <p>We're a general contractor, so a Wells project gets one crew and one phone number from the estimate to the final walkthrough.</p>
+            <p>Wells is in the far southern corner of Cherokee County, where US 69 meets FM 1247. It was founded in 1885 as a stop on the Kansas and Gulf Short Line Railroad, named for engineer Maj. E. H. Wells, and incorporated in the 1920s.</p>
+            <p>Wells had 853 people in the 2020 Census and has its own school district, Wells ISD. Around town we build barndominiums, metal shops and new homes on rural land, and remodel kitchens and bathrooms in the houses already standing.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="/contact/" class="btn-primary">Request a Free Estimate</a>
@@ -62,21 +84,20 @@ const schema = {
         </div>
         <div class="space-y-5">
           <img
-            src="/images/barndominium-construction-east-texas.jpg"
-            alt="Home Builder in Wells, TX — Purpose Construction"
+            src="/images/barndominium-construction-east-texas-800.webp"
+            alt="Barndominium built by Purpose Construction for the Wells, TX area"
             class="rounded-xl shadow-hero w-full"
             width="640" height="480"
             loading="lazy" decoding="async"
           />
-          <!-- NAP card -->
           <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
             <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
             <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
-            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving East Texas</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving Wells and East Texas</p>
             <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
             <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
-              <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+              <p>Mon to Sat: 8:00 AM to 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
@@ -85,15 +106,13 @@ const schema = {
     </div>
   </section>
 
-  <!-- Map + Directions -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <SectionHeading tag="Service Area" title="Serving Wells" />
+          <SectionHeading tag="Service Area" title="Where Wells Sits" />
           <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 text-sm leading-relaxed text-charcoal-600 space-y-3">
-            <p>From Wells: Take US-69 S toward Lufkin — approximately 35 miles south. Purpose Construction is based in Lufkin and serves Cherokee County with no travel fees.</p>
-            <p>We come to you for estimates — call to schedule a free on-site consultation anywhere in the Wells area.</p>
+            <p>Wells is about 17 miles north of Lufkin on US 69 and about 23 miles south of Rusk. Cherokee County runs between the Neches River on the west and the Angelina River on the southeast.</p>
           </div>
         </div>
         <div class="overflow-hidden rounded-xl border border-warm-200 shadow-card">
@@ -112,90 +131,63 @@ const schema = {
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section-padding bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading
         tag="What We Do in Wells"
-        title="Construction &amp; Remodeling Services"
-        subtitle="Purpose Construction offers the full range of residential construction and remodeling services to homeowners in Wells and Cherokee County."
+        title="Construction and Remodeling Services"
+        subtitle="New builds on rural land around Wells, plus kitchen and bath remodels."
         align="center"
       />
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
-          <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
-          <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
-          <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
-          <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
-          <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
-          <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
-          <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
-          <a href="/interior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Interior Painting</a>
-          <a href="/exterior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Exterior Painting</a>
-          <a href="/patio-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks & Patios</a>
-          <a href="/pergola-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Pergolas & Pavilions</a>
-          <a href="/fence-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Fence Installation</a>
-          <a href="/siding-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Siding Installation</a>
-          <a href="/drywall-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Drywall Installation</a>
-          <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
+        <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
+        <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
+        <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
+        <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
+        <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
+        <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
+        <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
+        <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/outdoor-living/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks, Patios and Outdoor Living</a>
+        <a href="/construction-costs/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Construction Costs</a>
       </div>
+      <p class="mt-6 text-center text-sm text-charcoal-500"><a href="/services/" class="font-semibold text-brand-red hover:underline focus-visible:underline">See every service we offer</a></p>
     </div>
   </section>
 
-  <!-- Why choose us -->
   <section class="section-padding bg-charcoal-900">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHeading
-            tag="Why Purpose Construction"
-            title="Why Wells Homeowners Choose Us"
+            tag="Before You Build"
+            title="Building in Wells: What to Know"
             theme="dark"
           />
-          <p class="mb-6 text-base text-white/70">Cherokee County land is well-suited for rural builds — wooded acreage, rolling terrain, and proximity to East Texas lakes make it a growing area for barndominiums and custom home construction.</p>
           <ul class="space-y-4 text-sm text-charcoal-300">
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Fully Insured</strong> — Liability insurance and workers' comp on every job. Documentation available on request.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Water service:</strong> Texas requires a customer service inspection before continuous water service starts on new construction, and the City of Wells points to that rule. We schedule it into the build.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Written Contracts — Always</strong> — Every project starts with a written contract. No verbal agreements, no scope creep.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">City permits:</strong> Wells is incorporated. We check with the city on your job and pull whatever applies.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Honest, Upfront Pricing</strong> — We quote the real cost. No bait-and-switch, no hidden fees after work starts.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Different county:</strong> Wells is in Cherokee County, not Angelina, so septic and county paperwork go through different offices than in Lufkin. We confirm who handles your lot before we price it.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">We Pull All Permits</strong> — We handle every required permit. Never build without proper authorization.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Workmanship Warranty</strong> — We stand behind our work after the job is done — not just until the invoice is paid.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Local East Texas Crew</strong> — Lufkin-based team serving the region. We're your neighbors, not a traveling franchise.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Red soil:</strong> Redlands cover about a fourth of Cherokee County, so we check the ground and drainage before we pour.</span>
           </li>
           </ul>
         </div>
         <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-8">
           <p class="text-xs font-bold uppercase tracking-widest text-brand-red mb-4">Free On-Site Estimate</p>
-          <p class="text-2xl font-bold text-white mb-2">Ready to Start Your Project?</p>
-          <p class="text-sm text-charcoal-400 mb-6">We'll come to your Wells property, walk the project with you, and provide a written estimate — no pressure, no obligation.</p>
+          <p class="text-2xl font-bold text-white mb-2">Planning a Job in Wells?</p>
+          <p class="text-sm text-charcoal-400 mb-6">We'll drive up 69, walk the land and work out which Cherokee County offices your job goes through.</p>
           <div class="flex flex-col gap-3">
             <a href="/contact/" class="btn-primary w-full justify-center py-4">Request a Free Quote</a>
             <a href="tel:9362552235" class="btn-ghost w-full justify-center py-4">(936) 255-2235</a>
@@ -205,45 +197,31 @@ const schema = {
     </div>
   </section>
 
-  <!-- Reviews -->
   <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-warm-200 bg-white px-8 py-6 shadow-card sm:flex-row">
         <div>
           <p class="font-display text-lg font-bold leading-tight text-charcoal-900">Worked with us in Wells?</p>
-          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors find a contractor they can trust.</p>
+          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors in Wells find us.</p>
         </div>
         <a href="https://g.page/r/CUKivaolola3EBM/review" target="_blank" rel="noopener noreferrer" class="btn-outline flex-shrink-0">Leave Us a Review</a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Common Questions" title="FAQ — Wells Area Projects" align="center" />
+      <SectionHeading tag="Common Questions" title="Wells Construction FAQs" align="center" />
       <div class="mx-auto max-w-3xl space-y-3">
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do you build on raw land in Cherokee County?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — we're experienced with rural builds in Cherokee County, including site clearing, gravel, slab, and all construction phases on previously unimproved land.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            What's the most popular build type in the Wells area?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Barndominiums and custom homes on acreage are the most common projects we see in the Wells area. We build both, from simple metal-and-slab structures to fully custom interiors.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do you handle Cherokee County permits?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — we know Cherokee County's permitting requirements and manage all required permits as part of your project.</div>
-        </details>
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
+              {faq.q}
+              <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
@@ -262,11 +240,10 @@ const schema = {
     </div>
   </section>
 
-  <!-- Final CTA -->
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Ready to Start Your Wells Project?</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free on-site estimate. We serve Wells, Cherokee County, and all of East Texas — no travel fees, no runaround.</p>
+      <h2 class="display-md text-white mb-4">Start Your Wells Project</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Planning a build near Wells? Call us and we'll come walk the land.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>

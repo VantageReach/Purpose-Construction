@@ -5,9 +5,9 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
-  { q: 'Do you build custom homes in Lufkin, TX?', a: 'Yes. Purpose Construction builds fully custom residential homes in Lufkin and throughout Angelina County. We work from your plans, architect drawings, or help you develop a design from scratch. No cookie-cutter packages — every home is built to your spec.' },
-  { q: 'How do you handle building on rural land outside Lufkin?', a: 'Rural builds in Angelina County are a significant part of our work. We handle site evaluation, land clearing, well and septic coordination, and all required county permits. Rural acreage builds often pair well with our barndominium construction services.' },
-  { q: 'What Angelina County permits are needed for a new home?', a: 'New residential construction requires a building permit from the Angelina County Building Department, plus inspections at foundation, framing, rough mechanical, and final stages. Purpose Construction manages all permit applications and coordinates required inspections.' },
+  { q: 'Do you build custom homes in Lufkin, TX?', a: 'Yes. Purpose Construction builds fully custom residential homes in Lufkin and throughout Angelina County. We work from your plans or architect drawings, or help you develop a design from scratch. Every home is built to your spec, not a cookie-cutter package.' },
+  { q: 'How do you handle building on rural land outside Lufkin?', a: 'Rural builds in Angelina County are a big part of our work. We handle site evaluation, land clearing, well and septic coordination, and the permits that apply, like septic through ANRA and a county culvert permit for a new driveway. Rural acreage builds often pair well with our barndominium construction services.' },
+  { q: 'What Angelina County permits are needed for a new home?', a: 'Inside Lufkin city limits, a new home needs a city building permit and city inspections. Outside city limits, Angelina County has no general building permit, but you\'ll still need a septic permit from the Angelina and Neches River Authority (ANRA), a $25 culvert permit for a new driveway onto a county road, and a floodplain permit if the lot is in a mapped floodplain. We handle those for you.' },
   { q: 'What is the difference between residential and commercial construction?', a: 'Residential construction follows IRC (International Residential Code) standards and is subject to residential permitting. Commercial projects follow IBC (International Building Code) and involve different structural, fire, and ADA requirements. We handle both.' },
 ];
 
@@ -18,7 +18,7 @@ const schema = [
     name: 'Residential Construction in Lufkin TX',
     provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedInPlace: { '@type': 'State', name: 'Texas' } },
-    description: 'Custom residential construction in Lufkin, TX. Purpose Construction builds homes in Lufkin and on rural Angelina County acreage — full-scope from site prep to final walkthrough.',
+    description: 'Custom residential construction in Lufkin, TX. Purpose Construction builds homes in Lufkin and on rural Angelina County acreage, from site prep to final walkthrough.',
   },
   {
     '@context': 'https://schema.org',
@@ -45,14 +45,14 @@ const schema = [
 
   <PageHero
     title="Custom Home Builder in Lufkin, TX"
-    subtitle="Purpose Construction builds custom residential homes throughout Lufkin and Angelina County — in-city lots, subdivisions, and rural acreage. Insured and fully permitted."
+    subtitle="Purpose Construction builds custom residential homes throughout Lufkin and Angelina County, on in-city lots, in subdivisions, and on rural acreage. Insured and fully permitted."
     tag="Lufkin, TX"
     image="/images/residential-construction-east-texas.jpg"
   />
 
   <div class="bg-charcoal-900 border-b border-charcoal-700">
     <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County. Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
         <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
@@ -66,9 +66,9 @@ const schema = [
         <div>
           <SectionHeading tag="Lufkin, TX" title="Custom Residential Construction Across Angelina County" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Lufkin and Angelina County offer a mix of in-city lots, established subdivisions, and rural acreage — each with different construction considerations. Purpose Construction's residential construction team has experience building across all of them, from slab-on-grade homes in Lufkin city limits to rural builds on land outside town where utility extensions and site prep are part of the project.</p>
-            <p>We build fully custom homes — no pre-set packages. You supply the land and the vision; we handle permits, engineering coordination, framing, all mechanical systems, insulation, drywall, and every finish. For rural East Texas acreage builds, our <a href="/barndominium-construction/" class="text-brand-red hover:underline font-semibold">barndominium construction</a> is another popular option that delivers flexible living space at a competitive cost.</p>
-            <p>We self-perform many of the core trades and coordinate the rest, keeping your project moving with a single point of accountability. From site clearing and foundation pour through framing, mechanical rough-ins, insulation, drywall, and all interior and exterior finishes — you deal with one contractor who owns the whole build.</p>
+            <p>Lufkin and Angelina County have in-city lots, established subdivisions, and rural acreage, and each one builds differently. We've built on all of them, from slab-on-grade homes inside Lufkin city limits to rural builds outside town where utility extensions and site prep are part of the job.</p>
+            <p>We build fully custom homes, not pre-set packages. You bring the land and the idea, and we handle permits, engineering coordination, framing, all mechanical systems, insulation, drywall, and every finish. On rural East Texas acreage, our <a href="/barndominium-construction/" class="text-brand-red hover:underline font-semibold">barndominium construction</a> is another popular option that gives you flexible living space at a competitive cost.</p>
+            <p>We do many of the core trades ourselves and coordinate the rest, so one company is accountable and the job keeps moving. From site clearing and the foundation pour through framing, rough-ins, insulation, drywall, and finishes, you deal with one contractor who owns the whole build.</p>
           </div>
           <div class="mt-6 flex gap-4">
             <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
@@ -77,7 +77,7 @@ const schema = [
         </div>
         <div class="space-y-5">
           <img
-            src="/images/residential-construction-east-texas.jpg"
+            src="/images/residential-construction-east-texas-800.webp"
             alt="Residential construction in Lufkin, TX by Purpose Construction"
             class="rounded-xl shadow-hero w-full"
             width="640" height="480"
@@ -90,7 +90,7 @@ const schema = [
             <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
             <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
-              <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+              <p>Mon to Sat: 8:00 AM to 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
@@ -125,7 +125,7 @@ const schema = [
         {[
           { step: '1', title: 'Free Site Consultation', body: 'We visit your lot or land, review your plans, and discuss scope, timeline, and budget.' },
           { step: '2', title: 'Written Proposal', body: 'Detailed itemized pricing, material specs, engineering requirements, and a construction phase schedule.' },
-          { step: '3', title: 'Permits & Pre-Construction', body: 'All required Angelina County permits are pulled. Survey, engineering, and subcontractor scheduling finalized before we break ground.' },
+          { step: '3', title: 'Permits & Pre-Construction', body: 'City permits, septic and culvert permits are pulled as needed. Survey, engineering, and subcontractor scheduling finalized before we break ground.' },
           { step: '4', title: 'Foundation & Structural Work', body: 'Site is cleared, graded, and prepared. Foundation is poured, cured, and inspected. Framing is completed, dried in, and signed off.' },
           { step: '5', title: 'Systems Rough-In & Finishes', body: 'Electrical, plumbing, and HVAC rough-in inspected. Insulation, drywall, and all interior and exterior finishes completed.' },
           { step: '6', title: 'Final Walkthrough & Delivery', body: 'We walk every room with you, complete all punch list items, and deliver the home only when you\'re fully satisfied.' },
@@ -144,7 +144,7 @@ const schema = [
 
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-mid px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Common Questions" title="Residential Construction FAQs — Lufkin, TX" align="center" />
+      <SectionHeading tag="Common Questions" title="Residential Construction FAQs in Lufkin, TX" align="center" />
       <div class="space-y-4">
         {faqs.map((faq) => (
           <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">
@@ -170,6 +170,7 @@ const schema = [
           { label: 'Barndominium Construction', href: '/barndominium-construction/' },
           { label: 'Commercial Construction', href: '/commercial-construction/' },
           { label: 'Home Additions', href: '/home-additions/' },
+          { label: 'Construction Costs', href: '/construction-costs/' },
           { label: 'General Contractor', href: '/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">

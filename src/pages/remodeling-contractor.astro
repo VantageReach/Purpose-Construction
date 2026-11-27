@@ -5,10 +5,10 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
 const faqs = [
-  { q: 'What remodeling services do you offer in Lufkin, TX?', a: 'Purpose Construction handles the full range of residential remodeling in Lufkin: kitchen remodels, bathroom remodels, home additions, interior painting, flooring installation, and drywall repair and installation. We also handle exterior work — siding, windows, doors, and exterior painting — often as part of a whole-home renovation.' },
-  { q: 'How much does a home remodel cost in Lufkin, TX?', a: 'Remodel costs vary significantly by project type. Kitchen remodels in Lufkin typically range from $20,000–$80,000+ depending on scope, layout changes, and finish level. Bathroom remodels run $8,000–$35,000+. Home additions are priced per square foot based on finish level and structural complexity. We provide a free, itemized estimate for every project.' },
-  { q: 'Do you pull permits for remodeling projects in Lufkin?', a: 'Yes. Purpose Construction handles all required permits through the City of Lufkin and Angelina County Building Department. Structural work, electrical, plumbing, and HVAC changes typically require permits. We assess what\'s required at the estimate stage and manage the permit process end-to-end.' },
-  { q: 'How long does a kitchen or bathroom remodel take in Lufkin?', a: 'A kitchen remodel in Lufkin typically takes 3–6 weeks from cabinet delivery to final walkthrough. Bathroom remodels run 2–4 weeks. Timelines depend heavily on material lead times — custom cabinets, specialty tile, and custom countertops all require ordering time. We provide a written schedule in every proposal.' },
+  { q: 'What remodeling services do you offer in Lufkin, TX?', a: 'Purpose Construction handles the full range of residential remodeling in Lufkin: kitchen remodels, bathroom remodels, home additions, interior painting, flooring installation, and drywall repair and installation. We also do exterior work (siding, windows, doors, and exterior painting), often as part of a whole-home renovation.' },
+  { q: 'How much does a home remodel cost in Lufkin, TX?', a: 'Cost depends on the project. Kitchen remodels in Lufkin typically run $20,000 to $80,000+ depending on scope, layout changes, and finish level. Bathroom remodels run $6,000 to $35,000+. Home additions are priced per square foot based on finish level and how much structural work they need. Every project gets a free, itemized estimate.' },
+  { q: 'Do you pull permits for remodeling projects in Lufkin?', a: 'Yes. Inside Lufkin city limits, the city requires a building permit for any construction, and we pull it through Lufkin Inspection Services. Structural work, electrical, plumbing, and HVAC changes typically need one. Outside city limits, Angelina County has no general building permit. We figure out what\'s required at the estimate and handle the permits for you.' },
+  { q: 'How long does a kitchen or bathroom remodel take in Lufkin?', a: 'A kitchen remodel in Lufkin typically takes 3 to 6 weeks from cabinet delivery to final walkthrough. Bathroom remodels run 2 to 4 weeks. Timelines depend a lot on material lead times, since custom cabinets, specialty tile, and custom countertops all have to be ordered. We provide a written schedule in every proposal.' },
 ];
 
 const schema = [
@@ -41,13 +41,13 @@ const schema = [
   },
 ];
 const services = [
-  { title: 'Kitchen Remodeling', body: 'Full kitchen renovations — layouts, cabinetry, countertops, flooring, lighting, and custom finishes.', href: '/kitchen-remodeling/', core: true },
-  { title: 'Bathroom Remodeling', body: 'Complete bathroom overhauls — tile, fixtures, vanities, showers, soaking tubs, and flooring.', href: '/bathroom-remodeling/', core: true },
+  { title: 'Kitchen Remodeling', body: 'Full kitchen renovations: layouts, cabinets, countertops, flooring, lighting, and custom finishes.', href: '/kitchen-remodeling/', core: true },
+  { title: 'Bathroom Remodeling', body: 'Complete bathroom overhauls: tile, fixtures, vanities, showers, soaking tubs, and flooring.', href: '/bathroom-remodeling/', core: true },
   { title: 'Home Additions', body: 'Expand your living space with room additions, sunrooms, bonus rooms, or full second-story additions.', href: '/home-additions/', core: true },
   { title: 'Interior Painting', body: 'Professional interior painting with proper prep, premium paints, and clean finishes from wall to trim.', href: '/interior-painting/', core: false },
   { title: 'Flooring Installation', body: 'Hardwood, LVP, tile, laminate, and carpet installation for every room in your home.', href: '/flooring-installation/', core: false },
   { title: 'Drywall Installation', body: 'New drywall installation for additions, renovations, and new construction throughout East Texas.', href: '/drywall-installation/', core: false },
-  { title: 'Drywall Repair', body: 'Patch and repair damaged drywall — holes, water damage, cracks, and texture matching.', href: '/drywall-repair/', core: false },
+  { title: 'Drywall Repair', body: 'We patch holes, cracks, and water damage and match the existing texture.', href: '/drywall-repair/', core: false },
 ];
 ---
 
@@ -63,14 +63,14 @@ const services = [
 
   <PageHero
     title="Remodeling Contractor in Lufkin, TX"
-    subtitle="Purpose Construction handles home remodeling for Lufkin and Angelina County homeowners — kitchens, bathrooms, additions, flooring, painting, and exterior work."
+    subtitle="Purpose Construction handles home remodeling for Lufkin and Angelina County homeowners: kitchens, bathrooms, additions, flooring, painting, and exterior work."
     tag="Lufkin, TX"
     image="/images/home-remodeling-contractor-lufkin-tx.jpg"
   />
 
   <div class="bg-charcoal-900 border-b border-charcoal-700">
     <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
+      <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County. Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
         <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
@@ -84,10 +84,10 @@ const services = [
         <div>
           <SectionHeading tag="Lufkin, TX" title="Home Remodeling for Lufkin Homeowners" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Lufkin's residential housing stock is aging — much of it built in the 1960s through the 1990s, when kitchen layouts, bathroom sizes, and interior finishes were very different from what today's homeowners want. Purpose Construction specializes in remodeling these homes to modern standards without losing what makes them solid, affordable East Texas properties to live in.</p>
-            <p>We handle the full scope of residential remodeling: <a href="/kitchen-remodeling/" class="text-brand-red hover:underline font-semibold">kitchen remodeling</a>, <a href="/bathroom-remodeling/" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a>, <a href="/home-additions/" class="text-brand-red hover:underline font-semibold">home additions</a>, <a href="/flooring-installation/" class="text-brand-red hover:underline font-semibold">flooring installation</a>, <a href="/interior-painting/" class="text-brand-red hover:underline font-semibold">interior painting</a>, and <a href="/drywall-installation/" class="text-brand-red hover:underline font-semibold">drywall services</a>. On the exterior, we also handle <a href="/siding-installation/" class="text-brand-red hover:underline font-semibold">siding</a>, <a href="/window-installation/" class="text-brand-red hover:underline font-semibold">windows</a>, <a href="/door-installation/" class="text-brand-red hover:underline font-semibold">doors</a>, and <a href="/exterior-painting/" class="text-brand-red hover:underline font-semibold">exterior painting</a>.</p>
-            <p>Every project starts with a free on-site estimate and a written proposal. We pull all required City of Lufkin permits and provide one point of contact from start to finish — you're not managing multiple contractors.</p>
-            <p>We're an insured general contractor, and we stand behind our work with a workmanship warranty. When we're done, we want you calling your neighbors to come see it — not calling us to come back and fix something.</p>
+            <p>A lot of Lufkin's houses were built in the 1960s through the 1990s, when kitchen layouts, bathroom sizes, and finishes looked nothing like what people want today. We remodel these homes to modern standards and keep what makes them solid, affordable East Texas houses to live in.</p>
+            <p>We do all kinds of residential remodeling: <a href="/kitchen-remodeling/" class="text-brand-red hover:underline font-semibold">kitchen remodeling</a>, <a href="/bathroom-remodeling/" class="text-brand-red hover:underline font-semibold">bathroom remodeling</a>, <a href="/home-additions/" class="text-brand-red hover:underline font-semibold">home additions</a>, <a href="/flooring-installation/" class="text-brand-red hover:underline font-semibold">flooring installation</a>, <a href="/interior-painting/" class="text-brand-red hover:underline font-semibold">interior painting</a>, and <a href="/drywall-installation/" class="text-brand-red hover:underline font-semibold">drywall services</a>. On the exterior, we also handle <a href="/siding-installation/" class="text-brand-red hover:underline font-semibold">siding</a>, <a href="/window-installation/" class="text-brand-red hover:underline font-semibold">windows</a>, <a href="/door-installation/" class="text-brand-red hover:underline font-semibold">doors</a>, and <a href="/exterior-painting/" class="text-brand-red hover:underline font-semibold">exterior painting</a>.</p>
+            <p>Every project starts with a free on-site estimate and a written proposal. We pull all required City of Lufkin permits, and you have one point of contact for the whole job, so you're not managing multiple contractors. Want a ballpark first? Our <a href="/construction-costs/" class="text-brand-red hover:underline font-semibold">construction costs</a> page lists typical price ranges.</p>
+            <p>We're an insured general contractor, and we stand behind our work with a workmanship warranty. When we're done, we want you calling your neighbors to come see it, not calling us back to fix something.</p>
           </div>
           <div class="mt-6 flex gap-4">
             <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
@@ -96,8 +96,8 @@ const services = [
         </div>
         <div class="space-y-5">
           <img
-            src="/images/home-remodeling-contractor-lufkin-tx.jpg"
-            alt="Remodeling contractor in Lufkin, TX — Purpose Construction"
+            src="/images/home-remodeling-contractor-lufkin-tx-800.webp"
+            alt="Purpose Construction, remodeling contractor in Lufkin, TX"
             class="rounded-xl shadow-hero w-full"
             width="640" height="480"
             loading="lazy" decoding="async"
@@ -109,7 +109,7 @@ const services = [
             <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
             <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
-              <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+              <p>Mon to Sat: 8:00 AM to 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
@@ -122,7 +122,7 @@ const services = [
       <SectionHeading
         tag="What We Remodel"
         title="Interior Remodeling Services"
-        subtitle="From kitchens and bathrooms to full home additions — every project is scoped clearly, priced honestly, and finished with craftsmanship."
+        subtitle="From kitchens and bathrooms to full home additions, we spell out the scope and give you an honest price before we start."
       />
       <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((svc) => (
@@ -152,11 +152,11 @@ const services = [
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[
           { title: 'Fully Insured', body: 'Full liability and workers\' comp coverage on every project.' },
-          { title: 'Written Proposals', body: 'Itemized written proposal before any work starts. No verbal quotes. No surprise costs after the deposit.' },
-          { title: 'Permit Management', body: 'We handle all City of Lufkin permits and inspections end-to-end. You don\'t manage any of it.' },
-          { title: 'Single Point of Contact', body: 'One contractor, one contract, one crew accountable from demolition to final walkthrough.' },
-          { title: 'East Texas Experience', body: 'We know Lufkin homes — older housing stock, humid climate, and Angelina County permit requirements.' },
-          { title: 'Free On-Site Estimates', body: 'We visit your home, assess the actual conditions, and price based on what we see — not a per-square-foot estimate over the phone.' },
+          { title: 'Written Proposals', body: 'You get an itemized written proposal before work starts instead of a verbal quote, and no surprise costs after the deposit.' },
+          { title: 'Permit Management', body: 'We handle all City of Lufkin permits and inspections, so you don\'t have to.' },
+          { title: 'Single Point of Contact', body: 'One contractor and one contract, with the same crew responsible from demolition to final walkthrough.' },
+          { title: 'East Texas Experience', body: 'We know Lufkin\'s older homes, the humid climate, and which permits apply inside and outside city limits.' },
+          { title: 'Free On-Site Estimates', body: 'We come out, look at the actual conditions, and price what we see instead of guessing a per-square-foot number over the phone.' },
         ].map((item) => (
           <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-5">
             <h3 class="mb-2 text-sm font-bold text-white">{item.title}</h3>
@@ -169,7 +169,7 @@ const services = [
 
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-mid px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Common Questions" title="Remodeling FAQs — Lufkin, TX" align="center" />
+      <SectionHeading tag="Common Questions" title="Remodeling FAQs in Lufkin, TX" align="center" />
       <div class="space-y-4">
         {faqs.map((faq) => (
           <details class="group rounded-xl border border-warm-200 bg-warm-50 shadow-card">

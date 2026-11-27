@@ -6,18 +6,18 @@ import SectionHeading from '../../components/SectionHeading.astro';
 
 const locations = [
   { city: 'Lufkin', slug: null, county: 'Angelina County', keyword: 'Home Base', desc: 'Our primary service area and home base. We serve all of Lufkin and Angelina County.', href: '/' },
-  { city: 'Hudson', slug: 'hudson', county: 'Angelina County', keyword: 'General Contractor', desc: 'Just north of Lufkin on US-59 — rapid response, no travel fees.', href: '/locations/hudson/' },
-  { city: 'Huntington', slug: 'huntington', county: 'Angelina County', keyword: 'Construction Company', desc: 'Full builds and remodels throughout Huntington and surrounding communities.', href: '/locations/huntington/' },
+  { city: 'Hudson', slug: 'hudson', county: 'Angelina County', keyword: 'General Contractor', desc: 'Next door on the west side of Lufkin, along SH 94. Kitchens, baths and additions.', href: '/locations/hudson/' },
+  { city: 'Huntington', slug: 'huntington', county: 'Angelina County', keyword: 'Construction Company', desc: 'About 10 miles east on US 69. Remodels in town, barndominiums outside it.', href: '/locations/huntington/' },
   { city: 'Diboll', slug: 'diboll', county: 'Angelina County', keyword: 'Remodeling Contractor', desc: 'Kitchen, bath, additions, and new construction for Diboll homeowners.', href: '/locations/diboll/' },
-  { city: 'Nacogdoches', slug: 'nacogdoches', county: 'Nacogdoches County', keyword: 'Renovation Services', desc: 'Serving Nacogdoches and Nacogdoches County — remodeling to new builds.', href: '/locations/nacogdoches/' },
-  { city: 'Corrigan', slug: 'corrigan', county: 'Polk County', keyword: 'Home Remodeling', desc: 'South into Polk County — same crew, same standards, no travel charges.', href: '/locations/corrigan/' },
+  { city: 'Nacogdoches', slug: 'nacogdoches', county: 'Nacogdoches County', keyword: 'Renovation Services', desc: 'Twenty miles up US 59. Remodels in the city and new builds in the county.', href: '/locations/nacogdoches/' },
+  { city: 'Corrigan', slug: 'corrigan', county: 'Polk County', keyword: 'Home Remodeling', desc: 'Where US 59 meets US 287 in Polk County. Remodels and metal buildings.', href: '/locations/corrigan/' },
   { city: 'Wells', slug: 'wells', county: 'Cherokee County', keyword: 'Home Builder', desc: 'Custom homes and barndominiums on Cherokee County rural land.', href: '/locations/wells/' },
-  { city: 'Zavalla', slug: 'zavalla', county: 'Angelina County', keyword: 'Construction Services', desc: 'East Angelina County — metal structures, barndominiums, and remodeling.', href: '/locations/zavalla/' },
-  { city: 'Pollok', slug: 'pollok', county: 'Angelina County', keyword: 'Home Renovation', desc: 'Northwest Angelina County — outdoor living, renovations, rural builds.', href: '/locations/pollok/' },
-  { city: 'Redland', slug: 'redland', county: 'Angelina County', keyword: 'Remodeling Services', desc: 'Right next door to Lufkin — fast scheduling, full remodeling services.', href: '/locations/redland/' },
-  { city: 'Burke', slug: 'burke', county: 'Angelina County', keyword: 'General Contractor', desc: 'South Angelina County — decks, remodels, additions, and new construction.', href: '/locations/burke/' },
-  { city: 'Etoile', slug: 'etoile', county: 'Nacogdoches County', keyword: 'Construction Contractor', desc: 'Near Sam Rayburn Reservoir — rural builds, lake-area outdoor living.', href: '/locations/etoile/' },
-  { city: 'Chireno', slug: 'chireno', county: 'Nacogdoches County', keyword: 'Renovation Contractor', desc: 'Historic Nacogdoches County community — renovation and new construction.', href: '/locations/chireno/' },
+  { city: 'Zavalla', slug: 'zavalla', county: 'Angelina County', keyword: 'Construction Services', desc: 'Southeast toward Sam Rayburn. Metal buildings, barndominiums and remodels.', href: '/locations/zavalla/' },
+  { city: 'Pollok', slug: 'pollok', county: 'Angelina County', keyword: 'Home Renovation', desc: 'Northwest Angelina County on SH 7. Barndominiums and rural builds.', href: '/locations/pollok/' },
+  { city: 'Redland', slug: 'redland', county: 'Angelina County', keyword: 'Remodeling Services', desc: 'About five miles north on US 59. Remodels, additions and new builds.', href: '/locations/redland/' },
+  { city: 'Burke', slug: 'burke', county: 'Angelina County', keyword: 'General Contractor', desc: 'Eight miles south of Lufkin. Remodels, additions and barndominiums.', href: '/locations/burke/' },
+  { city: 'Etoile', slug: 'etoile', county: 'Nacogdoches County', keyword: 'Construction Contractor', desc: 'Near the north shore of Sam Rayburn. Barndominiums and lake-area builds.', href: '/locations/etoile/' },
+  { city: 'Chireno', slug: 'chireno', county: 'Nacogdoches County', keyword: 'Renovation Contractor', desc: 'On SH 21 in eastern Nacogdoches County. Remodels and new builds.', href: '/locations/chireno/' },
 ];
 
 const schema = {
@@ -46,7 +46,7 @@ const schema = {
   <Breadcrumb items={[{ label: 'Locations', href: '/locations/' }]} />
   <PageHero
     title="East Texas Construction & Remodeling"
-    subtitle="Purpose Construction is based in Lufkin and serves homeowners and businesses throughout East Texas — from Nacogdoches County to Polk County and everywhere in between."
+    subtitle="Purpose Construction is based in Lufkin and serves homeowners and businesses across East Texas, from Nacogdoches County down to Polk County."
     tag="Service Areas"
     image="/images/remodeling-contractor-east-texas.jpg"
   />
@@ -58,8 +58,8 @@ const schema = {
         <div>
           <SectionHeading tag="Where We Work" title="Locally Based, Regionally Trusted" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Purpose Construction is based in Lufkin, TX — the center of our service area and the community we call home. From here, we dispatch crews throughout Angelina County, Nacogdoches County, Cherokee County, Polk County, and surrounding areas without travel surcharges or reduced service quality for communities outside the city.</p>
-            <p>Every location page below is built around that specific community — local knowledge, driving directions, and content specific to homeowners in that area. Click your city to learn more about how we serve your neighborhood.</p>
+            <p>Purpose Construction is based in Lufkin, TX, in the middle of the area we cover. From here our crews work across Angelina, Nacogdoches, Cherokee and Polk counties.</p>
+            <p>Each town page below covers what's different about building there: which office handles permits, who issues septic permits, and what to watch for near Sam Rayburn. Pick your town to read more.</p>
             <p>If your city isn't listed, we may still serve your area. Call us or fill out a contact form and we'll let you know within one business day.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
@@ -76,7 +76,7 @@ const schema = {
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500">info@purposeconstructionco.com</a>
           </div>
           <div class="border-t border-warm-200 pt-4 text-xs text-charcoal-500 space-y-1">
-            <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+            <p>Mon to Sat: 8:00 AM to 6:00 PM</p>
             <p>Sunday: Closed</p>
           </div>
           <div class="overflow-hidden rounded-lg border border-warm-200">
@@ -88,7 +88,7 @@ const schema = {
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="Purpose Construction — Lufkin, TX"
+              title="Purpose Construction, Lufkin, TX"
             ></iframe>
           </div>
         </div>
@@ -102,7 +102,7 @@ const schema = {
       <SectionHeading
         tag="All Service Areas"
         title="Choose Your City"
-        subtitle="Click any location below for local info, driving directions, community-specific content, and FAQs."
+        subtitle="Pick your town for local permit and septic notes, a map and answers to common questions."
         align="center"
       />
       <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

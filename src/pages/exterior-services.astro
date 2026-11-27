@@ -10,16 +10,16 @@ const schema = {
   name: 'Exterior Services Contractor',
   provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
   areaServed: { '@type': 'State', name: 'Texas', containedInPlace: { '@type': 'Country', name: 'United States' } },
-  description: 'Exterior home improvement services across East Texas — siding, windows, doors, exterior painting, gutters, and insulation.',
+  description: 'Exterior home improvement across East Texas: siding, windows, doors, exterior painting, gutters and insulation.',
 };
 
 const services = [
   { title: 'Siding Installation', body: 'Fiber cement, vinyl, engineered wood, and LP SmartSide siding installed to protect your home from East Texas weather.', href: '/siding-installation/' },
-  { title: 'Window Installation', body: 'Energy-efficient replacement windows and new construction windows — installed with proper flashing and sealing.', href: '/window-installation/' },
+  { title: 'Window Installation', body: 'Energy-efficient replacement and new construction windows, installed with proper flashing and sealing.', href: '/window-installation/' },
   { title: 'Door Installation', body: 'Exterior entry doors, patio doors, French doors, and storm doors installed securely and sealed for energy efficiency.', href: '/door-installation/' },
-  { title: 'Exterior Painting', body: 'Professional exterior painting with proper prep, primer, and premium paint that holds up to East Texas sun and humidity.', href: '/exterior-painting/' },
+  { title: 'Exterior Painting', body: 'Exterior painting with real prep, primer and premium paint that holds up to East Texas sun and humidity.', href: '/exterior-painting/' },
   { title: 'Gutter Installation', body: 'Seamless aluminum and steel gutter systems installed with proper slope and drainage to protect your foundation.', href: '/gutter-installation/' },
-  { title: 'Insulation Installation', body: 'Spray foam, blown-in, and batt insulation for walls, attics, and crawl spaces — reducing energy costs year-round.', href: '/insulation-installation/' },
+  { title: 'Insulation Installation', body: 'Spray foam, blown-in and batt insulation for walls, attics and crawl spaces to cut your energy bills year-round.', href: '/insulation-installation/' },
 ];
 ---
 
@@ -41,7 +41,7 @@ const services = [
       <SectionHeading
         tag="Exterior Services"
         title="Your Home's Defense Against the Elements"
-        subtitle="East Texas storms, humidity, and UV exposure demand exterior materials and installation that actually hold up. We don't cut corners on the work that protects everything inside."
+        subtitle="East Texas storms, humidity and sun are hard on a house, so the materials and the install have to hold up. We don't cut corners on the work that protects everything inside."
       />
       <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((svc) => (
@@ -69,8 +69,8 @@ const services = [
       <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
           <p class="text-xs font-semibold uppercase tracking-widest text-charcoal-400 mb-1">Also Need Roofing?</p>
-          <h2 class="display-sm text-white mb-2">Purpose Roofing — Our Sister Company</h2>
-          <p class="text-sm text-charcoal-300 max-w-md">While Purpose Construction handles siding, windows, and exterior work, roofing is handled by our sister company, from <a href="https://purpose-roofing.com/roofing-repair/" target="_blank" rel="noopener" class="font-semibold text-white underline underline-offset-2 hover:text-brand-red transition-colors duration-150">roof repair</a> and <a href="https://purpose-roofing.com/roof-storm-damage/" target="_blank" rel="noopener" class="font-semibold text-white underline underline-offset-2 hover:text-brand-red transition-colors duration-150">storm damage repair</a> to <a href="https://purpose-roofing.com/roof-replacement/" target="_blank" rel="noopener" class="font-semibold text-white underline underline-offset-2 hover:text-brand-red transition-colors duration-150">roof replacement</a>. Same ownership, same values, same commitment to East Texas homeowners.</p>
+          <h2 class="display-sm text-white mb-2">Purpose Roofing: Our Sister Company</h2>
+          <p class="text-sm text-charcoal-300 max-w-md">While Purpose Construction handles siding, windows, and exterior work, roofing is handled by our sister company, from <a href="https://purpose-roofing.com/roofing-repair/" target="_blank" rel="noopener" class="font-semibold text-white underline underline-offset-2 hover:text-brand-red transition-colors duration-150">roof repair</a> and <a href="https://purpose-roofing.com/roof-storm-damage/" target="_blank" rel="noopener" class="font-semibold text-white underline underline-offset-2 hover:text-brand-red transition-colors duration-150">storm damage repair</a> to <a href="https://purpose-roofing.com/roof-replacement/" target="_blank" rel="noopener" class="font-semibold text-white underline underline-offset-2 hover:text-brand-red transition-colors duration-150">roof replacement</a>. It's the same owners, and they run it the same way.</p>
         </div>
         <a href="https://www.purpose-roofing.com" target="_blank" rel="noopener noreferrer" class="btn-outline flex-shrink-0 border-charcoal-600 text-charcoal-200 hover:bg-white hover:text-charcoal-900 hover:border-white">
           Visit Purpose Roofing →
@@ -99,7 +99,7 @@ const services = [
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="display-md text-white mb-4">Protect Your Home's Exterior</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call or fill out the form for a free exterior assessment and estimate. We'll identify what needs attention and give you a clear, honest scope of work.</p>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call or fill out the form for a free exterior assessment and estimate. We'll tell you what needs work and give you a clear, honest scope.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>

@@ -4,19 +4,45 @@ import PageHero from '../../components/PageHero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  '@id': 'https://www.purposeconstructionco.com/locations/pollok/#service',
-  name: 'Construction Company in Pollok, TX',
-  serviceType: 'Construction company',
-  description: 'Construction company serving Pollok, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
-  url: 'https://www.purposeconstructionco.com/locations/pollok/',
-  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
-  areaServed: [
-    { '@type': 'City', name: 'Pollok', containedInPlace: { '@type': 'State', name: 'Texas' } },
-  ],
-};
+const faqs = [
+  {
+    "q": "Do I need a building permit in Pollok?",
+    "a": "Pollok isn't incorporated, and Angelina County doesn't issue general building permits outside city limits. You may still need a county culvert permit for a new driveway, a floodplain permit if the lot is in a mapped floodplain, and a septic permit from ANRA."
+  },
+  {
+    "q": "What does a barndominium cost near Pollok?",
+    "a": "In Angelina County, finished barndominium living space typically runs $90 to $175 per square foot, depending on finish level, size and how much work the land needs."
+  },
+  {
+    "q": "Do you handle the dirt work too?",
+    "a": "Yes. Clearing, grading and the pad are part of our site preparation work, so the building goes up on ground that drains."
+  }
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://www.purposeconstructionco.com/locations/pollok/#service',
+    name: 'Construction Company in Pollok, TX',
+    serviceType: 'Construction company',
+    description: 'Construction company serving Pollok, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
+    url: 'https://www.purposeconstructionco.com/locations/pollok/',
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
+    areaServed: [
+      { '@type': 'City', name: 'Pollok', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
 ---
 <BaseLayout
   title="Construction Company in Pollok, TX | Purpose Construction"
@@ -27,15 +53,14 @@ const schema = {
 
   <PageHero
     title="Construction Company in Pollok, TX"
-    subtitle="Purpose Construction serves Pollok and northwest Angelina County with home renovation, outdoor living, new construction, and rural builds — locally based, insured, honest pricing."
+    subtitle="Barndominiums, metal buildings, remodels and new homes around Pollok and the Central ISD area north of Lufkin."
     tag="Serving Pollok, TX"
     image="/images/outdoor-living-east-texas.jpg"
   />
 
-  <!-- Quick CTA bar -->
   <div class="bg-charcoal-900 border-b border-charcoal-700">
     <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm font-semibold text-white">Serving Pollok & Angelina County — Free on-site estimates, no obligation.</p>
+      <p class="text-sm font-semibold text-white">Land around Pollok or Central ISD? We'll come look at no charge.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
         <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
@@ -43,18 +68,15 @@ const schema = {
     </div>
   </div>
 
-  <!-- Intro -->
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionHeading tag="Pollok, TX" title="Serving Pollok and Angelina County" />
+          <SectionHeading tag="Pollok, TX" title="Building on Land Around Pollok" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Pollok is a rural community in the northwestern part of Angelina County, near the Davy Crockett National Forest boundary. Many properties here are larger rural tracts where homeowners want updates to existing structures or are building new on land that's been in the family for generations.</p>
-            <p>Purpose Construction serves the Pollok area with the full range of remodeling and new construction services. From a kitchen renovation in an established farmhouse to a new barndominium on a cleared rural lot, we approach every project with the same attention to detail and the same commitment to delivering what we promised.</p>
-            <p>We also build outdoor living structures — decks, pergolas, covered patios, and pavilions — that are well-suited to the open-air lifestyle common to rural Angelina County properties. If you're spending time on land, you should have a space worth spending time in.</p>
-            <p>Need roof work too? Our sister company, Purpose Roofing, handles <a href="https://purpose-roofing.com/pollok/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">roofing in Pollok</a>, from leak repairs and storm damage to full roof replacements.</p>
-            <p>We work as a general contractor out here, so one crew handles the whole Pollok project and you have one number to call.</p>
+            <p>Pollok is an unincorporated community in northwestern Angelina County, on State Highway 7 near where it meets US 69. It started as a sawmill town in the 1880s, got its post office in 1886, and later had the J. A. Young and Bodan lumber mills.</p>
+            <p>Central ISD is based in Pollok, with its campuses on US 69 about seven miles north of Lufkin. Around Pollok we build barndominiums, metal shops, pole barns and new homes on rural land, and remodel the houses already there.</p>
+            <p>Need roof work too? Our sister company, Purpose Roofing, handles <a href="https://purpose-roofing.com/pollok/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark focus-visible:underline transition-colors duration-150">roofing in Pollok</a>.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="/contact/" class="btn-primary">Request a Free Estimate</a>
@@ -63,21 +85,20 @@ const schema = {
         </div>
         <div class="space-y-5">
           <img
-            src="/images/outdoor-living-east-texas.jpg"
-            alt="Home Renovation in Pollok, TX — Purpose Construction"
+            src="/images/outdoor-living-east-texas-800.webp"
+            alt="Outdoor living project by Purpose Construction near Pollok, TX"
             class="rounded-xl shadow-hero w-full"
             width="640" height="480"
             loading="lazy" decoding="async"
           />
-          <!-- NAP card -->
           <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
             <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
             <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
-            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving East Texas</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving Pollok and East Texas</p>
             <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
             <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
-              <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+              <p>Mon to Sat: 8:00 AM to 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
@@ -86,15 +107,13 @@ const schema = {
     </div>
   </section>
 
-  <!-- Map + Directions -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <SectionHeading tag="Service Area" title="Serving Pollok" />
+          <SectionHeading tag="Service Area" title="Where Pollok Sits" />
           <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 text-sm leading-relaxed text-charcoal-600 space-y-3">
-            <p>From Pollok: Take US-69 S toward Lufkin — approximately 20 miles southeast. Purpose Construction is based in Lufkin and dispatches to Pollok regularly.</p>
-            <p>We come to you for estimates — call to schedule a free on-site consultation anywhere in the Pollok area.</p>
+            <p>Pollok sits on SH 7 near US 69 in northwestern Angelina County, along the old Cotton Belt rail line.</p>
           </div>
         </div>
         <div class="overflow-hidden rounded-xl border border-warm-200 shadow-card">
@@ -113,90 +132,63 @@ const schema = {
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section-padding bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading
         tag="What We Do in Pollok"
-        title="Construction &amp; Remodeling Services"
-        subtitle="Purpose Construction offers the full range of residential construction and remodeling services to homeowners in Pollok and Angelina County."
+        title="Construction and Remodeling Services"
+        subtitle="Barndominiums, metal buildings and new homes on rural land, plus remodels."
         align="center"
       />
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
-          <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
-          <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
-          <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
-          <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
-          <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
-          <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
-          <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
-          <a href="/interior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Interior Painting</a>
-          <a href="/exterior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Exterior Painting</a>
-          <a href="/patio-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks & Patios</a>
-          <a href="/pergola-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Pergolas & Pavilions</a>
-          <a href="/fence-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Fence Installation</a>
-          <a href="/siding-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Siding Installation</a>
-          <a href="/drywall-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Drywall Installation</a>
-          <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
+        <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
+        <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
+        <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
+        <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
+        <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
+        <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
+        <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
+        <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/outdoor-living/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks, Patios and Outdoor Living</a>
+        <a href="/construction-costs/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Construction Costs</a>
       </div>
+      <p class="mt-6 text-center text-sm text-charcoal-500"><a href="/services/" class="font-semibold text-brand-red hover:underline focus-visible:underline">See every service we offer</a></p>
     </div>
   </section>
 
-  <!-- Why choose us -->
   <section class="section-padding bg-charcoal-900">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHeading
-            tag="Why Purpose Construction"
-            title="Why Pollok Homeowners Choose Us"
+            tag="Before You Build"
+            title="Building in Pollok: What to Know"
             theme="dark"
           />
-          <p class="mb-6 text-base text-white/70">Properties near Pollok often have significant outdoor space — outdoor living builds like covered patios, pergolas, and barns are among the most common projects we complete in this area.</p>
           <ul class="space-y-4 text-sm text-charcoal-300">
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Fully Insured</strong> — Liability insurance and workers' comp on every job. Documentation available on request.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">No city permit:</strong> Pollok isn't incorporated, and Angelina County has no general building permit outside city limits.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Written Contracts — Always</strong> — Every project starts with a written contract. No verbal agreements, no scope creep.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Driveways:</strong> A new driveway onto a county road needs a $25 culvert permit from Angelina County Road and Bridge, and the county sets the flowline before construction.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Honest, Upfront Pricing</strong> — We quote the real cost. No bait-and-switch, no hidden fees after work starts.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Floodplain:</strong> If your lot is in a mapped floodplain, the county's Emergency Management office handles the floodplain permit.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">We Pull All Permits</strong> — We handle every required permit. Never build without proper authorization.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Workmanship Warranty</strong> — We stand behind our work after the job is done — not just until the invoice is paid.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Local East Texas Crew</strong> — Lufkin-based team serving the region. We're your neighbors, not a traveling franchise.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Septic:</strong> Septic permits go through the Angelina and Neches River Authority (ANRA) in Lufkin.</span>
           </li>
           </ul>
         </div>
         <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-8">
           <p class="text-xs font-bold uppercase tracking-widest text-brand-red mb-4">Free On-Site Estimate</p>
-          <p class="text-2xl font-bold text-white mb-2">Ready to Start Your Project?</p>
-          <p class="text-sm text-charcoal-400 mb-6">We'll come to your Pollok property, walk the project with you, and provide a written estimate — no pressure, no obligation.</p>
+          <p class="text-2xl font-bold text-white mb-2">Planning a Job in Pollok?</p>
+          <p class="text-sm text-charcoal-400 mb-6">We'll walk the land with you, look at access and drainage, and price the pad and the building together.</p>
           <div class="flex flex-col gap-3">
             <a href="/contact/" class="btn-primary w-full justify-center py-4">Request a Free Quote</a>
             <a href="tel:9362552235" class="btn-ghost w-full justify-center py-4">(936) 255-2235</a>
@@ -206,45 +198,31 @@ const schema = {
     </div>
   </section>
 
-  <!-- Reviews -->
   <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-warm-200 bg-white px-8 py-6 shadow-card sm:flex-row">
         <div>
           <p class="font-display text-lg font-bold leading-tight text-charcoal-900">Worked with us in Pollok?</p>
-          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors find a contractor they can trust.</p>
+          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors in Pollok find us.</p>
         </div>
         <a href="https://g.page/r/CUKivaolola3EBM/review" target="_blank" rel="noopener noreferrer" class="btn-outline flex-shrink-0">Leave Us a Review</a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Common Questions" title="FAQ — Pollok Area Projects" align="center" />
+      <SectionHeading tag="Common Questions" title="Pollok Construction FAQs" align="center" />
       <div class="mx-auto max-w-3xl space-y-3">
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do you serve the Pollok area?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — Pollok is approximately 20 miles from our Lufkin base and we dispatch crews there regularly with no travel surcharges.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            What outdoor living projects do you build in Pollok?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Decks, covered patios, pergolas, pavilions, and outdoor kitchens are all within our scope. Rural properties near Pollok often have the space for larger outdoor builds — we love these projects.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Can you renovate an older farmhouse in Pollok?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Absolutely. We work on older rural homes regularly and understand how to assess and work with aging structures, including updating systems alongside cosmetic improvements.</div>
-        </details>
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
+              {faq.q}
+              <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
@@ -263,11 +241,10 @@ const schema = {
     </div>
   </section>
 
-  <!-- Final CTA -->
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Ready to Start Your Pollok Project?</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free on-site estimate. We serve Pollok, Angelina County, and all of East Texas — no travel fees, no runaround.</p>
+      <h2 class="display-md text-white mb-4">Start Your Pollok Project</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Have land around Pollok? Call us and we'll walk it with you and price the build.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>

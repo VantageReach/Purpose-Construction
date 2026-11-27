@@ -4,19 +4,45 @@ import PageHero from '../../components/PageHero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  '@id': 'https://www.purposeconstructionco.com/locations/huntington/#service',
-  name: 'Construction Company in Huntington, TX',
-  serviceType: 'Construction company',
-  description: 'Construction company serving Huntington, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
-  url: 'https://www.purposeconstructionco.com/locations/huntington/',
-  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
-  areaServed: [
-    { '@type': 'City', name: 'Huntington', containedInPlace: { '@type': 'State', name: 'Texas' } },
-  ],
-};
+const faqs = [
+  {
+    "q": "Can you replace a manufactured home with a barndominium in Huntington?",
+    "a": "Yes. We handle the site prep, the slab and the building. Inside city limits, Huntington has its own manufactured home and sewer connection ordinances, so we check those with the city before we plan the job."
+  },
+  {
+    "q": "Who issues septic permits around Huntington?",
+    "a": "In Angelina County, the Angelina and Neches River Authority (ANRA) handles septic permits. Inside town, ask about city sewer first, since Huntington has ordinances for sewer connections."
+  },
+  {
+    "q": "How far do you travel for Huntington jobs?",
+    "a": "Not far. We're based in Lufkin, about 10 miles west on US 69. Estimates are free and we come to you."
+  }
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://www.purposeconstructionco.com/locations/huntington/#service',
+    name: 'Construction Company in Huntington, TX',
+    serviceType: 'Construction company',
+    description: 'Construction company serving Huntington, TX: renovations, kitchen and bath remodels, barndominiums and metal buildings.',
+    url: 'https://www.purposeconstructionco.com/locations/huntington/',
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
+    areaServed: [
+      { '@type': 'City', name: 'Huntington', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  },
+];
 ---
 <BaseLayout
   title="Huntington, TX Construction Company | Purpose Construction"
@@ -27,15 +53,14 @@ const schema = {
 
   <PageHero
     title="Construction Company in Huntington, TX"
-    subtitle="Purpose Construction is Huntington's locally based construction company — new homes, full remodels, barndominiums, and outdoor living built by an insured, experienced East Texas crew. Free estimates, written contracts."
+    subtitle="Remodels, additions, barndominiums and metal buildings for Huntington, about 10 miles east of Lufkin on US 69."
     tag="Serving Huntington, TX"
     image="/images/new-construction-east-texas.jpg"
   />
 
-  <!-- Quick CTA bar -->
   <div class="bg-charcoal-900 border-b border-charcoal-700">
     <div class="container-wide px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm font-semibold text-white">Serving Huntington & Angelina County — Free on-site estimates, no obligation.</p>
+      <p class="text-sm font-semibold text-white">Ten miles out on 69. Huntington estimates are free.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
         <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
@@ -43,18 +68,15 @@ const schema = {
     </div>
   </div>
 
-  <!-- Intro -->
   <section class="section-padding bg-warm-50">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionHeading tag="Huntington, TX" title="Serving Huntington and Angelina County" />
+          <SectionHeading tag="Huntington, TX" title="Remodeling and Building in Huntington" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
-            <p>Huntington is a close-knit community in the heart of Angelina County where homeowners prefer to work with local contractors who have roots in East Texas — not outside crews unfamiliar with the area. Purpose Construction is based in Lufkin and has completed projects throughout Huntington and surrounding communities.</p>
-            <p>The Huntington area features a mix of established older homes and newer rural construction. We handle both — whether it's a full interior renovation of a decades-old home or a new custom build on acreage. We're also experienced with the outbuilding and barndominium work that's common in this part of Angelina County.</p>
-            <p>From foundation to finish, Purpose Construction manages every Huntington project with experienced tradespeople, written contracts, and clear communication. You always know where things stand — no ignored calls, no surprise charges.</p>
-            <p>Need roof work too? Our sister company, Purpose Roofing, handles <a href="https://purpose-roofing.com/huntington/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">roofing in Huntington</a>, from leak repairs and storm damage to full roof replacements.</p>
-            <p>As a general contractor, we run the whole Huntington project ourselves, from the estimate to the final walkthrough.</p>
+            <p>Huntington was laid out in June 1900 and named for Collis P. Huntington, chairman of the Southern Pacific. It was cut out of virgin pine forest during the timber boom, and sawmills went up around it from 1900 on.</p>
+            <p>The town incorporated in 1937 and had 2,025 people in the 2020 Census. For Huntington homeowners we remodel kitchens and bathrooms and add rooms, and we build barndominiums and metal shops on land outside town.</p>
+            <p>Need roof work too? Our sister company, Purpose Roofing, handles <a href="https://purpose-roofing.com/huntington/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark focus-visible:underline transition-colors duration-150">roofing in Huntington</a>.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="/contact/" class="btn-primary">Request a Free Estimate</a>
@@ -63,21 +85,20 @@ const schema = {
         </div>
         <div class="space-y-5">
           <img
-            src="/images/new-construction-east-texas.jpg"
-            alt="Construction Company in Huntington, TX — Purpose Construction"
+            src="/images/new-construction-east-texas-800.webp"
+            alt="New construction by Purpose Construction near Huntington, TX"
             class="rounded-xl shadow-hero w-full"
             width="640" height="480"
             loading="lazy" decoding="async"
           />
-          <!-- NAP card -->
           <div class="rounded-xl border border-warm-200 bg-white p-5 shadow-card">
             <p class="mb-3 text-xs font-bold uppercase tracking-widest text-charcoal-400">Contact Information</p>
             <p class="text-base font-bold text-charcoal-900">Purpose Construction</p>
-            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving East Texas</p>
+            <p class="mt-1 text-sm text-charcoal-600">Lufkin, TX · serving Huntington and East Texas</p>
             <a href="tel:9362552235" class="mt-1 block text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">(936) 255-2235</a>
             <a href="mailto:info@purposeconstructionco.com" class="mt-0.5 block text-sm text-charcoal-500 hover:text-charcoal-800 transition-colors duration-150">info@purposeconstructionco.com</a>
             <div class="mt-3 border-t border-warm-200 pt-3 text-xs text-charcoal-500">
-              <p>Mon–Sat: 8:00 AM – 6:00 PM</p>
+              <p>Mon to Sat: 8:00 AM to 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
@@ -86,15 +107,13 @@ const schema = {
     </div>
   </section>
 
-  <!-- Map + Directions -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <SectionHeading tag="Service Area" title="Serving Huntington" />
+          <SectionHeading tag="Service Area" title="Where Huntington Sits" />
           <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 text-sm leading-relaxed text-charcoal-600 space-y-3">
-            <p>From Huntington: Take TX-94 W or US-69 N toward Lufkin — approximately 12 miles. Purpose Construction dispatches crews to Huntington from our base in Lufkin, TX 75904.</p>
-            <p>We come to you for estimates — call to schedule a free on-site consultation anywhere in the Huntington area.</p>
+            <p>Huntington is in eastern Angelina County on US 69, about 10 miles east of Lufkin and 15 miles northwest of Zavalla. It has its own school district, Huntington ISD.</p>
           </div>
         </div>
         <div class="overflow-hidden rounded-xl border border-warm-200 shadow-card">
@@ -113,90 +132,63 @@ const schema = {
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section-padding bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading
         tag="What We Do in Huntington"
-        title="Construction &amp; Remodeling Services"
-        subtitle="Purpose Construction offers the full range of residential construction and remodeling services to homeowners in Huntington and Angelina County."
+        title="Construction and Remodeling Services"
+        subtitle="Remodels in town, and barndominiums and metal buildings on the land around it."
         align="center"
       />
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
-          <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
-          <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
-          <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
-          <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
-          <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
-          <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
-          <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
-          <a href="/interior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Interior Painting</a>
-          <a href="/exterior-painting/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Exterior Painting</a>
-          <a href="/patio-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks & Patios</a>
-          <a href="/pergola-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Pergolas & Pavilions</a>
-          <a href="/fence-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Fence Installation</a>
-          <a href="/siding-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Siding Installation</a>
-          <a href="/drywall-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Drywall Installation</a>
-          <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/remodeling-contractor/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Remodeling</a>
+        <a href="/kitchen-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Kitchen Remodeling</a>
+        <a href="/bathroom-remodeling/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Bathroom Remodeling</a>
+        <a href="/home-additions/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Home Additions</a>
+        <a href="/barndominium-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Barndominium Construction</a>
+        <a href="/metal-structures/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Metal Buildings</a>
+        <a href="/new-construction/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>New Home Construction</a>
+        <a href="/flooring-installation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Flooring Installation</a>
+        <a href="/site-preparation/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Site Preparation</a>
+        <a href="/outdoor-living/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Decks, Patios and Outdoor Living</a>
+        <a href="/construction-costs/" class="flex items-center gap-2 rounded-lg border border-warm-200 bg-white px-4 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red focus-visible:text-brand-red transition-colors duration-200"><span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" aria-hidden="true"></span>Construction Costs</a>
       </div>
+      <p class="mt-6 text-center text-sm text-charcoal-500"><a href="/services/" class="font-semibold text-brand-red hover:underline focus-visible:underline">See every service we offer</a></p>
     </div>
   </section>
 
-  <!-- Why choose us -->
   <section class="section-padding bg-charcoal-900">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHeading
-            tag="Why Purpose Construction"
-            title="Why Huntington Homeowners Choose Us"
+            tag="Before You Build"
+            title="Building in Huntington: What to Know"
             theme="dark"
           />
-          <p class="mb-6 text-base text-white/70">Huntington's mix of older homes and rural new builds means we regularly handle both renovation work on established structures and complete new construction on vacant land in the same service area.</p>
           <ul class="space-y-4 text-sm text-charcoal-300">
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Fully Insured</strong> — Liability insurance and workers' comp on every job. Documentation available on request.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">City ordinances:</strong> Huntington has its own ordinances on manufactured homes, manufactured home parks and sewer connections. If your project touches any of those, we look at them first.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Written Contracts — Always</strong> — Every project starts with a written contract. No verbal agreements, no scope creep.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Permits:</strong> Before we start, we check with Huntington City Hall on what your job needs and pull whatever applies.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Honest, Upfront Pricing</strong> — We quote the real cost. No bait-and-switch, no hidden fees after work starts.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Outside city limits:</strong> Angelina County has no general building permit, but a new driveway onto a county road needs a $25 culvert permit from Road and Bridge, and floodplain lots need a county floodplain permit.</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">We Pull All Permits</strong> — We handle every required permit. Never build without proper authorization.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Workmanship Warranty</strong> — We stand behind our work after the job is done — not just until the invoice is paid.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true">
-              <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <span><strong class="text-charcoal-900">Local East Texas Crew</strong> — Lufkin-based team serving the region. We're your neighbors, not a traveling franchise.</span>
+            <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-red" aria-hidden="true"><svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+            <span><strong class="text-white">Septic:</strong> Septic permits in Angelina County go through the Angelina and Neches River Authority (ANRA).</span>
           </li>
           </ul>
         </div>
         <div class="rounded-xl border border-charcoal-700 bg-charcoal-800 p-8">
           <p class="text-xs font-bold uppercase tracking-widest text-brand-red mb-4">Free On-Site Estimate</p>
-          <p class="text-2xl font-bold text-white mb-2">Ready to Start Your Project?</p>
-          <p class="text-sm text-charcoal-400 mb-6">We'll come to your Huntington property, walk the project with you, and provide a written estimate — no pressure, no obligation.</p>
+          <p class="text-2xl font-bold text-white mb-2">Planning a Job in Huntington?</p>
+          <p class="text-sm text-charcoal-400 mb-6">We'll come over on 69, look at the job and check the city ordinances before we put a number on it.</p>
           <div class="flex flex-col gap-3">
             <a href="/contact/" class="btn-primary w-full justify-center py-4">Request a Free Quote</a>
             <a href="tel:9362552235" class="btn-ghost w-full justify-center py-4">(936) 255-2235</a>
@@ -206,45 +198,31 @@ const schema = {
     </div>
   </section>
 
-  <!-- Reviews -->
   <section class="section-padding-sm bg-warm-50 border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-warm-200 bg-white px-8 py-6 shadow-card sm:flex-row">
         <div>
           <p class="font-display text-lg font-bold leading-tight text-charcoal-900">Worked with us in Huntington?</p>
-          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors find a contractor they can trust.</p>
+          <p class="text-sm text-charcoal-500">A short Google review helps your neighbors in Huntington find us.</p>
         </div>
         <a href="https://g.page/r/CUKivaolola3EBM/review" target="_blank" rel="noopener noreferrer" class="btn-outline flex-shrink-0">Leave Us a Review</a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section class="section-padding bg-white border-t border-warm-200">
     <div class="container-wide px-4 sm:px-6 lg:px-8">
-      <SectionHeading tag="Common Questions" title="FAQ — Huntington Area Projects" align="center" />
+      <SectionHeading tag="Common Questions" title="Huntington Construction FAQs" align="center" />
       <div class="mx-auto max-w-3xl space-y-3">
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Does Purpose Construction work throughout Huntington?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Yes — we serve all of Huntington and the surrounding Angelina County area. Most Huntington projects are within 12 miles of our Lufkin base, so we can respond and schedule quickly.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Can you build a barndominium in Huntington?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Absolutely. Barndominiums are one of the most requested builds in the Huntington area. We handle the complete build — site prep, slab, metal shell, insulation, framing, and all interior finishes.</div>
-        </details>
-        <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
-          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
-            Do I need a permit for a home addition in Huntington?
-            <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">Most additions require an Angelina County permit. Purpose Construction handles all permitting as part of the project — we never build without required approvals.</div>
-        </details>
+        {faqs.map((faq) => (
+          <details class="group rounded-xl border border-warm-200 bg-white shadow-card">
+            <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-sm font-bold text-charcoal-900 list-none">
+              {faq.q}
+              <svg class="h-4 w-4 flex-shrink-0 text-brand-red transition-transform duration-200 group-open:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="border-t border-warm-200 px-6 py-4 text-sm leading-relaxed text-charcoal-600">{faq.a}</div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
@@ -263,11 +241,10 @@ const schema = {
     </div>
   </section>
 
-  <!-- Final CTA -->
   <section class="section-padding bg-gradient-red">
     <div class="container-mid px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="display-md text-white mb-4">Ready to Start Your Huntington Project?</h2>
-      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free on-site estimate. We serve Huntington, Angelina County, and all of East Texas — no travel fees, no runaround.</p>
+      <h2 class="display-md text-white mb-4">Start Your Huntington Project</h2>
+      <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us about your Huntington remodel, addition or build. We'll come out and give you a written price.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
