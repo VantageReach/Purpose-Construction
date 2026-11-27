@@ -16,7 +16,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Interior Painting in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'Professional interior painting in Lufkin, TX. Walls, ceilings, trim, cabinets, and full home painting for Angelina County homeowners.',
   },
@@ -38,9 +38,9 @@ const schema = [
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'Remodeling', href: '/remodeling-contractor' },
-    { label: 'Interior Painting', href: '/interior-painting' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Remodeling', href: '/remodeling-contractor/' },
+    { label: 'Interior Painting', href: '/interior-painting/' },
   ]} />
 
   <PageHero
@@ -55,7 +55,7 @@ const schema = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -67,12 +67,12 @@ const schema = [
           <SectionHeading tag="Lufkin, TX" title="Interior Painting Done Right in Lufkin" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Lufkin's humid subtropical climate can cause paint to fail prematurely if surfaces aren't properly prepped and the right products aren't used. Purpose Construction's interior painting crews use appropriate primers and moisture-resistant formulas where needed — the kind of attention that separates a paint job that lasts from one that peels in two years.</p>
-            <p>We handle everything from a single room refresh to a complete whole-home repaint. Interior painting is commonly paired with <a href="/drywall-installation" class="text-brand-red hover:underline font-semibold">drywall services</a> or <a href="/flooring-installation" class="text-brand-red hover:underline font-semibold">flooring installation</a> for a full renovation package that's more efficient to schedule together.</p>
+            <p>We handle everything from a single room refresh to a complete whole-home repaint. Interior painting is commonly paired with <a href="/drywall-installation/" class="text-brand-red hover:underline font-semibold">drywall services</a> or <a href="/flooring-installation/" class="text-brand-red hover:underline font-semibold">flooring installation</a> for a full renovation package that's more efficient to schedule together.</p>
             <p>No permits are required for interior painting in Lufkin. We work clean, protect your surfaces, and leave the job site tidy every day.</p>
             <p>A quality paint job starts before the first brush stroke — with proper surface preparation, drywall repair, caulking, priming, and masking. Purpose Construction's painting crews don't skip steps. We protect your floors and fixtures, prepare surfaces correctly, and apply paint that looks clean and holds up long-term.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -167,12 +167,12 @@ const schema = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Drywall Services', href: '/drywall-installation' },
-          { label: 'Flooring Installation', href: '/flooring-installation' },
-          { label: 'Kitchen Remodeling', href: '/kitchen-remodeling' },
-          { label: 'Exterior Painting', href: '/exterior-painting' },
-          { label: 'Remodeling Contractor', href: '/remodeling-contractor' },
-          { label: 'All Services', href: '/services' },
+          { label: 'Drywall Services', href: '/drywall-installation/' },
+          { label: 'Flooring Installation', href: '/flooring-installation/' },
+          { label: 'Kitchen Remodeling', href: '/kitchen-remodeling/' },
+          { label: 'Exterior Painting', href: '/exterior-painting/' },
+          { label: 'Remodeling Contractor', href: '/remodeling-contractor/' },
+          { label: 'All Services', href: '/services/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} →
@@ -186,12 +186,12 @@ const schema = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -201,7 +201,7 @@ const schema = [
       <h2 class="display-md text-white mb-4">Start Your Interior Painting in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

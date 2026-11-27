@@ -16,7 +16,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Pergola Construction in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'Pergola construction in Lufkin, TX. Freestanding and attached pergolas, pavilions, and shade structures for Angelina County homeowners.',
   },
@@ -38,9 +38,9 @@ const schema = [
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'Outdoor Living', href: '/outdoor-living' },
-    { label: 'Pergola Construction', href: '/pergola-construction' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Outdoor Living', href: '/outdoor-living/' },
+    { label: 'Pergola Construction', href: '/pergola-construction/' },
   ]} />
 
   <PageHero
@@ -55,7 +55,7 @@ const schema = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -67,12 +67,12 @@ const schema = [
           <SectionHeading tag="Lufkin, TX" title="Pergolas & Shade Structures for East Texas Homes" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>A pergola transforms a patio or deck into a defined outdoor living space — adding visual structure, shade, and character to what would otherwise be an open slab. In Lufkin's summer heat, shade matters. Purpose Construction builds pergolas that are designed for East Texas conditions: properly footed to handle wind loads, built from materials that resist humidity, and proportioned to match your home's architecture.</p>
-            <p>We build freestanding and attached pergolas in cedar, pressure-treated lumber, and aluminum. Pergolas are commonly paired with a <a href="/patio-construction" class="text-brand-red hover:underline font-semibold">patio</a> or <a href="/deck-construction" class="text-brand-red hover:underline font-semibold">deck</a> as part of a complete <a href="/outdoor-living" class="text-brand-red hover:underline font-semibold">outdoor living</a> project — we plan and build all of it as one coordinated job.</p>
+            <p>We build freestanding and attached pergolas in cedar, pressure-treated lumber, and aluminum. Pergolas are commonly paired with a <a href="/patio-construction/" class="text-brand-red hover:underline font-semibold">patio</a> or <a href="/deck-construction/" class="text-brand-red hover:underline font-semibold">deck</a> as part of a complete <a href="/outdoor-living/" class="text-brand-red hover:underline font-semibold">outdoor living</a> project — we plan and build all of it as one coordinated job.</p>
             <p>We build in cedar, which resists moisture and insects naturally and weathers beautifully in the Piney Woods climate, as well as pressure-treated pine and composite materials for different budget points and maintenance preferences. Louvered pergolas — with adjustable roof panels that open and close — are increasingly popular with East Texas homeowners who want shade control without committing to a fully roofed pavilion structure.</p>
             <p>We wire pergolas for ceiling fans and lighting during construction, so your outdoor space is functional from day one. We also integrate pergolas with new deck builds, existing patios, and pool decks throughout Lufkin and Angelina County.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -167,10 +167,10 @@ const schema = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Patio Construction', href: '/patio-construction' },
-          { label: 'Deck Construction', href: '/deck-construction' },
-          { label: 'Outdoor Living', href: '/outdoor-living' },
-          { label: 'All Services', href: '/services' },
+          { label: 'Patio Construction', href: '/patio-construction/' },
+          { label: 'Deck Construction', href: '/deck-construction/' },
+          { label: 'Outdoor Living', href: '/outdoor-living/' },
+          { label: 'All Services', href: '/services/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} →
@@ -184,12 +184,12 @@ const schema = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -199,7 +199,7 @@ const schema = [
       <h2 class="display-md text-white mb-4">Start Your Pergola Project in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

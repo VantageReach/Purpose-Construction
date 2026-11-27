@@ -5,10 +5,10 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 
 <BaseLayout
-  title="Contact Us | Purpose Construction — Lufkin, TX"
-  description="Get a free quote from Purpose Construction in Lufkin, TX. Call (936) 255-2235 or fill out our contact form. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of East Texas."
+  title="Contact Us | Purpose Construction, Lufkin TX"
+  description="Get a free estimate from Purpose Construction in Lufkin, TX. Call (936) 255-2235 or send the form. We serve Lufkin, Nacogdoches, Diboll and nearby."
 >
-  <Breadcrumb items={[{ label: 'Contact', href: '/contact' }]} />
+  <Breadcrumb items={[{ label: 'Contact', href: '/contact/' }]} />
   <PageHero
     title="Get a Free Quote"
     subtitle="Fill out the form below or call us directly. We'll respond within one business day to schedule your free on-site consultation."
@@ -25,7 +25,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
           <div class="rounded-xl border border-warm-200 bg-white p-8 shadow-card">
             <h2 class="display-sm mb-6 text-charcoal-900">Tell Us About Your Project</h2>
             <form action="https://formspree.io/f/mbdbyvbp" method="POST" class="space-y-5">
-              <input type="hidden" name="_next" value="https://www.purposeconstructionco.com/thank-you" />
+              <input type="hidden" name="_next" value="https://www.purposeconstructionco.com/thank-you/" />
               <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>
                   <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-charcoal-500">

@@ -16,7 +16,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'New Construction in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'New home construction in Lufkin, TX. Purpose Construction builds custom homes on your lot throughout Angelina County — full-scope from site prep to final walkthrough.',
   },
@@ -31,11 +31,11 @@ const schema = [
   },
 ];
 const services = [
-  { title: 'Residential Construction', body: 'Custom single-family homes built to your plans or from scratch — floor plans, materials, and finishes chosen by you.', href: '/residential-construction', core: false },
-  { title: 'Commercial Construction', body: 'Commercial shells, tenant buildouts, warehouses, and office construction for businesses across East Texas.', href: '/commercial-construction', core: false },
-  { title: 'Barndominium Construction', body: 'The most-requested build in rural East Texas. Custom barndominiums with metal exteriors, open-plan interiors, and full utility hookups.', href: '/barndominium-construction', core: true },
-  { title: 'Pole Barn Construction', body: 'Agricultural, storage, and workshop pole barns built to last on your East Texas property.', href: '/pole-barn-construction', core: false },
-  { title: 'Tiny Home Construction', body: 'Efficient, custom-built tiny homes — permanent foundation or slab — tailored to your property and lifestyle.', href: '/tiny-home-construction', core: false },
+  { title: 'Residential Construction', body: 'Custom single-family homes built to your plans or from scratch — floor plans, materials, and finishes chosen by you.', href: '/residential-construction/', core: false },
+  { title: 'Commercial Construction', body: 'Commercial shells, tenant buildouts, warehouses, and office construction for businesses across East Texas.', href: '/commercial-construction/', core: false },
+  { title: 'Barndominium Construction', body: 'The most-requested build in rural East Texas. Custom barndominiums with metal exteriors, open-plan interiors, and full utility hookups.', href: '/barndominium-construction/', core: true },
+  { title: 'Pole Barn Construction', body: 'Agricultural, storage, and workshop pole barns built to last on your East Texas property.', href: '/pole-barn-construction/', core: false },
+  { title: 'Tiny Home Construction', body: 'Efficient, custom-built tiny homes — permanent foundation or slab — tailored to your property and lifestyle.', href: '/tiny-home-construction/', core: false },
 ];
 ---
 
@@ -45,8 +45,8 @@ const services = [
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'New Construction', href: '/new-construction' },
+    { label: 'Services', href: '/services/' },
+    { label: 'New Construction', href: '/new-construction/' },
   ]} />
 
   <PageHero
@@ -61,7 +61,7 @@ const services = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -73,12 +73,12 @@ const services = [
           <SectionHeading tag="Lufkin, TX" title="Building New Homes in Lufkin and Angelina County" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Lufkin and Angelina County continue to see demand for new residential construction — both in established neighborhoods and on rural acreage outside the city. Purpose Construction handles new home construction on owner-supplied lots throughout the area, building to your plan with full permit management through Angelina County.</p>
-            <p>We manage the complete project: land clearing, site prep, foundation, framing, roofing, all mechanical systems, insulation, drywall, and interior and exterior finishes. For homeowners looking at rural builds, our <a href="/barndominium-construction" class="text-brand-red hover:underline font-semibold">barndominium construction</a> is also popular in Angelina County for its versatility and cost efficiency.</p>
+            <p>We manage the complete project: land clearing, site prep, foundation, framing, roofing, all mechanical systems, insulation, drywall, and interior and exterior finishes. For homeowners looking at rural builds, our <a href="/barndominium-construction/" class="text-brand-red hover:underline font-semibold">barndominium construction</a> is also popular in Angelina County for its versatility and cost efficiency.</p>
             <p>Every new home build starts with a written contract, detailed plan review, and permit pull through the Angelina County Building Department. We don't break ground until everything is in order.</p>
-            <p>East Texas land varies significantly. Sandy soils in some areas, heavy clay in others. We know what foundation types work where, what framing holds up to local humidity, and how to build for long-term performance in this region. We build throughout <a href="/locations/nacogdoches" class="text-brand-red hover:underline font-semibold">Nacogdoches</a>, <a href="/locations/huntington" class="text-brand-red hover:underline font-semibold">Huntington</a>, <a href="/locations/wells" class="text-brand-red hover:underline font-semibold">Wells</a>, and across all of Angelina County and Cherokee County.</p>
+            <p>East Texas land varies significantly. Sandy soils in some areas, heavy clay in others. We know what foundation types work where, what framing holds up to local humidity, and how to build for long-term performance in this region. We build throughout <a href="/locations/nacogdoches/" class="text-brand-red hover:underline font-semibold">Nacogdoches</a>, <a href="/locations/huntington/" class="text-brand-red hover:underline font-semibold">Huntington</a>, <a href="/locations/wells/" class="text-brand-red hover:underline font-semibold">Wells</a>, and across all of Angelina County and Cherokee County.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -200,10 +200,10 @@ const services = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Residential Construction', href: '/residential-construction' },
-          { label: 'Barndominium Construction', href: '/barndominium-construction' },
-          { label: 'Commercial Construction', href: '/commercial-construction' },
-          { label: 'Home Additions', href: '/home-additions' },
+          { label: 'Residential Construction', href: '/residential-construction/' },
+          { label: 'Barndominium Construction', href: '/barndominium-construction/' },
+          { label: 'Commercial Construction', href: '/commercial-construction/' },
+          { label: 'Home Additions', href: '/home-additions/' },
           { label: 'General Contractor', href: '/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
@@ -218,12 +218,12 @@ const services = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -233,7 +233,7 @@ const services = [
       <h2 class="display-md text-white mb-4">Start Your New Build in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

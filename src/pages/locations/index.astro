@@ -5,19 +5,19 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 
 const locations = [
-  { city: 'Lufkin', slug: null, county: 'Angelina County', keyword: 'Home Base', desc: 'Our primary service area and home base. We serve all of Lufkin and Angelina County.', href: '/contact' },
-  { city: 'Hudson', slug: 'hudson', county: 'Angelina County', keyword: 'General Contractor', desc: 'Just north of Lufkin on US-59 — rapid response, no travel fees.', href: '/locations/hudson' },
-  { city: 'Huntington', slug: 'huntington', county: 'Angelina County', keyword: 'Construction Company', desc: 'Full builds and remodels throughout Huntington and surrounding communities.', href: '/locations/huntington' },
-  { city: 'Diboll', slug: 'diboll', county: 'Angelina County', keyword: 'Remodeling Contractor', desc: 'Kitchen, bath, additions, and new construction for Diboll homeowners.', href: '/locations/diboll' },
-  { city: 'Nacogdoches', slug: 'nacogdoches', county: 'Nacogdoches County', keyword: 'Renovation Services', desc: 'Serving Nacogdoches and Nacogdoches County — remodeling to new builds.', href: '/locations/nacogdoches' },
-  { city: 'Corrigan', slug: 'corrigan', county: 'Polk County', keyword: 'Home Remodeling', desc: 'South into Polk County — same crew, same standards, no travel charges.', href: '/locations/corrigan' },
-  { city: 'Wells', slug: 'wells', county: 'Cherokee County', keyword: 'Home Builder', desc: 'Custom homes and barndominiums on Cherokee County rural land.', href: '/locations/wells' },
-  { city: 'Zavalla', slug: 'zavalla', county: 'Angelina County', keyword: 'Construction Services', desc: 'East Angelina County — metal structures, barndominiums, and remodeling.', href: '/locations/zavalla' },
-  { city: 'Pollok', slug: 'pollok', county: 'Angelina County', keyword: 'Home Renovation', desc: 'Northwest Angelina County — outdoor living, renovations, rural builds.', href: '/locations/pollok' },
-  { city: 'Redland', slug: 'redland', county: 'Angelina County', keyword: 'Remodeling Services', desc: 'Right next door to Lufkin — fast scheduling, full remodeling services.', href: '/locations/redland' },
-  { city: 'Burke', slug: 'burke', county: 'Angelina County', keyword: 'General Contractor', desc: 'South Angelina County — decks, remodels, additions, and new construction.', href: '/locations/burke' },
-  { city: 'Etoile', slug: 'etoile', county: 'Nacogdoches County', keyword: 'Construction Contractor', desc: 'Near Sam Rayburn Reservoir — rural builds, lake-area outdoor living.', href: '/locations/etoile' },
-  { city: 'Chireno', slug: 'chireno', county: 'Nacogdoches County', keyword: 'Renovation Contractor', desc: 'Historic Nacogdoches County community — renovation and new construction.', href: '/locations/chireno' },
+  { city: 'Lufkin', slug: null, county: 'Angelina County', keyword: 'Home Base', desc: 'Our primary service area and home base. We serve all of Lufkin and Angelina County.', href: '/contact/' },
+  { city: 'Hudson', slug: 'hudson', county: 'Angelina County', keyword: 'General Contractor', desc: 'Just north of Lufkin on US-59 — rapid response, no travel fees.', href: '/locations/hudson/' },
+  { city: 'Huntington', slug: 'huntington', county: 'Angelina County', keyword: 'Construction Company', desc: 'Full builds and remodels throughout Huntington and surrounding communities.', href: '/locations/huntington/' },
+  { city: 'Diboll', slug: 'diboll', county: 'Angelina County', keyword: 'Remodeling Contractor', desc: 'Kitchen, bath, additions, and new construction for Diboll homeowners.', href: '/locations/diboll/' },
+  { city: 'Nacogdoches', slug: 'nacogdoches', county: 'Nacogdoches County', keyword: 'Renovation Services', desc: 'Serving Nacogdoches and Nacogdoches County — remodeling to new builds.', href: '/locations/nacogdoches/' },
+  { city: 'Corrigan', slug: 'corrigan', county: 'Polk County', keyword: 'Home Remodeling', desc: 'South into Polk County — same crew, same standards, no travel charges.', href: '/locations/corrigan/' },
+  { city: 'Wells', slug: 'wells', county: 'Cherokee County', keyword: 'Home Builder', desc: 'Custom homes and barndominiums on Cherokee County rural land.', href: '/locations/wells/' },
+  { city: 'Zavalla', slug: 'zavalla', county: 'Angelina County', keyword: 'Construction Services', desc: 'East Angelina County — metal structures, barndominiums, and remodeling.', href: '/locations/zavalla/' },
+  { city: 'Pollok', slug: 'pollok', county: 'Angelina County', keyword: 'Home Renovation', desc: 'Northwest Angelina County — outdoor living, renovations, rural builds.', href: '/locations/pollok/' },
+  { city: 'Redland', slug: 'redland', county: 'Angelina County', keyword: 'Remodeling Services', desc: 'Right next door to Lufkin — fast scheduling, full remodeling services.', href: '/locations/redland/' },
+  { city: 'Burke', slug: 'burke', county: 'Angelina County', keyword: 'General Contractor', desc: 'South Angelina County — decks, remodels, additions, and new construction.', href: '/locations/burke/' },
+  { city: 'Etoile', slug: 'etoile', county: 'Nacogdoches County', keyword: 'Construction Contractor', desc: 'Near Sam Rayburn Reservoir — rural builds, lake-area outdoor living.', href: '/locations/etoile/' },
+  { city: 'Chireno', slug: 'chireno', county: 'Nacogdoches County', keyword: 'Renovation Contractor', desc: 'Historic Nacogdoches County community — renovation and new construction.', href: '/locations/chireno/' },
 ];
 
 const schema = {
@@ -25,18 +25,18 @@ const schema = {
   '@type': 'LocalBusiness',
   name: 'Purpose Construction',
   description: 'Purpose Construction serves all of East Texas — Lufkin, Nacogdoches, Diboll, Huntington, and surrounding communities with residential and commercial construction and remodeling.',
-  url: 'https://www.purposeconstructionco.com/locations',
+  url: 'https://www.purposeconstructionco.com/locations/',
   telephone: '+19362552235',
   address: { '@type': 'PostalAddress', addressLocality: 'Lufkin', addressRegion: 'TX', postalCode: '75904', addressCountry: 'US' },
   areaServed: { '@type': 'State', name: 'Texas' },
 };
 ---
 <BaseLayout
-  title="Service Areas | Purpose Construction — East Texas"
-  description="Purpose Construction serves Lufkin, Nacogdoches, Diboll, Huntington, Hudson, Corrigan, Wells, Zavalla, Pollok, Redland, Burke, Etoile, and Chireno. Click your city for local info."
+  title="Service Areas | Purpose Construction, Lufkin TX"
+  description="Towns Purpose Construction serves from Lufkin, TX: Diboll, Huntington, Nacogdoches, Hudson, Zavalla, Corrigan and more across East Texas."
   schema={schema}
 >
-  <Breadcrumb items={[{ label: 'Locations', href: '/locations' }]} />
+  <Breadcrumb items={[{ label: 'Locations', href: '/locations/' }]} />
   <PageHero
     title="East Texas Construction & Remodeling"
     subtitle="Purpose Construction is based in Lufkin and serves homeowners and businesses throughout East Texas — from Nacogdoches County to Polk County and everywhere in between."
@@ -56,7 +56,7 @@ const schema = {
             <p>If your city isn't listed, we may still serve your area. Call us or fill out a contact form and we'll let you know within one business day.</p>
           </div>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">(936) 255-2235</a>
           </div>
         </div>
@@ -128,7 +128,7 @@ const schema = {
       <h2 class="display-md text-white mb-4">Don't See Your City?</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">We may still serve your area. Contact Purpose Construction and we'll let you know within one business day whether we can take your project.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Contact Us</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Contact Us</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

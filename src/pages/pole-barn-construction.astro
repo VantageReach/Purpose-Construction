@@ -8,18 +8,18 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Pole Barn Construction',
-  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
   areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
   description: 'Pole barn construction across East Texas — post-frame buildings with metal roofing, metal siding, concrete slabs, roll-up doors, and optional electrical for East Texas properties.',
 };
 ---
 <BaseLayout
-  title="Pole Barn Construction East Texas | Purpose Construction"
-  description="Pole barn construction across East Texas — post-frame buildings with metal roof, siding, concrete slab, and roll-up doors. Purpose Construction builds across East Texas. Call (936) 255-2235."
+  title="Pole Barn Construction in Lufkin, TX | Purpose Construction"
+  description="Pole barn construction in Lufkin, TX: post-frame barns and shops with metal roofs, slabs and roll-up doors. Free estimates: (936) 255-2235."
   schema={schema}
 >
-  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'New Construction', href: '/new-construction' }, { label: 'Pole Barn Construction', href: '/pole-barn-construction' }]} />
-  <PageHero title="Pole Barn Construction in East Texas" subtitle="Post-frame pole barns built for East Texas — farm storage, equipment shops, and working buildings that handle the weather and hold up for decades." tag="New Construction Service" 
+  <Breadcrumb items={[{ label: 'Services', href: '/services/' }, { label: 'New Construction', href: '/new-construction/' }, { label: 'Pole Barn Construction', href: '/pole-barn-construction/' }]} />
+  <PageHero title="Pole Barn Construction in Lufkin, TX" subtitle="Post-frame pole barns built for East Texas — farm storage, equipment shops, and working buildings that handle the weather and hold up for decades." tag="New Construction Service" 
     image="/images/pole-barn-construction-east-texas.jpg"
   />
 
@@ -34,8 +34,8 @@ const schema = {
             <p>We can add personnel doors, roll-up doors, windows, and electrical to make your pole barn as functional as your project demands — from a simple open-air equipment shelter to a fully finished shop.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
-            <a href="/new-construction" class="btn-outline">All New Construction</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
+            <a href="/new-construction/" class="btn-outline">All New Construction</a>
           </div>
         </div>
         <img src="/images/pole-barn-construction-east-texas.jpg" alt="Pole barn construction across East Texas by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
@@ -60,7 +60,7 @@ const schema = {
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Related Services" title="Related Construction Services" />
       <div class="flex flex-wrap gap-3">
-        {[{ label: 'Barndominium Construction', href: '/barndominium-construction' }, { label: 'Site Preparation', href: '/site-preparation' }, { label: 'Outdoor Living', href: '/outdoor-living' }, { label: 'All New Construction', href: '/new-construction' }].map(link => (
+        {[{ label: 'Barndominium Construction', href: '/barndominium-construction/' }, { label: 'Site Preparation', href: '/site-preparation/' }, { label: 'Outdoor Living', href: '/outdoor-living/' }, { label: 'All New Construction', href: '/new-construction/' }].map(link => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
         ))}
       </div>
@@ -72,7 +72,7 @@ const schema = {
       <h2 class="display-md text-white mb-4">Ready to Build a Pole Barn?</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free pole barn estimate. We build across East Texas and East Texas.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

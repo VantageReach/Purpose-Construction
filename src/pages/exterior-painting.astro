@@ -16,7 +16,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Exterior Painting in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'Exterior painting in Lufkin, TX. Professional whole-house exterior painting, power washing, and surface prep for Angelina County homeowners.',
   },
@@ -38,9 +38,9 @@ const schema = [
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'Exterior Services', href: '/exterior-services' },
-    { label: 'Exterior Painting', href: '/exterior-painting' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Exterior Services', href: '/exterior-services/' },
+    { label: 'Exterior Painting', href: '/exterior-painting/' },
   ]} />
 
   <PageHero
@@ -55,7 +55,7 @@ const schema = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -67,12 +67,12 @@ const schema = [
           <SectionHeading tag="Lufkin, TX" title="Exterior Painting That Holds Up in Lufkin" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Lufkin's combination of intense UV, high humidity, and heat puts exterior paint under more stress than most climates. Paint failures in East Texas — peeling, blistering, mildew — almost always trace back to inadequate surface prep or the wrong product selection. Purpose Construction's exterior painting process starts with thorough power washing, caulking, and primer — not just a coat of paint over whatever's already there.</p>
-            <p>We paint the whole exterior: siding, trim, fascia, soffits, doors, shutters, and garage doors. Exterior painting is often paired with <a href="/siding-installation" class="text-brand-red hover:underline font-semibold">siding installation</a> or <a href="/window-installation" class="text-brand-red hover:underline font-semibold">window installation</a> for a complete exterior refresh.</p>
+            <p>We paint the whole exterior: siding, trim, fascia, soffits, doors, shutters, and garage doors. Exterior painting is often paired with <a href="/siding-installation/" class="text-brand-red hover:underline font-semibold">siding installation</a> or <a href="/window-installation/" class="text-brand-red hover:underline font-semibold">window installation</a> for a complete exterior refresh.</p>
             <p>No permits required for exterior painting in Angelina County. We work around your schedule and protect your landscaping and surfaces throughout the project.</p>
             <p>We use premium exterior paints and primers rated for humid Southern climates — products with mildewcide additives and flexible formulations that expand and contract with the substrate through East Texas temperature swings without cracking or peeling. The right product on a properly prepped surface will protect your home and hold color significantly longer than a rushed, low-bid paint job.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -167,11 +167,11 @@ const schema = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Siding Installation', href: '/siding-installation' },
-          { label: 'Window Installation', href: '/window-installation' },
-          { label: 'Door Installation', href: '/door-installation' },
-          { label: 'Interior Painting', href: '/interior-painting' },
-          { label: 'All Services', href: '/services' },
+          { label: 'Siding Installation', href: '/siding-installation/' },
+          { label: 'Window Installation', href: '/window-installation/' },
+          { label: 'Door Installation', href: '/door-installation/' },
+          { label: 'Interior Painting', href: '/interior-painting/' },
+          { label: 'All Services', href: '/services/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} →
@@ -185,12 +185,12 @@ const schema = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -200,7 +200,7 @@ const schema = [
       <h2 class="display-md text-white mb-4">Start Your Exterior Painting in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

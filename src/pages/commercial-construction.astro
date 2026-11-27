@@ -16,7 +16,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Commercial Construction in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'Commercial construction and tenant improvements in Lufkin, TX. Purpose Construction builds offices, retail spaces, warehouses, and medical facilities across Angelina County.',
   },
@@ -38,9 +38,9 @@ const schema = [
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'New Construction', href: '/new-construction' },
-    { label: 'Commercial Construction', href: '/commercial-construction' },
+    { label: 'Services', href: '/services/' },
+    { label: 'New Construction', href: '/new-construction/' },
+    { label: 'Commercial Construction', href: '/commercial-construction/' },
   ]} />
 
   <PageHero
@@ -55,7 +55,7 @@ const schema = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -67,12 +67,12 @@ const schema = [
           <SectionHeading tag="Lufkin, TX" title="Commercial Construction for Lufkin Businesses" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Lufkin is the commercial and retail hub of deep East Texas, and consistent demand for new commercial construction along Loop 287 and the city's major corridors reflects that role. Purpose Construction handles commercial construction for businesses establishing or expanding in the Lufkin market — from ground-up builds to tenant improvements in existing spaces.</p>
-            <p>Our commercial work spans offices, retail spaces, medical facilities, light industrial, and warehouse construction. We also do <a href="/residential-construction" class="text-brand-red hover:underline font-semibold">residential construction</a> and can manage mixed-use projects. Every commercial build is fully permitted through the City of Lufkin and meets applicable IBC code requirements.</p>
+            <p>Our commercial work spans offices, retail spaces, medical facilities, light industrial, and warehouse construction. We also do <a href="/residential-construction/" class="text-brand-red hover:underline font-semibold">residential construction</a> and can manage mixed-use projects. Every commercial build is fully permitted through the City of Lufkin and meets applicable IBC code requirements.</p>
             <p>We work directly with business owners, property managers, and commercial landlords. Written contracts, engineered drawings where required, and transparent timelines on every project.</p>
             <p>We understand that commercial projects have hard deadlines — lease commencement dates, investor milestones, and business timelines that don't flex. Purpose Construction builds detailed schedules and manages subcontractors to hit them. Whether you're building a warehouse, outfitting a retail space, or constructing an office building, we track every phase and communicate proactively.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -167,9 +167,9 @@ const schema = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'New Construction', href: '/new-construction' },
-          { label: 'Residential Construction', href: '/residential-construction' },
-          { label: 'Barndominium Construction', href: '/barndominium-construction' },
+          { label: 'New Construction', href: '/new-construction/' },
+          { label: 'Residential Construction', href: '/residential-construction/' },
+          { label: 'Barndominium Construction', href: '/barndominium-construction/' },
           { label: 'General Contractor', href: '/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
@@ -184,12 +184,12 @@ const schema = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -199,7 +199,7 @@ const schema = [
       <h2 class="display-md text-white mb-4">Start Your Commercial Project in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free consultation. We serve Lufkin businesses and properties throughout Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

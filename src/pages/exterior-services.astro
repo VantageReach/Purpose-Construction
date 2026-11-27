@@ -8,29 +8,29 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Exterior Services Contractor',
-  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
   areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
   description: 'Exterior home improvement services across East Texas — siding, windows, doors, exterior painting, gutters, and insulation.',
 };
 
 const services = [
-  { title: 'Siding Installation', body: 'Fiber cement, vinyl, engineered wood, and LP SmartSide siding installed to protect your home from East Texas weather.', href: '/siding-installation' },
-  { title: 'Window Installation', body: 'Energy-efficient replacement windows and new construction windows — installed with proper flashing and sealing.', href: '/window-installation' },
-  { title: 'Door Installation', body: 'Exterior entry doors, patio doors, French doors, and storm doors installed securely and sealed for energy efficiency.', href: '/door-installation' },
-  { title: 'Exterior Painting', body: 'Professional exterior painting with proper prep, primer, and premium paint that holds up to East Texas sun and humidity.', href: '/exterior-painting' },
-  { title: 'Gutter Installation', body: 'Seamless aluminum and steel gutter systems installed with proper slope and drainage to protect your foundation.', href: '/gutter-installation' },
-  { title: 'Insulation Installation', body: 'Spray foam, blown-in, and batt insulation for walls, attics, and crawl spaces — reducing energy costs year-round.', href: '/insulation-installation' },
+  { title: 'Siding Installation', body: 'Fiber cement, vinyl, engineered wood, and LP SmartSide siding installed to protect your home from East Texas weather.', href: '/siding-installation/' },
+  { title: 'Window Installation', body: 'Energy-efficient replacement windows and new construction windows — installed with proper flashing and sealing.', href: '/window-installation/' },
+  { title: 'Door Installation', body: 'Exterior entry doors, patio doors, French doors, and storm doors installed securely and sealed for energy efficiency.', href: '/door-installation/' },
+  { title: 'Exterior Painting', body: 'Professional exterior painting with proper prep, primer, and premium paint that holds up to East Texas sun and humidity.', href: '/exterior-painting/' },
+  { title: 'Gutter Installation', body: 'Seamless aluminum and steel gutter systems installed with proper slope and drainage to protect your foundation.', href: '/gutter-installation/' },
+  { title: 'Insulation Installation', body: 'Spray foam, blown-in, and batt insulation for walls, attics, and crawl spaces — reducing energy costs year-round.', href: '/insulation-installation/' },
 ];
 ---
 
 <BaseLayout
-  title="Exterior Services East Texas | Purpose Construction"
-  description="Exterior home improvement services across East Texas. Purpose Construction installs siding, windows, doors, gutters, and insulation — and handles exterior painting across East Texas. Free estimates."
+  title="Exterior Services in Lufkin, TX | Purpose Construction"
+  description="Exterior services in Lufkin, TX: siding, windows, doors, exterior painting, gutters and insulation. Insured, local crew. Free estimates: (936) 255-2235."
   schema={schema}
 >
-  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Exterior Services', href: '/exterior-services' }]} />
+  <Breadcrumb items={[{ label: 'Services', href: '/services/' }, { label: 'Exterior Services', href: '/exterior-services/' }]} />
   <PageHero
-    title="Exterior Services in East Texas"
+    title="Exterior Services in Lufkin, TX"
     subtitle="Protect and upgrade the outside of your home with Purpose Construction. Siding, windows, doors, painting, gutters, and insulation across East Texas."
     tag="Exterior Home Services"
     image="/images/exterior-services-east-texas.jpg"
@@ -84,9 +84,9 @@ const services = [
       <SectionHeading tag="Also From Purpose Construction" title="More Services" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Remodeling', href: '/remodeling-contractor' },
-          { label: 'New Construction', href: '/new-construction' },
-          { label: 'Outdoor Living', href: '/outdoor-living' },
+          { label: 'Remodeling', href: '/remodeling-contractor/' },
+          { label: 'New Construction', href: '/new-construction/' },
+          { label: 'Outdoor Living', href: '/outdoor-living/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} →
@@ -101,7 +101,7 @@ const services = [
       <h2 class="display-md text-white mb-4">Protect Your Home's Exterior</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call or fill out the form for a free exterior assessment and estimate. We'll identify what needs attention and give you a clear, honest scope of work.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

@@ -8,6 +8,7 @@ import InfoCard from '../components/InfoCard.astro';
 const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'GeneralContractor',
+  '@id': 'https://www.purposeconstructionco.com/#business',
   name: 'Purpose Construction',
   url: 'https://www.purposeconstructionco.com',
   telephone: '(936) 255-2235',
@@ -33,7 +34,7 @@ const businessSchema = {
       closes: '20:00',
     },
   ],
-  image: 'https://www.purposeconstructionco.com/og-default.jpg', // TODO: Replace with real photo
+  image: 'https://www.purposeconstructionco.com/og-default.jpg',
   areaServed: [
     'Lufkin', 'Hudson', 'Huntington', 'Diboll', 'Nacogdoches',
     'Corrigan', 'Wells', 'Zavalla', 'Pollok', 'Redland',
@@ -54,25 +55,25 @@ const categories = [
   {
     title: 'Remodeling',
     body: 'Kitchen and bathroom remodels, home additions, flooring, drywall, and interior painting — complete interior transformations for East Texas homes.',
-    href: '/remodeling-contractor',
+    href: '/remodeling-contractor/',
     icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
   },
   {
     title: 'New Construction',
     body: 'Custom homes, commercial builds, barndominiums, pole barns, and tiny homes — built from the ground up with East Texas craftsmanship.',
-    href: '/new-construction',
+    href: '/new-construction/',
     icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
   },
   {
     title: 'Outdoor Living',
     body: 'Patios, decks, pergolas, pavilions, fences, driveways, and walkways — outdoor spaces designed for East Texas living.',
-    href: '/outdoor-living',
+    href: '/outdoor-living/',
     icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
   },
   {
     title: 'Exterior Services',
     body: 'Siding, windows, doors, exterior painting, gutters, and insulation — protecting and upgrading the outside of your home.',
-    href: '/exterior-services',
+    href: '/exterior-services/',
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
   },
 ];
@@ -82,28 +83,28 @@ const coreServices = [
     title: 'Kitchen Remodeling',
     tag: 'Most Popular',
     body: 'Transform your kitchen with custom layouts, cabinetry, countertops, flooring, and full gut renovations tailored to how your family actually lives.',
-    href: '/kitchen-remodeling',
+    href: '/kitchen-remodeling/',
     image: '/images/kitchen-remodeling-lufkin-tx.jpg',
   },
   {
     title: 'Bathroom Remodeling',
     tag: 'Top Requested',
     body: 'From walk-in showers and soaking tubs to full layout changes — we deliver bathroom transformations that blend beauty with everyday function.',
-    href: '/bathroom-remodeling',
+    href: '/bathroom-remodeling/',
     image: '/images/bathroom-remodeling-lufkin-tx.jpg',
   },
   {
     title: 'Metal Structures',
     tag: 'East Texas Specialty',
     body: 'Barndominiums, pole barns, metal shop buildings, and custom steel-frame structures built for East Texas land and life — durable, versatile, and fully custom.',
-    href: '/metal-structures',
+    href: '/metal-structures/',
     image: '/images/metal-structures-barndominium-lufkin-tx.jpg',
   },
   {
     title: 'Gutter Installation',
     tag: 'Protect Your Home',
     body: 'Seamless gutters, guards, and downspouts installed by professionals — protecting your foundation, siding, and landscaping from East Texas rainfall.',
-    href: '/gutter-installation',
+    href: '/gutter-installation/',
     image: '/images/gutter-installation-lufkin-tx.jpg',
   },
 ];
@@ -128,24 +129,24 @@ const faqSchema = {
 
 const serviceAreas = [
   { name: 'Lufkin', href: '/' },
-  { name: 'Burke', href: '/locations/burke' },
-  { name: 'Chireno', href: '/locations/chireno' },
-  { name: 'Corrigan', href: '/locations/corrigan' },
-  { name: 'Diboll', href: '/locations/diboll' },
-  { name: 'Etoile', href: '/locations/etoile' },
-  { name: 'Hudson', href: '/locations/hudson' },
-  { name: 'Huntington', href: '/locations/huntington' },
-  { name: 'Nacogdoches', href: '/locations/nacogdoches' },
-  { name: 'Pollok', href: '/locations/pollok' },
-  { name: 'Redland', href: '/locations/redland' },
-  { name: 'Wells', href: '/locations/wells' },
-  { name: 'Zavalla', href: '/locations/zavalla' },
+  { name: 'Burke', href: '/locations/burke/' },
+  { name: 'Chireno', href: '/locations/chireno/' },
+  { name: 'Corrigan', href: '/locations/corrigan/' },
+  { name: 'Diboll', href: '/locations/diboll/' },
+  { name: 'Etoile', href: '/locations/etoile/' },
+  { name: 'Hudson', href: '/locations/hudson/' },
+  { name: 'Huntington', href: '/locations/huntington/' },
+  { name: 'Nacogdoches', href: '/locations/nacogdoches/' },
+  { name: 'Pollok', href: '/locations/pollok/' },
+  { name: 'Redland', href: '/locations/redland/' },
+  { name: 'Wells', href: '/locations/wells/' },
+  { name: 'Zavalla', href: '/locations/zavalla/' },
 ];
 ---
 
 <BaseLayout
-  title="General Contractor Lufkin TX | Purpose Construction"
-  description="General contractor in Lufkin, TX: custom homes, barndominiums, remodels and outdoor living across East Texas. Insured, local crew. Call (936) 255-2235."
+  title="Construction Company in Lufkin, TX | Purpose Construction"
+  description="Construction company in Lufkin, TX: custom homes, barndominiums, remodels and outdoor living across East Texas. Insured, local crew. Call (936) 255-2235."
   schema={[businessSchema, websiteSchema, faqSchema]}
 >
   <!-- Hero -->
@@ -257,7 +258,7 @@ const serviceAreas = [
         ))}
       </div>
       <div class="mt-10 text-center reveal">
-        <a href="/services" class="btn-ghost">
+        <a href="/services/" class="btn-ghost">
           View All Services
           <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -300,13 +301,13 @@ const serviceAreas = [
 
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>
-              <strong class="text-charcoal-900">Purpose Construction</strong> is a locally owned general contractor in Lufkin, serving East Texas homeowners and businesses for over a decade. We're insured and experienced, and we build remodels, custom homes and commercial projects across the region.
+              <strong class="text-charcoal-900">Purpose Construction</strong> is a locally owned construction company in Lufkin, TX, serving East Texas homeowners and businesses for over a decade. We're insured and experienced, and we build remodels, custom homes and commercial projects across the region.
             </p>
             <p>
               As a locally owned construction company, we understand what it means to build in East Texas. Our crews know local building codes, local suppliers, and the specific climate conditions that affect how your project should be built. From the first consultation to the final walkthrough, you work directly with our team — not a revolving door of subcontractors.
             </p>
             <p>
-              We specialize in <a href="/kitchen-remodeling" class="text-brand-red hover:underline font-semibold">kitchen and bathroom remodeling</a>, <a href="/new-construction" class="text-brand-red hover:underline font-semibold">new home construction</a>, barndominiums, metal structures, outdoor living spaces, and exterior services across Lufkin, <a href="/locations/nacogdoches" class="text-brand-red hover:underline font-semibold">Nacogdoches</a>, <a href="/locations/diboll" class="text-brand-red hover:underline font-semibold">Diboll</a>, and surrounding East Texas communities. We pull all permits and provide written contracts.
+              We specialize in <a href="/kitchen-remodeling/" class="text-brand-red hover:underline font-semibold">kitchen and bathroom remodeling</a>, <a href="/new-construction/" class="text-brand-red hover:underline font-semibold">new home construction</a>, barndominiums, metal structures, outdoor living spaces, and exterior services across Lufkin, <a href="/locations/nacogdoches/" class="text-brand-red hover:underline font-semibold">Nacogdoches</a>, <a href="/locations/diboll/" class="text-brand-red hover:underline font-semibold">Diboll</a>, and surrounding East Texas communities. We pull all permits and provide written contracts.
             </p>
           </div>
 
@@ -326,8 +327,8 @@ const serviceAreas = [
           </div>
 
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/about" class="btn-primary">About Our Company</a>
-            <a href="/contact" class="btn-outline">Get a Free Estimate</a>
+            <a href="/about/" class="btn-primary">About Our Company</a>
+            <a href="/contact/" class="btn-outline">Get a Free Estimate</a>
           </div>
         </div>
       </div>
@@ -453,7 +454,7 @@ const serviceAreas = [
 
       <!-- Bottom CTA -->
       <div class="reveal mt-16 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-primary px-8 py-4">Get Your Free Estimate</a>
+        <a href="/contact/" class="btn-primary px-8 py-4">Get Your Free Estimate</a>
         <a href="tel:9362552235" class="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:border-white/50">
           <svg class="h-4 w-4 text-brand-red" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
@@ -591,7 +592,7 @@ const serviceAreas = [
         Whether you're planning a full custom home, a kitchen remodel, or a new barndominium on your land — Purpose Construction is ready to put a plan together at no cost to you.
       </p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4 text-sm">
+        <a href="/contact/" class="btn-ghost px-8 py-4 text-sm">
           Get a Free Quote
           <svg class="h-4 w-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

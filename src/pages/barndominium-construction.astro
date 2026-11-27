@@ -19,7 +19,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Barndominium Construction in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'Barndominium construction in Lufkin, TX and rural Angelina County. Purpose Construction builds custom barndominiums on your land — full-scope from slab to final finishes.',
   },
@@ -36,14 +36,14 @@ const schema = [
 ---
 
 <BaseLayout
-  title="Barndominium Construction in Lufkin, TX | Purpose Construction"
+  title="Barndominium Builder in Lufkin, TX | Purpose Construction"
   description="Barndominium construction in Lufkin, TX and rural Angelina County. Slab to finished living space, built to your plan. Free estimates: (936) 255-2235."
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'New Construction', href: '/new-construction' },
-    { label: 'Barndominium Construction', href: '/barndominium-construction' },
+    { label: 'Services', href: '/services/' },
+    { label: 'New Construction', href: '/new-construction/' },
+    { label: 'Barndominium Construction', href: '/barndominium-construction/' },
   ]} />
 
   <PageHero
@@ -58,7 +58,7 @@ const schema = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -70,11 +70,11 @@ const schema = [
           <SectionHeading tag="Lufkin, TX" title="East Texas Barndominium Country" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>Angelina County is exactly the kind of place barndominiums are built for — wide rural lots, a country lifestyle, and landowners who want flexibility in what they build. Purpose Construction's barndominium construction team has built throughout the Lufkin area and understands the site-specific requirements of rural Angelina County builds: well and septic coordination, county permits, rural access roads, and site prep on wooded East Texas land.</p>
-            <p>We build barndominiums to your floor plan — open living layouts, shop/garage combinations, or fully finished custom interiors with all the amenities of a traditional home. Many clients pair the barndominium living space with a workshop or equipment storage bay in the same structure. If you're also looking at a conventional home build, see our <a href="/residential-construction" class="text-brand-red hover:underline font-semibold">residential construction</a> page.</p>
+            <p>We build barndominiums to your floor plan — open living layouts, shop/garage combinations, or fully finished custom interiors with all the amenities of a traditional home. Many clients pair the barndominium living space with a workshop or equipment storage bay in the same structure. If you're also looking at a conventional home build, see our <a href="/residential-construction/" class="text-brand-red hover:underline font-semibold">residential construction</a> page.</p>
             <p>Purpose Construction handles the complete build: site preparation, slab, metal shell erection, windows and doors, insulation, framing, drywall, electrical, plumbing, HVAC, and all interior finishes. We also coordinate any required septic, well, and utility work.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -169,10 +169,10 @@ const schema = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'New Construction', href: '/new-construction' },
-          { label: 'Residential Construction', href: '/residential-construction' },
-          { label: 'Commercial Construction', href: '/commercial-construction' },
-          { label: 'Home Additions', href: '/home-additions' },
+          { label: 'New Construction', href: '/new-construction/' },
+          { label: 'Residential Construction', href: '/residential-construction/' },
+          { label: 'Commercial Construction', href: '/commercial-construction/' },
+          { label: 'Home Additions', href: '/home-additions/' },
           { label: 'General Contractor', href: '/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
@@ -187,12 +187,12 @@ const schema = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -202,7 +202,7 @@ const schema = [
       <h2 class="display-md text-white mb-4">Build Your Barndominium in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate on your Angelina County land. We serve Lufkin and all of deep East Texas.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

@@ -8,7 +8,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Metal Structure Construction Lufkin TX',
-  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
   areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
   description: 'Custom metal structures including barndominiums, pole barns, steel frame buildings, and metal shop construction across East Texas and East Texas.',
 };
@@ -17,25 +17,25 @@ const services = [
   {
     title: 'Barndominium Construction',
     body: 'The most-requested metal structure in East Texas. Custom barndominiums with durable metal exteriors, fully custom interiors, porches, and complete utility hookups — built on your land.',
-    href: '/barndominium-construction',
+    href: '/barndominium-construction/',
     core: true,
   },
   {
     title: 'Pole Barn Construction',
     body: 'Heavy-duty pole barns for agriculture, livestock, equipment storage, and workshops. Built for the East Texas climate and your specific property.',
-    href: '/pole-barn-construction',
+    href: '/pole-barn-construction/',
     core: false,
   },
   {
     title: 'Metal Shop Buildings',
     body: 'Commercial and residential metal shop buildings — welding shops, auto garages, woodworking shops, and general-purpose steel frame structures built to last.',
-    href: '/new-construction',
+    href: '/new-construction/',
     core: false,
   },
   {
     title: 'Steel Frame Homes',
     body: 'Residential homes built on steel frames for superior strength, energy efficiency, and longevity. A modern alternative to traditional wood-frame construction.',
-    href: '/residential-construction',
+    href: '/residential-construction/',
     core: false,
   },
 ];
@@ -65,18 +65,18 @@ const advantages = [
 ---
 
 <BaseLayout
-  title="Metal Structures & Barndominiums East Texas | Purpose Construction"
-  description="Purpose Construction builds custom metal structures across East Texas — barndominiums, pole barns, steel frame homes, and metal shop buildings. Insured general contractor. Free estimates."
+  title="Metal Buildings in Lufkin, TX | Purpose Construction"
+  description="Metal buildings in Lufkin, TX: steel shops, garages, barns and metal homes built for East Texas land. Insured, local crew. Free estimates: (936) 255-2235."
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'Construction Services', href: '/new-construction' },
-    { label: 'Metal Structures', href: '/metal-structures' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Construction Services', href: '/new-construction/' },
+    { label: 'Metal Structures', href: '/metal-structures/' },
   ]} />
 
   <PageHero
-    title="Metal Structures in East Texas"
+    title="Metal Buildings in Lufkin, TX"
     subtitle="From barndominiums and pole barns to steel frame homes and metal shop buildings — Purpose Construction delivers durable, fully custom metal structures built for East Texas land and life."
     tag="Metal Structure Construction"
     image="/images/metal-structures-barndominium-lufkin-tx.jpg"
@@ -124,7 +124,7 @@ const advantages = [
             <p>Want a metal roof on your house, too? Our sister company Purpose Roofing installs <a href="https://purpose-roofing.com/metal-roofing/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">metal roofing in Lufkin</a> and the surrounding area.</p>
           </div>
           <div class="mt-6">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
           </div>
         </div>
         <img
@@ -170,10 +170,10 @@ const advantages = [
       <SectionHeading tag="Also From Purpose Construction" title="More Services" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Remodeling', href: '/remodeling-contractor' },
-          { label: 'New Construction', href: '/new-construction' },
-          { label: 'Outdoor Living', href: '/outdoor-living' },
-          { label: 'Exterior Services', href: '/exterior-services' },
+          { label: 'Remodeling', href: '/remodeling-contractor/' },
+          { label: 'New Construction', href: '/new-construction/' },
+          { label: 'Outdoor Living', href: '/outdoor-living/' },
+          { label: 'Exterior Services', href: '/exterior-services/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} &rarr;
@@ -191,7 +191,7 @@ const advantages = [
         Contact us for a free consultation. We'll walk your property, review your plans, and put together a detailed estimate — at no cost to you.
       </p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

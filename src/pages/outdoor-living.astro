@@ -16,7 +16,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Outdoor Living in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'Outdoor living construction in Lufkin, TX. Patios, decks, pergolas, pavilions, and outdoor kitchens for Angelina County homeowners.',
   },
@@ -31,13 +31,13 @@ const schema = [
   },
 ];
 const services = [
-  { title: 'Patio Construction', body: 'Poured concrete, stamped concrete, pavers, and flagstone patios designed for East Texas outdoor entertaining.', href: '/patio-construction' },
-  { title: 'Deck Construction', body: 'Pressure-treated, composite, and hardwood decks that stand up to East Texas heat and humidity.', href: '/deck-construction' },
-  { title: 'Pergola Construction', body: 'Custom pergolas for shade and style — freestanding or attached to your home, any size.', href: '/pergola-construction' },
-  { title: 'Pavilion Construction', body: 'Fully covered pavilions with roofing, lighting options, and optional screens for year-round outdoor living.', href: '/pavilion-construction' },
-  { title: 'Fence Installation', body: 'Wood, vinyl, chain link, and ornamental iron fencing for privacy, security, and curb appeal.', href: '/fence-installation' },
-  { title: 'Driveway Installation', body: 'Concrete and asphalt driveways installed and finished with proper drainage for East Texas soil conditions.', href: '/driveway-installation' },
-  { title: 'Walkway Installation', body: 'Poured concrete, paver, and flagstone walkways connecting your home, garage, and outdoor spaces.', href: '/walkway-installation' },
+  { title: 'Patio Construction', body: 'Poured concrete, stamped concrete, pavers, and flagstone patios designed for East Texas outdoor entertaining.', href: '/patio-construction/' },
+  { title: 'Deck Construction', body: 'Pressure-treated, composite, and hardwood decks that stand up to East Texas heat and humidity.', href: '/deck-construction/' },
+  { title: 'Pergola Construction', body: 'Custom pergolas for shade and style — freestanding or attached to your home, any size.', href: '/pergola-construction/' },
+  { title: 'Pavilion Construction', body: 'Fully covered pavilions with roofing, lighting options, and optional screens for year-round outdoor living.', href: '/pavilion-construction/' },
+  { title: 'Fence Installation', body: 'Wood, vinyl, chain link, and ornamental iron fencing for privacy, security, and curb appeal.', href: '/fence-installation/' },
+  { title: 'Driveway Installation', body: 'Concrete and asphalt driveways installed and finished with proper drainage for East Texas soil conditions.', href: '/driveway-installation/' },
+  { title: 'Walkway Installation', body: 'Poured concrete, paver, and flagstone walkways connecting your home, garage, and outdoor spaces.', href: '/walkway-installation/' },
 ];
 ---
 
@@ -47,8 +47,8 @@ const services = [
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'Outdoor Living', href: '/outdoor-living' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Outdoor Living', href: '/outdoor-living/' },
   ]} />
 
   <PageHero
@@ -63,7 +63,7 @@ const services = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -75,11 +75,11 @@ const services = [
           <SectionHeading tag="Lufkin, TX" title="Outdoor Living Built for East Texas" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>East Texas has one of the longest outdoor living seasons in the country — Lufkin homeowners can enjoy their yards from March through November with the right setup. Purpose Construction builds outdoor living spaces that are designed for Angelina County's wooded lots, humid climate, and hot summers — not a generic national template.</p>
-            <p>We build everything from a simple concrete patio to a fully covered outdoor kitchen and living area. Projects are often layered: a <a href="/patio-construction" class="text-brand-red hover:underline font-semibold">patio or deck</a> as the base, topped with a <a href="/pergola-construction" class="text-brand-red hover:underline font-semibold">pergola or pavilion</a> for shade and definition. We design and build it as a unified project.</p>
+            <p>We build everything from a simple concrete patio to a fully covered outdoor kitchen and living area. Projects are often layered: a <a href="/patio-construction/" class="text-brand-red hover:underline font-semibold">patio or deck</a> as the base, topped with a <a href="/pergola-construction/" class="text-brand-red hover:underline font-semibold">pergola or pavilion</a> for shade and definition. We design and build it as a unified project.</p>
             <p>East Texas summers are long and hot. Pine roots are aggressive. Humidity causes untreated wood to rot in just a few seasons. Our outdoor construction uses materials and methods proven in this specific climate.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -200,11 +200,11 @@ const services = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Patio Construction', href: '/patio-construction' },
-          { label: 'Deck Construction', href: '/deck-construction' },
-          { label: 'Pergola Construction', href: '/pergola-construction' },
-          { label: 'Exterior Painting', href: '/exterior-painting' },
-          { label: 'All Services', href: '/services' },
+          { label: 'Patio Construction', href: '/patio-construction/' },
+          { label: 'Deck Construction', href: '/deck-construction/' },
+          { label: 'Pergola Construction', href: '/pergola-construction/' },
+          { label: 'Exterior Painting', href: '/exterior-painting/' },
+          { label: 'All Services', href: '/services/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} →
@@ -218,12 +218,12 @@ const services = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -233,7 +233,7 @@ const services = [
       <h2 class="display-md text-white mb-4">Start Your Outdoor Living Project in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

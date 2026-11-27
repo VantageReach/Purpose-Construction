@@ -16,7 +16,7 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Patio Construction in Lufkin TX',
-    provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+    provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
     areaServed: { '@type': 'City', name: 'Lufkin', containedIn: { '@type': 'State', name: 'Texas' } },
     description: 'Patio construction in Lufkin, TX. Concrete patios, stamped concrete, pavers, and covered patio structures for Angelina County homeowners.',
   },
@@ -38,9 +38,9 @@ const schema = [
   schema={schema}
 >
   <Breadcrumb items={[
-    { label: 'Services', href: '/services' },
-    { label: 'Outdoor Living', href: '/outdoor-living' },
-    { label: 'Patio Construction', href: '/patio-construction' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Outdoor Living', href: '/outdoor-living/' },
+    { label: 'Patio Construction', href: '/patio-construction/' },
   ]} />
 
   <PageHero
@@ -55,7 +55,7 @@ const schema = [
       <p class="text-sm font-semibold text-white">Serving Lufkin & Angelina County — Free on-site estimates, no obligation.</p>
       <div class="flex items-center gap-3">
         <a href="tel:9362552235" class="text-sm font-bold text-brand-red hover:text-white transition-colors duration-150">(936) 255-2235</a>
-        <a href="/contact" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
+        <a href="/contact/" class="btn-primary py-2.5 text-xs">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -67,13 +67,13 @@ const schema = [
           <SectionHeading tag="Lufkin, TX" title="Patio Construction for Lufkin Homes" />
           <div class="space-y-4 text-base leading-relaxed text-charcoal-600">
             <p>A well-built patio is one of the best investments a Lufkin homeowner can make — East Texas weather gives you months of outdoor living time, and a quality concrete or paver patio holds up to the heat, humidity, and UV exposure of the region. Purpose Construction handles patio construction from simple broom-finish slabs to decorative stamped concrete entertainment areas.</p>
-            <p>We handle the full scope: grading and drainage planning, base prep, forming, concrete pour, and finishing. Patios are often the first step in a larger <a href="/outdoor-living" class="text-brand-red hover:underline font-semibold">outdoor living</a> project, and we can plan for a <a href="/pergola-construction" class="text-brand-red hover:underline font-semibold">pergola or cover structure</a> at the same time to avoid future disruption.</p>
+            <p>We handle the full scope: grading and drainage planning, base prep, forming, concrete pour, and finishing. Patios are often the first step in a larger <a href="/outdoor-living/" class="text-brand-red hover:underline font-semibold">outdoor living</a> project, and we can plan for a <a href="/pergola-construction/" class="text-brand-red hover:underline font-semibold">pergola or cover structure</a> at the same time to avoid future disruption.</p>
             <p>We use proper sub-base depths and fiber reinforcement specified for East Texas soil conditions to prevent the cracking and settling that shortcuts cause.</p>
             <p>East Texas gets generous rainfall — Lufkin averages around 50 inches per year — which means a patio without proper drainage becomes a pond after every storm. Purpose Construction grades and drains every patio we build so water moves away from your foundation and your outdoor space stays usable after it rains. It's a detail that separates a well-built patio from one that causes problems down the road.</p>
             <p>We pour standard and stamped concrete patios, install paver systems in brick and natural stone patterns, and lay flagstone for a more organic, natural look. Covered patio slabs are engineered to handle the structure above them — we coordinate with the cover installation so footings and slab thickness match what's being built on top.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
             <a href="tel:9362552235" class="btn-outline">Call (936) 255-2235</a>
           </div>
         </div>
@@ -168,11 +168,11 @@ const schema = [
       <SectionHeading tag="Also in Lufkin" title="Related Services in Lufkin, TX" />
       <div class="flex flex-wrap gap-3">
         {[
-          { label: 'Deck Construction', href: '/deck-construction' },
-          { label: 'Pergola Construction', href: '/pergola-construction' },
-          { label: 'Outdoor Living', href: '/outdoor-living' },
-          { label: 'Exterior Painting', href: '/exterior-painting' },
-          { label: 'All Services', href: '/services' },
+          { label: 'Deck Construction', href: '/deck-construction/' },
+          { label: 'Pergola Construction', href: '/pergola-construction/' },
+          { label: 'Outdoor Living', href: '/outdoor-living/' },
+          { label: 'Exterior Painting', href: '/exterior-painting/' },
+          { label: 'All Services', href: '/services/' },
         ].map((link) => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">
             {link.label} →
@@ -186,12 +186,12 @@ const schema = [
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Also Serving" title="Nearby Communities" />
       <div class="flex flex-wrap gap-3">
-        <a href="/locations/nacogdoches" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
-        <a href="/locations/diboll" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
-        <a href="/locations/huntington" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
-        <a href="/locations/hudson" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
-        <a href="/locations/zavalla" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
-        <a href="/locations" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
+        <a href="/locations/nacogdoches/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Nacogdoches →</a>
+        <a href="/locations/diboll/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Diboll →</a>
+        <a href="/locations/huntington/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Huntington →</a>
+        <a href="/locations/hudson/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Hudson →</a>
+        <a href="/locations/zavalla/" class="rounded-lg border border-warm-200 bg-warm-50 px-5 py-2.5 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-brand-red transition-all duration-200">Zavalla →</a>
+        <a href="/locations/" class="rounded-lg border border-brand-red/30 bg-brand-red-light px-5 py-2.5 text-sm font-semibold text-brand-red hover:bg-brand-red hover:text-white transition-all duration-200">All Service Areas →</a>
       </div>
     </div>
   </section>
@@ -201,7 +201,7 @@ const schema = [
       <h2 class="display-md text-white mb-4">Start Your Patio Project in Lufkin</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Call us or fill out the contact form for a free on-site estimate. We serve Lufkin, Nacogdoches, Diboll, Huntington, and all of Angelina County.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

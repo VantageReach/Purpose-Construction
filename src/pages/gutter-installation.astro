@@ -8,18 +8,18 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Gutter Installation',
-  provider: { '@type': 'GeneralContractor', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com' },
+  provider: { '@type': 'GeneralContractor', '@id': 'https://www.purposeconstructionco.com/#business', name: 'Purpose Construction', url: 'https://www.purposeconstructionco.com/' },
   areaServed: { '@type': 'State', name: 'Texas', containedIn: { '@type': 'Country', name: 'United States' } },
   description: 'Gutter installation across East Texas — seamless aluminum and steel gutters with downspouts, gutter guards, and proper slope for drainage around East Texas homes.',
 };
 ---
 <BaseLayout
-  title="Gutter Installation East Texas | Purpose Construction"
-  description="Gutter installation across East Texas — seamless aluminum gutters, downspouts, gutter guards, and custom colors. Purpose Construction protects East Texas homes from water damage. Call (936) 255-2235."
+  title="Gutter Installation in Lufkin, TX | Purpose Construction"
+  description="Gutter installation in Lufkin, TX: seamless gutters, downspouts and gutter guards sized for East Texas rain. Free estimates: (936) 255-2235."
   schema={schema}
 >
-  <Breadcrumb items={[{ label: 'Services', href: '/services' }, { label: 'Exterior Services', href: '/exterior-services' }, { label: 'Gutter Installation', href: '/gutter-installation' }]} />
-  <PageHero title="Gutter Installation in East Texas" subtitle="Seamless aluminum and steel gutters installed with proper slope, downspout placement, and gutter guards — protecting East Texas homes from heavy rainfall and foundation water damage." tag="Exterior Service" 
+  <Breadcrumb items={[{ label: 'Services', href: '/services/' }, { label: 'Exterior Services', href: '/exterior-services/' }, { label: 'Gutter Installation', href: '/gutter-installation/' }]} />
+  <PageHero title="Gutter Installation in Lufkin, TX" subtitle="Seamless aluminum and steel gutters installed with proper slope, downspout placement, and gutter guards — protecting East Texas homes from heavy rainfall and foundation water damage." tag="Exterior Service" 
     image="/images/gutter-installation-lufkin-tx.jpg"
   />
 
@@ -35,8 +35,8 @@ const schema = {
             <p>Gutters and roofs work as one system. If your roof edge or shingles need attention along with new gutters, our sister company Purpose Roofing handles <a href="https://purpose-roofing.com/gutters/" target="_blank" rel="noopener" class="font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-150">gutters and roof work in Lufkin</a> and across East Texas.</p>
           </div>
           <div class="mt-6 flex gap-4">
-            <a href="/contact" class="btn-primary">Get a Free Estimate</a>
-            <a href="/exterior-services" class="btn-outline">All Exterior Services</a>
+            <a href="/contact/" class="btn-primary">Get a Free Estimate</a>
+            <a href="/exterior-services/" class="btn-outline">All Exterior Services</a>
           </div>
         </div>
         <img src="/images/gutter-installation-lufkin-tx.jpg" alt="Gutter installation across East Texas by Purpose Construction" class="rounded-xl shadow-hero" width="640" height="480" loading="lazy" decoding="async" />
@@ -61,7 +61,7 @@ const schema = {
     <div class="container-wide px-4 sm:px-6 lg:px-8">
       <SectionHeading tag="Related Services" title="Related Exterior Services" />
       <div class="flex flex-wrap gap-3">
-        {[{ label: 'Siding Installation', href: '/siding-installation' }, { label: 'Exterior Services', href: '/exterior-services' }].map(link => (
+        {[{ label: 'Siding Installation', href: '/siding-installation/' }, { label: 'Exterior Services', href: '/exterior-services/' }].map(link => (
           <a href={link.href} class="rounded-lg border border-warm-200 bg-white px-5 py-3 text-sm font-semibold text-charcoal-700 shadow-card hover:border-brand-red-mid hover:text-charcoal-900 transition-all duration-200">{link.label} →</a>
         ))}
       </div>
@@ -73,7 +73,7 @@ const schema = {
       <h2 class="display-md text-white mb-4">Protect Your Home From the Rain</h2>
       <p class="mx-auto mb-8 max-w-xl text-base text-white/80">Contact Purpose Construction for a free gutter installation estimate. We serve Lufkin and all of East Texas.</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-        <a href="/contact" class="btn-ghost px-8 py-4">Get a Free Quote</a>
+        <a href="/contact/" class="btn-ghost px-8 py-4">Get a Free Quote</a>
         <a href="tel:9362552235" class="text-sm font-semibold text-white/70 hover:text-white transition-colors duration-150">(936) 255-2235</a>
       </div>
     </div>

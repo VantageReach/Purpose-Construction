@@ -16,15 +16,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center mb-12">
         <a href="/" class="btn-primary">Back to Home</a>
-        <a href="/contact" class="btn-outline">Contact Us</a>
+        <a href="/contact/" class="btn-outline">Contact Us</a>
       </div>
       <div class="flex flex-wrap justify-center gap-3">
         {[
-          { label: 'Services', href: '/services' },
-          { label: 'Remodeling', href: '/remodeling-contractor' },
-          { label: 'New Construction', href: '/new-construction' },
-          { label: 'Outdoor Living', href: '/outdoor-living' },
-          { label: 'About', href: '/about' },
+          { label: 'Services', href: '/services/' },
+          { label: 'Remodeling', href: '/remodeling-contractor/' },
+          { label: 'New Construction', href: '/new-construction/' },
+          { label: 'Outdoor Living', href: '/outdoor-living/' },
+          { label: 'About', href: '/about/' },
         ].map((link) => (
           <a
             href={link.href}
